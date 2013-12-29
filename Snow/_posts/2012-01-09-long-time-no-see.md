@@ -1,0 +1,5 @@
+---
+layout: post
+title: Long time, No see! 
+---
+It has been a while since my last post - a long while. I have been keeping busy, though! My reprap is now compete and is printing parts of remarkable quality. Recently, I modded a tiny zotac nettop with a large 12v fan. The mod was far from straightforward, so I plan to document it for the benefit of anyone else whose stock fan dies. In the meantime, I have been working on a website to help students study organic chemistry. Right now, the public site is feature frozen while I develop version 2, a complete rewrite. I wish it were not necessary, but the first version was procedural PHP backed only by a simple XML file. Quick and easy, perhaps, but not maintainable! Version 2 will use the [YII framework](http://www.yiiframework.com/) and will open the door to some really nice features in the future. You can see the first version at [www.StudyOrganic.com](http://www.studyorganic.com/)
