@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Building GMediaRender on LMDE 
+title: Building GMediaRender on LMDE   
+category: linux
 ---
 Note: I don't know that this will work for you. It builds fine on my system, but *gmediarender --list-outputs* shows only "Dummy output module (default)". If you have better luck, let me know!
 

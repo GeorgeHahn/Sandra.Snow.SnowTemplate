@@ -19,7 +19,7 @@ html {
 
 body {
     background: #fff;
-    background-image: url(images/pw_maze_white.png);
+    background-image: url(images/tiny_grid.png);
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
@@ -1180,27 +1180,27 @@ div.divider {
 }
 
 .darkishblue {
-  border-top: 3px #409abf solid;
+  border-top: 3px #5384FF solid;
 }
 
 .darkishred {
-  border-top: 3px #e05c5c solid;
+  border-top: 3px #FF0200 solid;
 }
 
 .lightblue {
-    border-top: 3px #00b6e3 solid;
+    border-top: 3px #779EFF solid;
 }
 
 .lightred {
-    border-top: 3px #ff7575 solid;
+    border-top: 3px #FF0200 solid;
 }
 
 .orange {
-    border-top: 3px #ff761b solid;
+    border-top: 3px #E87A0B solid;
 }
 
 .lightgreen {
-    border-top: 3px #abe254 solid;
+    border-top: 3px #970BE8 solid;
 }
 div.logos {
     overflow: hidden;

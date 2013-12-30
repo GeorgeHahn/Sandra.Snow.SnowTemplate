@@ -1,6 +1,7 @@
 ---
 layout: post
-title: NJIT High School Programming Contest Practice Problems 
+title: NJIT High School Programming Contest Practice Problems  
+category: words
 ---
 NJIT High School Programming Contest Practice Problems
 Came across some practice problems from the NJIT High School Programming Contest I attended three years ago, thought I'd share.

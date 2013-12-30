@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Building MonoDevelop on LMDE 
+title:  Building MonoDevelop on LMDE   
+category: linux
 ---
 
 I had a fair bit of trouble installing MonoDevelop on my LMDE machine the first time around. As I write this, the current version is 3.0.5 (commit [5542f6c0aa](https://github.com/mono/monodevelop/commit/5542f6c0aaa19e016f627f8bb202494c1db68888))

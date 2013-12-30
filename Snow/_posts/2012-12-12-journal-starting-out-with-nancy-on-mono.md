@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Journal: Starting out with Nancy on Mono Pt.1 
+title:  Journal: Starting out with Nancy on Mono Pt.1       
+category: words
 ---
 Before starting out, I installed NuGet, per these combined instructions:
 

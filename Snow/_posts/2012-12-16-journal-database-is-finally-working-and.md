@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Journal: Database is Finally Working and Enabling Sessions. 
+title: Journal: Database is Finally Working and Enabling Sessions.       
+category: words
 ---
 **Finally**, I can write some code. First things first, though, here's what I had to do to get to this point.
 

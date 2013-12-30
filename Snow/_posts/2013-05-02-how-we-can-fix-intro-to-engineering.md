@@ -1,6 +1,7 @@
 ---
 layout: post
-title: How We Can Fix Intro to Engineering Courses  
+title: How We Can Fix Intro to Engineering Courses     
+category: words
 ---
 Intro to Engineering courses are a necessity.
 

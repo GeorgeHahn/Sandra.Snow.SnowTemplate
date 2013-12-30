@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Journal: Starting out with Nancy on Mono Pt.3 
+title: Journal: Starting out with Nancy on Mono Pt.3      
+category: words
 ---
 In the last blog post, I had some trouble finding an ORM layer I could tolerate. Since then, I have built mono 3.0.3 from source (master/df22423 Sat Dec 15 04:31:04 EST 2012). It wasn't easy - there was a lot of black magic involved. Even once I had the mono compiler and libraries built, I was unable to build Entity Framework from source. My solution was to get the EF5 binary from NuGet - so there wasn't really any point to my building mono from source!
 

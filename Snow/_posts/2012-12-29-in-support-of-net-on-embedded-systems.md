@@ -1,6 +1,7 @@
 ---
 layout: post
-title: In Support of .Net on Embedded Systems 
+title: In Support of .Net on Embedded Systems    
+category: words, comparison
 ---
 I am going to address some of the hostility towards .Net on embedded systems - known as the .Net Micro framework, or NetMF.
 
@@ -20,18 +21,18 @@ The costs:
 Judging by this quick cost-benefit analysis, NetMF doesn't make sense in an environment where hard real time is an absolute requirement. Other than that, RAM and flash are cheap. In many cases, there is a 2 to 4 dollar difference between non-NetMF capable processors and those that are. Seems like a no-brainer for any quick-turn, low quantity shop.
 
 Let's take a look at some basic code to toggle a pin in C:
-	
-	#include <mfr_library.h>
-	 
-	int main (void)
-	{
-	    LED_TRIS_BIT = PIN_OUTPUT;
-	 
-	    while(1)
-	    {
-	        LED ^= 1;
-	    }
-	}
+
+    #include <mfr_library.h>
+     
+    int main (void)
+    {
+        LED_TRIS_BIT = PIN_OUTPUT;
+     
+        while(1)
+        {
+            LED ^= 1;
+        }
+    }
 
 And in NetMF:
 	

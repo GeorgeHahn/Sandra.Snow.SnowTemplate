@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  More Online EDA Thoughts - Upverter/Circuits.IO 
+title:  More Online EDA Thoughts - Upverter/Circuits.IO      
+category: comparison
 ---
 Some little annoyances I came up with as I was drawing out a simple Micro USB breakout board.
 #Upverter

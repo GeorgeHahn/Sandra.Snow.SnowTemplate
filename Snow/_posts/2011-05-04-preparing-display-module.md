@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Pictorial: Preparing a Display Module 
+category: display module
 ---
 To use a display without a mating 4 pin connector, the cable must be modified.
 

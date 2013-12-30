@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Converting Linux Mint Debian Edition (LMDE) into Debian Testing 
+title: Converting Linux Mint Debian Edition (LMDE) into Debian Testing   
+category: linux
 ---
 Linux Mint Debian Edition is built on Debian Testing. After months of dealing with flaky mirrors and a not-so-impressive distro, I decided it was time to flip the switch. (Other than Cinnamon and/or MATE, Mint doesn't offer much.)
 

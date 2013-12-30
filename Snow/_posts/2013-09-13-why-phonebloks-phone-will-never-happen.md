@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Why the PhoneBloks phone will never happen
+title: Why the PhoneBloks phone will never happen   
+category: words
 ---
 
 It's a physics issue. Signals in modern devices are extremely high speed; the easiest and cheapest way to combat this is to bring components closer together. For example, the wireless radios, RAM, and processor in all modern phones exist as one chip. They essentially put the CPU and wireless magic on the same silicon die (or on a separate die in the same package) and pop a RAM chip on top ("Package on Package").

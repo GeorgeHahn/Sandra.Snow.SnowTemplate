@@ -1,6 +1,7 @@
 ---
 layout: post
 title: New Horizons 
+category: hardware
 ---
 Recently, I created a bare-bones design for TI's [PCM2707](http://www.ti.com/product/pcm2707) USB DAC. This was the first time I designed a board layout. It was enlightening, to say the least. The board is almost entirely surface mount and comes in at a hair over 1 sq inch. I have five of them on order at BatchPCB - I'll share the schematic and layout for this one once I get a chance to play with the hardware.
 

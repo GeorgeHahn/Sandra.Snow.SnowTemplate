@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Building DBus Explorer on LMDE 
+title:  Building DBus Explorer on LMDE  
+category: linux
 ---
 Nice easy build today. DBus Explorer is a handy C# application for probing DBus.
 

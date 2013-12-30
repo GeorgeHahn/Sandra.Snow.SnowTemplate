@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Working on a Droid RAZR HD Maxx Case 
+title:  Working on a Droid RAZR HD Maxx Case    
+category: making, printing
 ---
 
 Available on Thingiverse: [http://www.thingiverse.com/thing:34668](http://www.thingiverse.com/thing:34668)

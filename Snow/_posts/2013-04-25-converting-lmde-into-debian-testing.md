@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Converting LMDE into Debian Testing: Results 
+title:  Converting LMDE into Debian Testing: Results  
+category: linux
 ---
 
 Yesterday, I replaced the LMDE entries in my sources.list with entries for Debian Testing. Then I ran a dist-upgrade.

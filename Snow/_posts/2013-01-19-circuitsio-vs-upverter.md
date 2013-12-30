@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Circuits.IO vs Upverter 
+title: Circuits.IO vs Upverter     
+category: comparison
 ---
 
 ![][0]

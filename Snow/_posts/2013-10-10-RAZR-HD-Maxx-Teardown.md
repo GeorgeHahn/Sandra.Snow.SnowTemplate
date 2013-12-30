@@ -1,13 +1,14 @@
 ---
 layout: post
 title: RAZR HD Maxx Teardown
+category: teardown
 ---
 
 A friend accidentally ran over his RAZR HD Maxx, so I rescued the motherboard and tore it down!
 
 I wasn't too kind when removing the RF shielding, so the copper is torn off in a few places.
 
-Click for full resolution.
+View image for full resolution.
 
 ![][0]
 ![][1]

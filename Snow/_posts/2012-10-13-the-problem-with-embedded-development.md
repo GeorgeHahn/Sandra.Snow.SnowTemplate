@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  The Problem with Embedded Development 
+title:  The Problem with Embedded Development  
+category: words
 ---
 Embedded development sits in a remarkably odd position - somewhere between electrical engineering and computer science. It is such an odd position that there isn't even a college degree for it!
 

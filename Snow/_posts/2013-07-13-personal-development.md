@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Personal Development
+title: Personal Development   
+category: words
 ---
 
 Earlier this week, I returned from an eight day visit to Toronto, Ontario. I'm from rural New Jersey and, though there are some 'population centers' near me, there isn't anything like a three million person city.

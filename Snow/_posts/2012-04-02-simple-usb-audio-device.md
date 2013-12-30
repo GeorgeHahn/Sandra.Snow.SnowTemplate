@@ -1,6 +1,7 @@
 ---
 layout: post
-title: A Simple USB Audio Device 
+title: A Simple USB Audio Device  
+category: hardware
 ---
 
 About four months ago, I came across the [TI PCM2707](http://www.ti.com/product/pcm2707). The PCM2707 is a standard USB 1.1 audio IC. As such, it can play audio without any custom drivers. My device closely follows the reference design shown in TI's datasheet. The PCM2707 can play 16 bit stereo audio at a maximum sampling rate of 48kHz. It has a built in 175mW headphone amplifier for analog output. Additionally, it can output S/PDIF and I2S digital audio. The former might be used to connect to a consumer audio receiver, while the latter could be used to interface with a more powerful amplifier IC.

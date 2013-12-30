@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Giving away an IBM 5150 
+category: pictures
 ---
 This is an IBM 5150 my boss was going to throw away. It works - and even boots faster than my phone! A DOS 2.0 floppy (5 1/4") is in the boot drive.
 

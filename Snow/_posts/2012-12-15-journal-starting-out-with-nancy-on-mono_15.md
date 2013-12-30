@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Journal: Starting out with Nancy on Mono Pt.2
+title: Journal: Starting out with Nancy on Mono Pt.2      
+category: words
 ---
 Hello world is great, but it's time for some real code. I plan to develop a simple flash-card style application to help me study organic chemistry.
 

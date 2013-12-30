@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Abandoning the EFM32G210F128 Breakout 
+category: hardware
 ---
 
 ![][0]

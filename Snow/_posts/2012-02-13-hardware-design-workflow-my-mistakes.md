@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Hardware Design Workflow: My Mistakes 
+category: hardware
 ---
 During my recent foray into PCB layout, I made a few mistakes. Here are the most egregious:
 

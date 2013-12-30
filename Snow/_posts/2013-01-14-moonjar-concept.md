@@ -1,6 +1,7 @@
 ---
 layout: post
-title: MoonJar Concept 
+title: MoonJar Concept        
+category: pictures
 ---
 
 ![][0]

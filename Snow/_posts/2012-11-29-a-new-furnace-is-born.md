@@ -1,6 +1,7 @@
 ---
 layout: post
-title: A New Furnace is Born 
+title: A New Furnace is Born        
+category: pictures, furnace
 ---
 I was going to write a post about this, but it's been months and it still hasn't happened, so I'll just post the pictures for now.
 

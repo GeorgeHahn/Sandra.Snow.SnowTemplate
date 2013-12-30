@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Building my bot
+category: reprap
 ---
 
 My parts! Purchased with Bitcoins :)

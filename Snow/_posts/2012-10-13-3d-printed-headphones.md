@@ -1,6 +1,7 @@
 ---
 layout: post
-title: 3D Printed Headphones 
+title: 3D Printed Headphones  
+category: making, printing
 ---
 The [Sony MDR-V500](http://store.sony.com/webapp/wcs/stores/servlet/ProductDisplay?catalogId=10551&storeId=10151&langId=-1&partNumber=MDRV500DJ#specifications) headphones were marketed as budget DJ headphones. They sound 'good enough' and are extremely durable. Their biggest fault is that they are on-the-ear headphones instead of the more comfortable over-the-ear type. I set out to fix that with a bit of 3D printing.
 

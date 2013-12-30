@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Display Module Details 
+category: display module
 ---
 Here are the specifications for the display module. Read & enjoy!
 

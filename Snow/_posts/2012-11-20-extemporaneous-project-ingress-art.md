@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Extemporaneous Project: Ingress Art 
+title: Extemporaneous Project: Ingress Art       
+category: pictures
 ---
 
 Making some original #ingress art 

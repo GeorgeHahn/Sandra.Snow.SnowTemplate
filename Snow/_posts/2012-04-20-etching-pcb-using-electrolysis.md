@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Etching a PCB using Electrolysis 
+title: Etching a PCB using Electrolysis  
+category: pictures, science
 ---
 
 While playing around with electroplating, I decided to try using a PCB as the anode (the piece that metal is removed from). In theory, this will allow one to etch a PCB without any chemicals.

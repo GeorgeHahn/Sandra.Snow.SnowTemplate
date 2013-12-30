@@ -1,6 +1,7 @@
 ---
 layout: post
-title: The Roles of Professors 
+title: The Roles of Professors   
+category: words
 ---
 This is an assignment I wrote for my "Intro to Engineering" class. 
 

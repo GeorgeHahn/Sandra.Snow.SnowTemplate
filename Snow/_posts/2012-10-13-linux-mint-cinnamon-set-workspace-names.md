@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  (Linux Mint) Cinnamon Set Workspace Names 
+title:  (Linux Mint) Cinnamon Set Workspace Names   
+category: linux
 ---
 In Cinnamon 1.6, workspaces in the expo can have custom names applied. However, these names are not carried through to the window right click menu (Move to another workspace ->).
 

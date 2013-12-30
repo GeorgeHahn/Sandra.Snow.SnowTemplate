@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Why I Want to be an Engineer
+title: Why I Want to be an Engineer   
+category: words
 ---
 *Term paper for a generic Intro to Engineering class.*
 

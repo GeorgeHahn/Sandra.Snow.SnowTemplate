@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Electroplating
+title: Electroplating       
+category: pictures, science
 ---
 
 As defined by Wikipedia, electroplating is "[a] process in which metal ions in a solution are moved by an electric field to coat an electrode." All it takes to electroplate is a power supply and an ionic bath. Connect the positive terminal to the metallic piece to be deposited - this is the anode, and the negative terminal to the piece to be plated - this is the cathode.

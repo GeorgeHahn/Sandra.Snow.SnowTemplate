@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Unboxing: Energy Micro EFM32 Tiny Gecko Starter Kit 
+title: Unboxing: Energy Micro EFM32 Tiny Gecko Starter Kit  
+category: hardware
 ---
 Today I received a Tiny Gecko starter kit (http://www.energymicro.com/tools/efm32-tiny-gecko-starter-kit)
 

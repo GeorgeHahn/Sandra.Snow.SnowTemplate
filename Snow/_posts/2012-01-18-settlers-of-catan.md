@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Settlers of Catan! 
+category: making, printing
 ---
 
 I have been a [Settlers of Catan](http://en.wikipedia.org/wiki/The_Settlers_of_Catan) addict for the past two years. If you enjoy board games and you have not had the chance to play this one, you are really missing out.
