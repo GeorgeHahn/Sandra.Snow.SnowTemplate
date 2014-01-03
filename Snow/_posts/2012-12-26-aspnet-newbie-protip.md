@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ASP.Net Newbie Protip 
+category: software
 ---
 When building ASP.NET projects and hosting with local IIS, don't play with the build output path in Visual Studio. The issue here is that IIS Express loads libraries from the bin\ directory. Change that to something like bin\Release\, and the running code is no longer updated when Visual Studio builds.
 

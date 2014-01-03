@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Bridging Upverter and OSHPark
+category: software
 ---
 [Upverter](http://upverter.com/) is the best online circuit creation platform, and OSHPark is one of the best circuit board production services. Put the two together, and you should find bliss - but you won't. Anyone who has had an Upverter-designed board built by OSHPark will be familiar with this problem. When you download gerbers from Upverter, you get a zip full of files like bottom_copper.ger and top_paste.ger. OSHPark, on the other hand, wants names like Bottom Layer.ger and Board Outline.ger.
 
@@ -25,4 +26,4 @@ I wrote a quick C# command line app to do the transformation automatically. If y
 
 You can find the source and the binary at [https://bitbucket.org/George_Hahn/upvertertooshpark](https://bitbucket.org/George_Hahn/upvertertooshpark).
 
-BONUS: Create a shortcut to the binary in the %APPDATA%\Microsoft\Windows\SendTo directory! This will allow you to right click on an Upverter zip and choose Send to: OSHPark!
+BONUS: Create a shortcut to the binary in the `%APPDATA%\Microsoft\Windows\SendTo` directory! This will allow you to right click on an Upverter zip and choose Send to: OSHPark!

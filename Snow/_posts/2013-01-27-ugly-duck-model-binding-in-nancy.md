@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ugly Duck Model Binding in Nancy 
+category: software
 ---
 It's been a while since I last wrote about my pet web development project. I have made a couple large changes - most importantly, I am now using RavenDB. The second big change is that I have begun dual booting Windows 8 as my development system. While running Windows in a VM is enough to get into Visual Studio, the little pauses began to drive me crazy. I went out and bought a 240 GB Corsair Force GT and couldn't be happier.
 
