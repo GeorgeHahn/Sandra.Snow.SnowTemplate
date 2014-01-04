@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2014-01-04T00:02:14.7125108-05:00" />
+    <title>Generic Maker</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="canonical" href="http://www.genericmaker.com/page4/" />
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        <header id="masthead" class="site-header fancy-container lightgreen" role="banner">
+            <hgroup>
+                <h1 class="site-title"><a href="/" title="genericmaker.com" rel="home">Generic Maker</a></h1>
+            </hgroup>
+            <nav role="navigation" class="site-navigation main-navigation">
+                <h1 class="assistive-text">Menu</h1>
+                <div class="assistive-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+                <div class="menu">
+                    <ul>
+                        <!--li><a href="/about">About</a></li-->
+                        <li><a href="/category">Categories</a></li>
+                        <li><a href="/archive">Archive</a></li>
+                        <li><a href="/rss">RSS</a> / <a href="/feed">Atom</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+  <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/10/3d-printed-headphones.html/">3D Printed Headphones</a> 
+        <span>posted on 13 Oct 2012</span>
+      </h1> 
+      
+      <p>The <a href="http://store.sony.com/webapp/wcs/stores/servlet/ProductDisplay?catalogId=10551&amp;storeId=10151&amp;langId=-1&amp;partNumber=MDRV500DJ#specifications">Sony MDR-V500</a> headphones were marketed as budget DJ headphones. They sound 'good enough' and are extremely durable. Their biggest fault is that they are on-the-ear headphones instead of the more comfortable over-the-ear type. I set out to fix that with a bit of 3D printing.</p>
+
+<p><s><strong>Mod Results</strong></s>
+I did not complete this mod.</p>
+
+<p>I neglected to take a 'before' picture, so here's one from someone else:</p>
+
+<p><img src="/images/sony-mdr-500-headphones.jpg" alt="" /></p>
+
+<p><em>Source: Playderecord.com</em></p>
+
+<h2>In-Progress Photos</h2>
+
+<p><img src="/images/sony-mdr-500-result.jpg" alt="" /></p>
+
+<p><img src="/images/sony-mdr-500-result2.jpg" alt="" /></p>
+
+<p>Modification Process</p>
+
+<p>First, I modeled the two part enclosure in Solidworks. When this was complete, I tweaked the dimensions to allow for pads with a diameter 3cm larger than the original.</p>
+
+<p><img src="/images/sony-mdr-500-progress1.jpg" alt="" /></p>
+
+<p>To install the larger enclosures, the original enclosures must be removed and the drivers extracted.</p>
+
+<p>First, remove the pads and the three screws under them. Carefully remove the foam that is glued over the driver.</p>
+
+<p><img src="/images/sony-mdr-500-progress2.jpg" alt="" /></p>
+
+<p>Separate the two halves of the enclosure. Flip the inner half around and remove the driver by twisting it slightly.</p>
+
+<p><img src="/images/sony-mdr-500-progress3.jpg" alt="" /></p>
+
+<p>Once the driver is free, the headphone wires will need to be removed. Grab a soldering iron and remove the wires one at a time.</p>
+
+<p><img src="/images/sony-mdr-500-progress4.jpg" alt="" /></p>
+
+<p>Cut the zip tie inside and pull the wire out from the enclosure. The enclosure can now be removed from the headband.</p>
+
+<p><img src="/images/sony-mdr-500-progress5.jpg" alt="" /></p>
+
+<p>Save the nice rubber strain relief piece for the new enclosure.</p>
+
+      <p><a href="/2012/10/3d-printed-headphones.html/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/10/linux-mint-cinnamon-set-workspace-names.html/">(Linux Mint) Cinnamon Set Workspace Names</a> 
+        <span>posted on 13 Oct 2012</span>
+      </h1> 
+      
+      <p>In Cinnamon 1.6, workspaces in the expo can have custom names applied. However, these names are not carried through to the window right click menu (Move to another workspace ->).</p>
+
+<p>Workspace names in the right click menu are set by the workspace-names key in org.gnome.desktop.wm.preferences.</p>
+
+<p>For example:</p>
+
+<pre><code>gsettings set org.gnome.desktop.wm.preferences workspace-names "['Entertainment', 'Projects', 'Programming', 'Learning', 'Homework']" 
+</code></pre>
+
+<p>(Sadly, these names do synchronize with the expo names, so you'll have to set everything twice.) </p>
+
+      <p><a href="/2012/10/linux-mint-cinnamon-set-workspace-names.html/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/10/the-problem-with-embedded-development.html/">The Problem with Embedded Development</a> 
+        <span>posted on 13 Oct 2012</span>
+      </h1> 
+      
+      <p>Embedded development sits in a remarkably odd position - somewhere between electrical engineering and computer science. It is such an odd position that there isn't even a college degree for it!</p>
+
+<p>There is one big problem with embedded development today - tools. On the electrical engineering side, there are great tools. An electrical design can be created by a group ranging in size from one person to hundreds, and can be thoroughly simulated, tested, and verified before it is built. Software that runs on full computers is in an even better position. Best practices exist for all common tasks; software written in any language can be thoroughly tested. Every iteration of code can be evaluated based on one metric or another - primarily: do the tests pass?</p>
+
+<p>In embedded development, none of this is true. Unit testing is almost unheard of. Whether or not the code "works" is defined by (hopefully) a third party (probably, a fellow developer) putting a device through its paces.</p>
+
+<p>What we need:</p>
+
+<ul>
+<li>Unit testing (Desktop based?)</li>
+<li>A way to put code through its paces on a desktop before it is deployed. I'm imagining a tiny package that defines all of a processor's registers so code will compile and run on a desktop. Bonuses would be a system to generate various interrupts and a robust plugin system that would allow for IO.</li>
+</ul>
+
+<p>From there, it would be trivial to set up a build server to continuously check the code in a repository.</p>
+
+<p><em>Sorry for the unpolished post. Better early than never!</em></p>
+
+      <p><a href="/2012/10/the-problem-with-embedded-development.html/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/09/maker-faire-2012.html/">Maker Faire 2012</a> 
+        <span>posted on 29 Sep 2012</span>
+      </h1> 
+      
+      <p>A friend asked what got my attention at Maker Faire. My response:</p>
+
+<p>Everything on the Make Live stage was amazing. Intel's futurist, Brian David Johnson, had a very interesting talk. The makerspace panel was absolutely stunning; life changing, even.</p>
+
+<p>I was super impressed by the Rostock Max printer (<a href="http://www.seemecnc.com/">www.SeeMeCNC.com</a>). (re)Designed by a bunch of injection molding guys. They'll be shipping kits of the hard-to-print parts alongside their full kits. These guys had a really neat injection molded business card! I'll post pictures soon.</p>
+
+<p>Trinity Labs (<a href="http://www.trinitylabs.com/">www.trinitylabs.com</a>) is absolutely AMAZING. They have Mike Payson (maxbots), Triffid Hunter, and Arthur Wolf on the payroll. They're moving forward on the excellent Smoothieboard, and have a very sturdy MendelMax offering. Think: single linear motion extrusion on the y axis rather than a pair. Eric took a lot of time to talk to me; it was pretty cool to connect over our plans to build Rostocks.</p>
+
+<p>Listened (and asked a lot of questions) to Edward P. Ryan (<a href="http://www.tb-iplaw.com/">www.tb-iplaw.com</a>), a patent attorney. He was great, and gave me a few good bits of information that I didn't know before. For example, if you create a PCB that, once populated, will infringe upon a patent, selling the bare PCB puts you at risk for a suit.</p>
+
+<p>Qu-Bd (<a href="http://www.qu-bd.com/">http://www.qu-bd.com/</a>) gave me a few feet of their 'nanolinks' mini cable chain. At $3/foot, it's awesome and affordable!</p>
+
+<p>I enjoyed seeing the DLP resin printers. Stunning resolution, but the cured plastic isn't very rigid. It's also best in one color - red - because they're using visible-color (blue?) curing plastic. I think I'll wait until someone's built a specialized UV projector.</p>
+
+<p>iDigi gave me a business card with a bare XBee board. If I can find a BOM, I'm going to populate it ;)</p>
+
+<p>The Shopbot tools on display were impressive - they had a CNC-lathe combo on display! I wouldn't want one for the house, but would definitely reccomend to otherse.</p>
+
+<p>I glanced the Helios Robot (<a href="http://kick.st/Spjaw0">http://kick.st/Spjaw0</a>). Looked like an interesting toy.</p>
+
+<p>I enjoyed seeing the AeroQuad (<a href="http://www.aeroquad.com/">www.AeroQuad.com</a>) multicopters buzzing about all day. They also have very impressive business cards (as much as a paper business card can be impressive).</p>
+
+      <p><a href="/2012/09/maker-faire-2012.html/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/09/njit-high-school-programming-contest.html/">NJIT High School Programming Contest Practice Problems</a> 
+        <span>posted on 21 Sep 2012</span>
+      </h1> 
+      
+      <p>NJIT High School Programming Contest Practice Problems
+Came across some practice problems from the NJIT High School Programming Contest I attended three years ago, thought I'd share.</p>
+
+<h2>Practice Problem 1</h2>
+
+<p>Write a program that reads a line containing one or more positive integers and prints out the even numbers.</p>
+
+<p>The input is a first line containing one or more positive integers. The output is a single line with each of the even numbers, appearing in the same order as the input.</p>
+
+<p>For example, if the input is</p>
+
+<p>77 2046 91 3 405981 378 22228</p>
+
+<p>then the correct output is</p>
+
+<p>2046 378 22228</p>
+
+<h2>Practice Problem 2</h2>
+
+<p>Write a program that reads a line containing one or more strings and prints out the strings on a single line with each lower canse letter changed to an upper case and each upper case letter changed to lower case.</p>
+
+<p>For example, if the input is</p>
+
+<p>New Jersey</p>
+
+<p>then the correct output is</p>
+
+<p>nEW jERSEY</p>
+
+<h2>Practice Problem 3</h2>
+
+<p>Write a program that determines the subset of a list of words that start with a given letter.</p>
+
+<p>The input is a first line containing a positive integer n and a single letter c. There are n subsequent lines, each containing a word. The output is the number of words that start with c, followed by a list of those words.</p>
+
+<p>For example, if the input is</p>
+
+<p>4 d
+cat
+dog
+rabbit
+donkey</p>
+
+<p>then the correct output is</p>
+
+<p>2
+dog
+donkey</p>
+
+<p>Competition was hosted by <a href="http://web.njit.edu/~calvin/">http://web.njit.edu/~calvin/</a></p>
+
+      <p><a href="/2012/09/njit-high-school-programming-contest.html/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/05/unboxing-energy-micro-efm32-tiny-gecko.html/">Unboxing: Energy Micro EFM32 Tiny Gecko Starter Kit</a> 
+        <span>posted on 11 May 2012</span>
+      </h1> 
+      
+      <p>Today I received a Tiny Gecko starter kit (http://www.energymicro.com/tools/efm32-tiny-gecko-starter-kit)</p>
+
+<p>Thanks to <a href="http://www.eevblog.com/">EEVBlog</a> and <a href="http://energymicro.com/">EnergyMicro</a> for the kit!</p>
+
+<p><img src="/images/DSC_0470.JPG" alt="" /></p>
+
+<p><img src="/images/DSC_0471.JPG" alt="" /></p>
+
+<p><img src="/images/DSC_0472.JPG" alt="" /></p>
+
+<p><img src="/images/DSC_0473.JPG" alt="" /></p>
+
+<p><img src="/images/DSC_0474.JPG" alt="" /></p>
+
+      <p><a href="/2012/05/unboxing-energy-micro-efm32-tiny-gecko.html/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/04/electroplating.html/">Electroplating</a> 
+        <span>posted on 20 Apr 2012</span>
+      </h1> 
+      
+      <p>As defined by Wikipedia, electroplating is "[a] process in which metal ions in a solution are moved by an electric field to coat an electrode." All it takes to electroplate is a power supply and an ionic bath. Connect the positive terminal to the metallic piece to be deposited - this is the anode, and the negative terminal to the piece to be plated - this is the cathode.</p>
+
+<p><img src="/images/500px-Copper_electroplating.svg.png" alt="" /></p>
+
+<p>I began my experiment by making a sodium chloride solution - table salt and water. I used a steel hex wrench as the anode and a penny as the cathode. Both pieces of metal were suspended in the salt bath with precariously balanced alligator clips. My power supply is rated to supply four amps continuously. I turned the power supply on and bubbles started to stream from the cathode. After some time had passed, the bath began to darken. I removed the cathode to see a layer of dark slime; when I wiped it away, a thin layer of copper/zinc was revealed.</p>
+
+<p><img src="/images/electroplating-rod.jpg" alt="" /></p>
+
+<p>Next, I tried using an aluminum can as the cathode. Due to the large exposed area, this drew a lot of current and warmed the solution. This time, the solution darkened even more quickly.</p>
+
+<p><img src="/images/electroplating-process.jpg" alt="" /></p>
+
+<p>You can see how thin the aluminum on the exposed edge became.</p>
+
+<p><img src="/images/electroplating-can.jpg" alt="" /></p>
+
+<p><img src="/images/electroplating-can2.jpg" alt="" /></p>
+
+<p>My next target was a metal capped PIC microprocessor. On a whim, I decided to use a new ionic bath. I opted to start with a hydrochloric acid base - vinegar. No additives were necessary; when the electroplating process was started, the anode would be ionized, giving rise to an ionic bath.</p>
+
+<p>Twenty minutes after beginning the process, the chip slipped away from its clip. Curious, I turned the power supply off and inspected the setup. To my dismay, the alligator clip holding the chip had been electrolyzed! A sad turn of events - but it was worth it! The cover of the microprocessor was removed with no damage to the silicon core inside.</p>
+
+<p><img src="/images/electroplating-can2.jpg" alt="" /></p>
+
+<p><img src="/images/electroplating-clips.jpg" alt="" /></p>
+
+<p><img src="/images/electroplating-ic1.jpg" alt="" /></p>
+
+<p>I wish I could get a better picture of the die.</p>
+
+<p><img src="/images/electroplating-ic2.jpg" alt="" /></p>
+
+<p><img src="/images/electroplating-ic3.jpg" alt="" /></p>
+
+<p><img src="/images/electroplating-ic4.jpg" alt="" /></p>
+
+<p>Taking the picture through a magnifying glass didn't help.</p>
+
+<p><img src="/images/electroplating-ic6.jpg" alt="" /></p>
+
+      <p><a href="/2012/04/electroplating.html/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/04/etching-pcb-using-electrolysis.html/">Etching a PCB using Electrolysis</a> 
+        <span>posted on 20 Apr 2012</span>
+      </h1> 
+      
+      <p>While playing around with electroplating, I decided to try using a PCB as the anode (the piece that metal is removed from). In theory, this will allow one to etch a PCB without any chemicals.</p>
+
+<p>I pulled some copper up from the edge so I could get a reliable connection.</p>
+
+<p><img src="/images/electroplating-ewpcb.jpg" alt="" /></p>
+
+<p>I used sand paper to remove a patch of soldermask from the back of the board. After placing a piece of clear household tape over the bare copper, I cut out the negative of a small sample circuit. Sadly, I don't have any pictures of this process, only the before and after shown below </p>
+
+<p>Salt bath (vinegar; the blue tint is from copper ions left from a previous electroplating)</p>
+
+<p><img src="/images/electroplating-etchant.JPG" alt="" /></p>
+
+<p>On the first try, I made the gaps too small. Additionally, I neglected to remove all soldermask from the area, and I scratched the PCB with a screw driver. All together, this made for a badly etched board.</p>
+
+<p><img src="/images/electroplating-etchattempt.JPG" alt="" /></p>
+
+<p>The board after a second try. I made the separation as wide as possible to ensure success.</p>
+
+<p><img src="/images/electroplating-etched.JPG" alt="" /></p>
+
+<p>The other side of the PCB. The leads on or near ground were removed, others were largely untouched.</p>
+
+<p><img src="/images/electroplating-orig.JPG" alt="" /></p>
+
+<p>Grinding wheels are no good at removing soldermask. </p>
+
+<p><img src="/images/electroplating-grindwheel.JPG" alt="" /></p>
+
+<p>I'm not sure I could have chosen a simpler circuit, but I was still stoked when this worked. </p>
+
+<p><img src="/images/electroplating-final.JPG" alt="" /></p>
+
+      <p><a href="/2012/04/etching-pcb-using-electrolysis.html/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/04/simple-usb-audio-device.html/">A Simple USB Audio Device</a> 
+        <span>posted on 02 Apr 2012</span>
+      </h1> 
+      
+      <p>About four months ago, I came across the <a href="http://www.ti.com/product/pcm2707">TI PCM2707</a>. The PCM2707 is a standard USB 1.1 audio IC. As such, it can play audio without any custom drivers. My device closely follows the reference design shown in TI's datasheet. The PCM2707 can play 16 bit stereo audio at a maximum sampling rate of 48kHz. It has a built in 175mW headphone amplifier for analog output. Additionally, it can output S/PDIF and I2S digital audio. The former might be used to connect to a consumer audio receiver, while the latter could be used to interface with a more powerful amplifier IC.</p>
+
+<p>The PCM2707 has a built in 3.3 volt regulator. I was tempted to use this regulator's output to power a separate headphone amplifier, but TI specifically warns against this. Doing so would probably risk blowing the built in regulator or going over USB's 500mA current limit. As I'm not a fan of toasting $10 chips, I opted to stay with the reference design.</p>
+
+<p>The PCM2707 was brought to market in 2003. While it offers simplicity, it sacrifices a number of attractive features present in modern USB audio devices. The USB 1.1 audio standard has provisions for stereo audio at a bit depth of 16 and a sampling rate of up to 48kHz. If you want more, you need a custom driver. Any of these features is likely to require more bandwidth than USB 1.1 can offer, so you probably need a USB 2.0 device, too. As far as I am aware, there is no USB 2.0 equivalent to the PCM2707 on the market - all solutions seem to be based around a processor with a USB hardware interface and a DAC. I didn't want to bother with an unfamiliar MCU, custom drivers, and expensive development kits - so I picked the dinosaur.</p>
+
+<h2>Hardware</h2>
+
+<p>I did not need any exceptional features, so I opted to use TI's reference design. I copied the schematic into OrCAD and broke out the lines that looked interesting. From OrCAD, I exported a netlist to PADS for hardware layout. (To glue the two pieces of software together, I used the <a href="http://pcbstandards.com/forums/showthread.php?t=2247">PowerNET</a> netlister.) This workflow was painful to set up, but very efficient once it was operational. I opted to use these two software packages over Eagle because my coworkers are familiar with them.</p>
+
+<p>The layout was scrapped three times before I arrived at my final design - I planned to buy boards from BatchPCB, so I foolishly forced my design into one square inch. By the time I was done carving bits from my design, I had a haphazardly placed double sided board with no access to a number of useful pins. For the first layout iteration, I hand placed all components and hand routed all traces. For the subsequent layouts, I kept the hand placement and autorouted the traces. This saved neither time nor effort - I spent so much time tweaking and optimizing the traces that it would have been faster to route them manually.</p>
+
+<p>In my final design, all resistors and ceramic capacitors are 0603 size. I like 0603 because it offers a good compromise between size and hand-solderability.</p>
+
+<p><img src="/images/usbdac-barepcb.jpg" alt="" /></p>
+
+<h2>Assembly</h2>
+
+<p>When the boards arrived, I performed a quick inspection. BatchPCB's board house had put the silkscreen for both sides on the top! Additionally, the soldermask was thin and uneven. I wasn't too happy - nonetheless, I hurriedly assembled one and plugged it into a USB port. The PCM2707 on-board promptly let out its magical smoke. After a few hours spent debugging, I determined that my USB footprint was numbered backwards and the data lines were swapped. After soldering a USB cable directly to my board, everything worked as expected.</p>
+
+<p><img src="/images/usbdac-during-debugging.jpg" alt="" /></p>
+
+<p>Once I was satisfied that nothing would spontaneously explode, I printed a small case with my reprap. Because I failed to add mounting holes to my PCB, I designed a case that would contact the perimeter of the PCB while avoiding any nearby components. To help avoid any mistakes, I modeled the assembled part and built a box around it.</p>
+
+<p><img src="/images/DACCase.jpg" alt="" /></p>
+
+<p>The four small pins visible in the above rendering did not print correctly, so I glued the two halves together.</p>
+
+<p><img src="/images/usbdac-in-case.jpg" alt="" /></p>
+
+<h2>Performance</h2>
+
+<p>This little guy sounds great! The "low res" audio sounds stellar on everything from my pair of Sony MDR-V500s to my friend's Sennheiser HD555s. The device is absolutely silent when no audio is playing. It delivers clean mids and highs and a reasonable amount of bass.</p>
+
+<h2>Mistakes</h2>
+
+<ul>
+<li>Micro USB connector on a prototype</li>
+<li>Components right next to the edge of the PCB</li>
+<li>Components on both sides of the PCB</li>
+<li>Autorouted traces</li>
+<li>Minimum size traces (6mil)</li>
+<li>No locating holes or cutouts</li>
+<li>No revision letter (or number)</li>
+<li>Ordered a lot of PCBs to 'make up for' the BatchPCB setup fee</li>
+</ul>
+
+<p>In the future, I will use:</p>
+
+<ul>
+<li>Mini USB</li>
+<li>0.1" edge clearance for all non-connector components</li>
+<li>Components on one side</li>
+<li>Larger traces</li>
+<li>Manual routing</li>
+<li>Locating holes</li>
+<li><a href="http://dorkbotpdx.org/wiki/pcb_order">DorkbotPDX</a></li>
+</ul>
+
+<p><em>Added 4/7/2012</em></p>
+
+<p>I found another bug - the channels are swapped! This issue would be tough to fix by cutting traces, so I solved it by flipping the 3.5mm jack upside-down and wiring its pins to the proper pads. This is fixed in rev B - the files for which will be up as soon as I have verified their integrity.</p>
+
+<p><em>Added 4/11/2012</em></p>
+
+<p>Gerbers: <a href="http://dl.dropbox.com/u/11414619/Gerbers_R16.zip">http://dl.dropbox.com/u/11414619/Gerbers_R16.zip</a></p>
+
+<p>Schematic:</p>
+
+<p><img src="/images/usbdac-schematic.png" alt="" /></p>
+
+      <p><a href="/2012/04/simple-usb-audio-device.html/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/02/hardware-design-workflow-my-mistakes.html/">Hardware Design Workflow: My Mistakes</a> 
+        <span>posted on 13 Feb 2012</span>
+      </h1> 
+      
+      <p>During my recent foray into PCB layout, I made a few mistakes. Here are the most egregious:</p>
+
+<p>The biggest mistake I made was starting to route traces before I was happy with part placement. I can't stress this enough, <strong>figure out your part placement before you start routing</strong>. Of course, if you have an autorouter available, it is acceptable to use it periodically to gauge your part placement.</p>
+
+<p><strong>Nail down your schematic before you start laying out your board.</strong> If your schematic is a moving target, layout will be impossible.</p>
+
+<p><strong>If you know you are going to need small parts, use them from the start.</strong> On my first design, I started with 0805 passives and had to switch to 0603's when I realized I wasn't going to be able to pack 0805's as tightly as I wanted to. I scrapped the entire 0805 based layout and started from scratch with 0603 parts.</p>
+
+<p><strong>Take it one step at a time.</strong> I may have made this point already, but it is important enough to warrant restating. Do not start placing parts until your schematic is done. Do not start routing traces until you are happy with part placement. Do not write a BOM until your PCB is complete.</p>
+
+<p><strong>It is a good idea to know the approximate price of parts you are using.</strong> If you use prohibitively expensive or unavailable parts on your design, you may have to make changes as far back as the schematic. Essentially, you may have to make changes to every single step. Save yourself the frustration and know the parts you use. </p>
+
+      <p><a href="/2012/02/hardware-design-workflow-my-mistakes.html/">Read more...</a></p>
+    </li>
+  </ul> 
+
+  <!-- Pagination links -->
+  <div id="post-pagination" class="pagination">
+
+   
+      <p class="previous">
+        <a href="/page3">Previous Page</a>
+        </p>
+
+
+    <p class="previous">
+      <a href="/page5">Next Page</a>
+    </p>
+
+  </div>
+
+
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+
+            <div id="secondary" class="widget-area fancy-container lightred" role="complementary">
+                <aside id="text-5" class="widget widget_text">
+                    <h1 class="widget-title">Follow</h1>
+                    <div class="textwidget logos">
+                        <a href="https://twitter.com/George_Hahn" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://twitter.com']);"><img src="/stylesheets/images/twitter.png"></a>
+                        <a href="https://stackoverflow.com/users/1042744/georgeh" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://stackoverflow.com']);"><img src="/stylesheets/images/stackoverflow.png"></a>
+                        <!--a href="https://www.linkedin.com/profile/view?id=250123824" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.linkedin.com']);"><img src="/stylesheets/images/linkedin.png"></a-->
+                        <a href="https://plus.google.com/u/0/114392689355099010616/" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://plus.google.com']);"><img src="/stylesheets/images/googleplus.png"></a>
+                        <a href="https://github.com/GeorgeHahn" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://github.com']);"><img src="/stylesheets/images/github.png"></a>
+                    </div>
+                        
+                        <a href="https://tindie.com/shops/George/?ref=offsite_badges&utm_source=sellers_George&utm_medium=badges&utm_campaign=badge_small" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://github.com']);"><img src="https://s3.amazonaws.com/tindie-static/badges/tindie-small.png"></a>
+                </aside>
+                <aside id="archives-4" class="widget widget_archive">
+                    <h1 class="widget-title">Archive</h1>
+                    <ul class="posts">
+                          <li><a href="/archive#2014January">January, 2014</a></li>
+                          <li><a href="/archive#2013October">October, 2013</a></li>
+                          <li><a href="/archive#2013September">September, 2013</a></li>
+                          <li><a href="/archive#2013August">August, 2013</a></li>
+                          <li><a href="/archive#2013July">July, 2013</a></li>
+                          <li><a href="/archive#2013May">May, 2013</a></li>
+                          <li><a href="/archive#2013April">April, 2013</a></li>
+                          <li><a href="/archive#2013March">March, 2013</a></li>
+                          <li><a href="/archive#2013February">February, 2013</a></li>
+                          <li><a href="/archive#2013January">January, 2013</a></li>
+                          <li><a href="/archive#2012December">December, 2012</a></li>
+                          <li><a href="/archive#2012November">November, 2012</a></li>
+                          <li><a href="/archive#2012October">October, 2012</a></li>
+                          <li><a href="/archive#2012September">September, 2012</a></li>
+                          <li><a href="/archive#2012May">May, 2012</a></li>
+                          <li><a href="/archive#2012April">April, 2012</a></li>
+                          <li><a href="/archive#2012February">February, 2012</a></li>
+                          <li><a href="/archive#2012January">January, 2012</a></li>
+                          <li><a href="/archive#2011July">July, 2011</a></li>
+                          <li><a href="/archive#2011May">May, 2011</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- #secondary .widget-area -->
+
+
+        </div>
+        <!-- #main -->
+
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="site-info">
+                Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.	
+            </div>
+            <!-- .site-info -->
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-36202871-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+    
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+</body>
+</html>

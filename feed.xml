@@ -1,0 +1,357 @@
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title /><link>http://www.genericmaker.com/feed.xml</link><description /><item><guid isPermaLink="true">http://www.genericmaker.com/2014/01/mono-for-beaglebone-black.html/</guid><link>http://www.genericmaker.com/2014/01/mono-for-beaglebone-black.html/</link><title>Building Mono on a BeagleBone Black (Hard Float)</title><description>&lt;p&gt;I performed this on &lt;a href="http://www.armhf.com/index.php/boards/beaglebone-black/"&gt;Ubuntu Saucy 13.10 from ARMhf&lt;/a&gt; (running from an 8Gb SD card)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Launch a terminal window/ssh into your BBB&lt;/li&gt;
+&lt;li&gt;sudo apt-get update&lt;/li&gt;
+&lt;li&gt;sudo apt-get install mono-complete git automake libtool&lt;/li&gt;
+&lt;li&gt;Wait a long time (hours)&lt;/li&gt;
+&lt;li&gt;git clone git://github.com/mono/mono.git&lt;/li&gt;
+&lt;li&gt;cd mono&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./autogen.sh --prefix=/usr/local --enable-nls=no --with-sgen=yes --with-xen-opt=no --with-ikvm-native=no&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;make&lt;/li&gt;
+&lt;li&gt;Wait a long time (hours again)&lt;/li&gt;
+&lt;li&gt;Ignore the errors and hope they don’t mean anything&lt;/li&gt;
+&lt;li&gt;sudo make install&lt;/li&gt;
+&lt;li&gt;Wait some more&lt;/li&gt;
+&lt;li&gt;Ignore the errors and hope they don’t mean anything&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Post based off of: &lt;a href="http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/"&gt;http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/&lt;/a&gt;&lt;/p&gt;
+</description><pubDate>Fri, 03 Jan 2014 05:00:00 Z</pubDate><a10:updated>2014-01-03T05:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;I performed this on &lt;a href="http://www.armhf.com/index.php/boards/beaglebone-black/"&gt;Ubuntu Saucy 13.10 from ARMhf&lt;/a&gt; (running from an 8Gb SD card)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Launch a terminal window/ssh into your BBB&lt;/li&gt;
+&lt;li&gt;sudo apt-get update&lt;/li&gt;
+&lt;li&gt;sudo apt-get install mono-complete git automake libtool&lt;/li&gt;
+&lt;li&gt;Wait a long time (hours)&lt;/li&gt;
+&lt;li&gt;git clone git://github.com/mono/mono.git&lt;/li&gt;
+&lt;li&gt;cd mono&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./autogen.sh --prefix=/usr/local --enable-nls=no --with-sgen=yes --with-xen-opt=no --with-ikvm-native=no&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;make&lt;/li&gt;
+&lt;li&gt;Wait a long time (hours again)&lt;/li&gt;
+&lt;li&gt;Ignore the errors and hope they don’t mean anything&lt;/li&gt;
+&lt;li&gt;sudo make install&lt;/li&gt;
+&lt;li&gt;Wait some more&lt;/li&gt;
+&lt;li&gt;Ignore the errors and hope they don’t mean anything&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Post based off of: &lt;a href="http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/"&gt;http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/&lt;/a&gt;&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/10/razr-hd-maxx-teardown.html/</guid><link>http://www.genericmaker.com/2013/10/razr-hd-maxx-teardown.html/</link><title>RAZR HD Maxx Teardown</title><description>&lt;p&gt;A friend accidentally ran over his RAZR HD Maxx, so I rescued the motherboard and tore it down!&lt;/p&gt;
+
+&lt;p&gt;I wasn't too kind when removing the RF shielding, so the copper is torn off in a few places.&lt;/p&gt;
+
+&lt;p&gt;View image for full resolution.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/razrhd_1.jpeg" alt="" /&gt;
+&lt;img src="/images/razrhd_2.jpeg" alt="" /&gt;
+&lt;img src="/images/razrhd_3.jpeg" alt="" /&gt;
+&lt;img src="/images/razrhd_4.jpeg" alt="" /&gt;
+&lt;img src="/images/razrhd_5.jpeg" alt="" /&gt;&lt;/p&gt;
+</description><pubDate>Thu, 10 Oct 2013 04:00:00 Z</pubDate><a10:updated>2013-10-10T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;A friend accidentally ran over his RAZR HD Maxx, so I rescued the motherboard and tore it down!&lt;/p&gt;
+
+&lt;p&gt;I wasn't too kind when removing the RF shielding, so the copper is torn off in a few places.&lt;/p&gt;
+
+&lt;p&gt;View image for full resolution.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://www.genericmaker.com/images/razrhd_1.jpeg" alt="" /&gt;
+&lt;img src="http://www.genericmaker.com/images/razrhd_2.jpeg" alt="" /&gt;
+&lt;img src="http://www.genericmaker.com/images/razrhd_3.jpeg" alt="" /&gt;
+&lt;img src="http://www.genericmaker.com/images/razrhd_4.jpeg" alt="" /&gt;
+&lt;img src="http://www.genericmaker.com/images/razrhd_5.jpeg" alt="" /&gt;&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/09/why-phonebloks-phone-will-never-happen.html/</guid><link>http://www.genericmaker.com/2013/09/why-phonebloks-phone-will-never-happen.html/</link><title>Why the PhoneBloks phone will never happen</title><description>&lt;p&gt;It's a physics issue. Signals in modern devices are extremely high speed; the easiest and cheapest way to combat this is to bring components closer together. For example, the wireless radios, RAM, and processor in all modern phones exist as one chip. They essentially put the CPU and wireless magic on the same silicon die (or on a separate die in the same package) and pop a RAM chip on top ("Package on Package").&lt;/p&gt;
+
+&lt;p&gt;It's a communication issue. All of the ICs in a phone don't communicate over a single bus - almost every one ties directly into specific processor pins. This would restrict block size and placement.&lt;/p&gt;
+
+&lt;p&gt;If we aim a little lower and try for a modular design, the interconnects needed to ensure signal integrity at high speed are still very expensive. This project would require serious economies of scale to succeed. Each high speed component - CPU, RAM, storage, modem - would need an expensive socket.&lt;/p&gt;
+
+&lt;p&gt;Technically, the storage could be put on a socket pretty easily. It's not fast enough to warrant a very expensive socket, but would still add ~$2-5 to the final design. (Keep in mind, that means the consumer would be paying $4-20 extra, just to have the option to upgrade the storage.)&lt;/p&gt;
+
+&lt;p&gt;It's an interoperability issue. Going a little further, even if the device could be built in some fashion - there isn't much standardization in this area. I've spent days wrestling with a display peripheral on a processor to get it to interface with a specific display or video input IC - and that's with the benefit of thousands of pages of documentation, a field application engineer on call, and a ~$15000 oscilloscope. The amount of effort in testing and debugging that would be required to ensure the compatibility of each component would be absolutely enormous.&lt;/p&gt;
+
+&lt;p&gt;--&lt;/p&gt;
+
+&lt;p&gt;All of that said, I think the modular idea is excellent and could be done right - maybe not with blocks as described and - optimally - not with electrical signals. I could see it happening with optical interconnects, but we're a few years out from that. On chip optical interconnects are still in research, but there's a lot of money being put into them. Intel has demonstrated some very impressive optical tech that should come to market within the next five years. Eventually, we may be able to tie ICs together through optical traces for extreme high speed communication.&lt;/p&gt;
+
+&lt;p&gt;Finally, the stated motivation for this design is to reduce electrical waste. The best way to do that in the short term is to ensure devices are more repairable. An emphasis on user-serviceable batteries would make a significant difference in how long our devices remain useful without adversely impacting their cost or limiting their design.&lt;/p&gt;
+
+&lt;p&gt;It's worth noting that the smartphone market is starting to mature. Phones aren't improving by the massive leaps and bounds that they were. The technological differences are trivial - few people notice the difference between a 1GHz and 1.2GHz processor or 1GB and 2GB of RAM. Now, the main thing that separates generations of phones are millimeters of extra display space, grams of saved space, and milliamphours of extra battery life.&lt;/p&gt;
+
+&lt;p&gt;One major driver of phone sales right now is software. This is where the problem lies, not in hardware. Users need the right to unlock our phone modems and bootloaders. Unlocking the modems to allow use on different carriers would give used phones a wider market. Unlocking bootloaders would let users completely replace the original software, adding improvements and features to otherwise uninteresting devices.&lt;/p&gt;
+
+&lt;p&gt;We definitely have an e-waste problem - and I give this person credit for thinking outside the box - but this isn't the solution we need.&lt;/p&gt;
+
+&lt;p&gt;--&lt;/p&gt;
+
+&lt;p&gt;One source, because I'm lazy:
+&lt;a href="http://www.ifixit.com/Info/why"&gt;IFIXIT&lt;/a&gt;&lt;/p&gt;
+</description><pubDate>Fri, 13 Sep 2013 04:00:00 Z</pubDate><a10:updated>2013-09-13T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;It's a physics issue. Signals in modern devices are extremely high speed; the easiest and cheapest way to combat this is to bring components closer together. For example, the wireless radios, RAM, and processor in all modern phones exist as one chip. They essentially put the CPU and wireless magic on the same silicon die (or on a separate die in the same package) and pop a RAM chip on top ("Package on Package").&lt;/p&gt;
+
+&lt;p&gt;It's a communication issue. All of the ICs in a phone don't communicate over a single bus - almost every one ties directly into specific processor pins. This would restrict block size and placement.&lt;/p&gt;
+
+&lt;p&gt;If we aim a little lower and try for a modular design, the interconnects needed to ensure signal integrity at high speed are still very expensive. This project would require serious economies of scale to succeed. Each high speed component - CPU, RAM, storage, modem - would need an expensive socket.&lt;/p&gt;
+
+&lt;p&gt;Technically, the storage could be put on a socket pretty easily. It's not fast enough to warrant a very expensive socket, but would still add ~$2-5 to the final design. (Keep in mind, that means the consumer would be paying $4-20 extra, just to have the option to upgrade the storage.)&lt;/p&gt;
+
+&lt;p&gt;It's an interoperability issue. Going a little further, even if the device could be built in some fashion - there isn't much standardization in this area. I've spent days wrestling with a display peripheral on a processor to get it to interface with a specific display or video input IC - and that's with the benefit of thousands of pages of documentation, a field application engineer on call, and a ~$15000 oscilloscope. The amount of effort in testing and debugging that would be required to ensure the compatibility of each component would be absolutely enormous.&lt;/p&gt;
+
+&lt;p&gt;--&lt;/p&gt;
+
+&lt;p&gt;All of that said, I think the modular idea is excellent and could be done right - maybe not with blocks as described and - optimally - not with electrical signals. I could see it happening with optical interconnects, but we're a few years out from that. On chip optical interconnects are still in research, but there's a lot of money being put into them. Intel has demonstrated some very impressive optical tech that should come to market within the next five years. Eventually, we may be able to tie ICs together through optical traces for extreme high speed communication.&lt;/p&gt;
+
+&lt;p&gt;Finally, the stated motivation for this design is to reduce electrical waste. The best way to do that in the short term is to ensure devices are more repairable. An emphasis on user-serviceable batteries would make a significant difference in how long our devices remain useful without adversely impacting their cost or limiting their design.&lt;/p&gt;
+
+&lt;p&gt;It's worth noting that the smartphone market is starting to mature. Phones aren't improving by the massive leaps and bounds that they were. The technological differences are trivial - few people notice the difference between a 1GHz and 1.2GHz processor or 1GB and 2GB of RAM. Now, the main thing that separates generations of phones are millimeters of extra display space, grams of saved space, and milliamphours of extra battery life.&lt;/p&gt;
+
+&lt;p&gt;One major driver of phone sales right now is software. This is where the problem lies, not in hardware. Users need the right to unlock our phone modems and bootloaders. Unlocking the modems to allow use on different carriers would give used phones a wider market. Unlocking bootloaders would let users completely replace the original software, adding improvements and features to otherwise uninteresting devices.&lt;/p&gt;
+
+&lt;p&gt;We definitely have an e-waste problem - and I give this person credit for thinking outside the box - but this isn't the solution we need.&lt;/p&gt;
+
+&lt;p&gt;--&lt;/p&gt;
+
+&lt;p&gt;One source, because I'm lazy:
+&lt;a href="http://www.ifixit.com/Info/why"&gt;IFIXIT&lt;/a&gt;&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/08/abandoning-efm32g210f128-breakout.html/</guid><link>http://www.genericmaker.com/2013/08/abandoning-efm32g210f128-breakout.html/</link><title>Abandoning the EFM32G210F128 Breakout</title><description>&lt;p&gt;&lt;img src="/images/efm32_breakout.jpg" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I'm officially abandoning my Energy Micro EFM32G210F128 breakout. The design files are all on Upverter and are released into the public domain.&lt;/p&gt;
+
+&lt;p&gt;Energy Micro has microprocessors with native USB, so there's no reason for me to continue working on a design that needs an expensive USB-UART converter. This is a straightforward case of subpar research and some flawed reasoning coming to bite after the design work has been completed.&lt;/p&gt;
+</description><pubDate>Wed, 28 Aug 2013 04:00:00 Z</pubDate><a10:updated>2013-08-28T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;&lt;img src="http://www.genericmaker.com/images/efm32_breakout.jpg" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I'm officially abandoning my Energy Micro EFM32G210F128 breakout. The design files are all on Upverter and are released into the public domain.&lt;/p&gt;
+
+&lt;p&gt;Energy Micro has microprocessors with native USB, so there's no reason for me to continue working on a design that needs an expensive USB-UART converter. This is a straightforward case of subpar research and some flawed reasoning coming to bite after the design work has been completed.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/07/personal-development.html/</guid><link>http://www.genericmaker.com/2013/07/personal-development.html/</link><title>Personal Development</title><description>&lt;p&gt;Earlier this week, I returned from an eight day visit to Toronto, Ontario. I'm from rural New Jersey and, though there are some 'population centers' near me, there isn't anything like a three million person city.&lt;/p&gt;
+
+&lt;p&gt;In some ways, the visit was scary - this was the first time I've ever heard someone get mugged. We ran outside to see what was going on, but there wasn't anyone around. We didn't know what had happened until the police stopped by later to ask questions. Yikes, that's new.&lt;/p&gt;
+
+&lt;p&gt;At the same time, the visit was an amazing experience. The amount of things going on in the city is outstanding. I've never seen a spectacle quite like the Pride parade, nor have I slept in a house so close to a city block full of shops, coffeehouses and interesting people.&lt;/p&gt;
+
+&lt;p&gt;Alright, so I didn't meet many people outside Upverter and friends. I plan to though! That's where my apprehension comes in - I'm a quiet, introverted guy. I stumble over my words sometimes, and I get pretty nervous when more than two people I don't know are listening to me. Giving knowledge, opinions, and speculations to others - using your voice - is one of the most profound facets of the human experience, but it scares the hell out of me.&lt;/p&gt;
+
+&lt;p&gt;I can't say why. Maybe it's because my smoker voice sounds funny. Perhaps it's that I get too distracted trying to pick the right words to keep speaking. I don't really know, but I really don't care. I don't need to understand why I'm bad at socializing to become better at it. Not really.&lt;/p&gt;
+
+&lt;p&gt;I'm going to become a better socializer by tour-de-force. I'm usually the type to grab a book and analyze every passage in an effort to absorb every last bit of information. Not this time - sure, I've done some reading about socializing and such, but I know enough to know I need to approach this problem from a different angle - I need to put myself right in the middle of situations I know I won't be comfortable in, because that's what it's going to take. Sure, I could read all about my problems, but no amount of reading is going to teach me to think on my feet. Nothing I read will help me remember the helpful little facts I wish I could contribute to a conversation. Nothing at all, except for braving the weather and surviving the storm.&lt;/p&gt;
+
+&lt;p&gt;Eh?&lt;/p&gt;
+
+&lt;p&gt;Toronto.&lt;/p&gt;
+
+&lt;p&gt;George Hahn.&lt;/p&gt;
+
+&lt;p&gt;2013.&lt;/p&gt;
+</description><pubDate>Sat, 13 Jul 2013 04:00:00 Z</pubDate><a10:updated>2013-07-13T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Earlier this week, I returned from an eight day visit to Toronto, Ontario. I'm from rural New Jersey and, though there are some 'population centers' near me, there isn't anything like a three million person city.&lt;/p&gt;
+
+&lt;p&gt;In some ways, the visit was scary - this was the first time I've ever heard someone get mugged. We ran outside to see what was going on, but there wasn't anyone around. We didn't know what had happened until the police stopped by later to ask questions. Yikes, that's new.&lt;/p&gt;
+
+&lt;p&gt;At the same time, the visit was an amazing experience. The amount of things going on in the city is outstanding. I've never seen a spectacle quite like the Pride parade, nor have I slept in a house so close to a city block full of shops, coffeehouses and interesting people.&lt;/p&gt;
+
+&lt;p&gt;Alright, so I didn't meet many people outside Upverter and friends. I plan to though! That's where my apprehension comes in - I'm a quiet, introverted guy. I stumble over my words sometimes, and I get pretty nervous when more than two people I don't know are listening to me. Giving knowledge, opinions, and speculations to others - using your voice - is one of the most profound facets of the human experience, but it scares the hell out of me.&lt;/p&gt;
+
+&lt;p&gt;I can't say why. Maybe it's because my smoker voice sounds funny. Perhaps it's that I get too distracted trying to pick the right words to keep speaking. I don't really know, but I really don't care. I don't need to understand why I'm bad at socializing to become better at it. Not really.&lt;/p&gt;
+
+&lt;p&gt;I'm going to become a better socializer by tour-de-force. I'm usually the type to grab a book and analyze every passage in an effort to absorb every last bit of information. Not this time - sure, I've done some reading about socializing and such, but I know enough to know I need to approach this problem from a different angle - I need to put myself right in the middle of situations I know I won't be comfortable in, because that's what it's going to take. Sure, I could read all about my problems, but no amount of reading is going to teach me to think on my feet. Nothing I read will help me remember the helpful little facts I wish I could contribute to a conversation. Nothing at all, except for braving the weather and surviving the storm.&lt;/p&gt;
+
+&lt;p&gt;Eh?&lt;/p&gt;
+
+&lt;p&gt;Toronto.&lt;/p&gt;
+
+&lt;p&gt;George Hahn.&lt;/p&gt;
+
+&lt;p&gt;2013.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/05/why-i-want-to-be-engineer.html/</guid><link>http://www.genericmaker.com/2013/05/why-i-want-to-be-engineer.html/</link><title>Why I Want to be an Engineer</title><description>&lt;p&gt;&lt;em&gt;Term paper for a generic Intro to Engineering class.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Should I be an engineer? Surely this is a question every student wrestles with at some point. Many who ask it may decide not to become engineers. While it may be a tough decision for some, it's a given for me. I love designing, analyzing, building, and testing systems. I thrive on tough situations – there's nothing that gets my brain going quite like a malfunctioning circuit or a buggy piece of software.&lt;/p&gt;
+
+&lt;p&gt;I embarked on the path to becoming an engineer early in life. It began with taking things apart – as a child, I would disassemble anything I was given the chance to. At eleven, I completely disassembled the old laptop my dad had given me so I could replace a noisy fan. When I put it back together, the fan had been silenced and my laptop was lighter by a couple of screws – but it still worked!&lt;/p&gt;
+
+&lt;p&gt;I owe much of my inspiration in recent years to my past – and only – employer. An entrepreneur and engineer himself, he once told me that he used to have a keen interest in bird watching. Once he knew all of the birds in his area, he got bored and moved on to electronics. He hasn't gotten bored yet. I have never had an interest in bird watching, but I certainly have never gotten bored with engineering.&lt;/p&gt;
+
+&lt;p&gt;My boss also taught me the importance of moving the status quo. When I started working at his company, I was given the freedom to work on a number of extremely interesting projects. As time went on, rather than working on important projects that would have an impact on our industry, my time was spent on menial projects that were barely related to my area of interest. When I proposed new projects that would move the company forward and set them up to have products to sell in ten years, they were shot down for being too ambitious, too complicated, or too expensive. When I quit four months ago, the company was scrambling to piece together a prototype that was strikingly similar to something I proposed almost two years before. They were hopelessly behind the industry and will release one or two product iterations that are painfully expensive and time consuming. Even then, they'll probably never catch up. The lesson I learned: move early. If you wait for the market to tell you what to do, you'll always be behind. Sometimes you can succeed by fulfilling a market's obvious demands, but to truly make a difference you have to be the one who reads the cards and takes the market to the next level.&lt;/p&gt;
+
+&lt;p&gt;A desire to move the status quo is why I'm hoping to intern at Upverter in the coming months. They're a small Candadian startup doing work in the electronic design automation (EDA) space. While the product they're creating isn't essential yet, it has the potential to change how we design and test electronic systems. This is no easy goal, but for something that could transform the EDA market before this decade is out, it's worth the effort.&lt;/p&gt;
+
+&lt;p&gt;Engineering is not for everyone, but it is everything for me. I find engineering intriguing, exciting and fulfilling. If I have changed the world by the time I die, I will rest easily. I do not ask to be remembered and I care little if my name stays around, but I want to leave the world a better place than it was when I entered it.&lt;/p&gt;
+</description><pubDate>Wed, 08 May 2013 04:00:00 Z</pubDate><a10:updated>2013-05-08T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;&lt;em&gt;Term paper for a generic Intro to Engineering class.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Should I be an engineer? Surely this is a question every student wrestles with at some point. Many who ask it may decide not to become engineers. While it may be a tough decision for some, it's a given for me. I love designing, analyzing, building, and testing systems. I thrive on tough situations – there's nothing that gets my brain going quite like a malfunctioning circuit or a buggy piece of software.&lt;/p&gt;
+
+&lt;p&gt;I embarked on the path to becoming an engineer early in life. It began with taking things apart – as a child, I would disassemble anything I was given the chance to. At eleven, I completely disassembled the old laptop my dad had given me so I could replace a noisy fan. When I put it back together, the fan had been silenced and my laptop was lighter by a couple of screws – but it still worked!&lt;/p&gt;
+
+&lt;p&gt;I owe much of my inspiration in recent years to my past – and only – employer. An entrepreneur and engineer himself, he once told me that he used to have a keen interest in bird watching. Once he knew all of the birds in his area, he got bored and moved on to electronics. He hasn't gotten bored yet. I have never had an interest in bird watching, but I certainly have never gotten bored with engineering.&lt;/p&gt;
+
+&lt;p&gt;My boss also taught me the importance of moving the status quo. When I started working at his company, I was given the freedom to work on a number of extremely interesting projects. As time went on, rather than working on important projects that would have an impact on our industry, my time was spent on menial projects that were barely related to my area of interest. When I proposed new projects that would move the company forward and set them up to have products to sell in ten years, they were shot down for being too ambitious, too complicated, or too expensive. When I quit four months ago, the company was scrambling to piece together a prototype that was strikingly similar to something I proposed almost two years before. They were hopelessly behind the industry and will release one or two product iterations that are painfully expensive and time consuming. Even then, they'll probably never catch up. The lesson I learned: move early. If you wait for the market to tell you what to do, you'll always be behind. Sometimes you can succeed by fulfilling a market's obvious demands, but to truly make a difference you have to be the one who reads the cards and takes the market to the next level.&lt;/p&gt;
+
+&lt;p&gt;A desire to move the status quo is why I'm hoping to intern at Upverter in the coming months. They're a small Candadian startup doing work in the electronic design automation (EDA) space. While the product they're creating isn't essential yet, it has the potential to change how we design and test electronic systems. This is no easy goal, but for something that could transform the EDA market before this decade is out, it's worth the effort.&lt;/p&gt;
+
+&lt;p&gt;Engineering is not for everyone, but it is everything for me. I find engineering intriguing, exciting and fulfilling. If I have changed the world by the time I die, I will rest easily. I do not ask to be remembered and I care little if my name stays around, but I want to leave the world a better place than it was when I entered it.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/05/how-we-can-fix-intro-to-engineering.html/</guid><link>http://www.genericmaker.com/2013/05/how-we-can-fix-intro-to-engineering.html/</link><title>How We Can Fix Intro to Engineering Courses</title><description>&lt;p&gt;Intro to Engineering courses are a necessity.&lt;/p&gt;
+
+&lt;p&gt;Most Intro to Engineering courses are useless.&lt;/p&gt;
+
+&lt;p&gt;Intro to Engineering courses exist to help engineering students get a job after college; to help students bridge the gap between academia and a career. The problem with these intro courses is that they can't evolve quickly enough. Engineering is changing, but the courses haven't caught up.&lt;/p&gt;
+
+&lt;p&gt;Now, here's how we can fix them:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stop using the old textbooks.&lt;/strong&gt; I don't care who wrote it or when it was written, an Intro to Engineering course shouldn't focus on one text.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Start using social media.&lt;/strong&gt; Assignment idea: Have students contact someone in the industry that they respect with as many questions as they can fit within a tweet. Of course, allow those without Twitter accounts to attempt an email contact.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Contacts are everything&lt;/strong&gt;, right? Teach students how contacts are made in the modern world.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Industry mags and blog posts from experts are important.&lt;/strong&gt; If a class must contain 'summarize and respond' assignments, let students pick articles or posts they care about. The quality of their responses will instantly improve. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Presentations are important, powerpoint is not.&lt;/strong&gt; Don't put artificial slide count requirements on presentations, this only reduces the number of good slides in a presentation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focus on solo presentations.&lt;/strong&gt; There are times when presentations must be given as a group. Even so, when learning public speaking, working as a group can be extremely stressful and provides little return. Don't force students to work with a group, especially on their first few presentations.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;PS: I'll write a post detailing what was wrong with the Intro to Engineering course that I took later on. I am publishing this post first because I'd rather focus on things that can be improved rather than rag on things that are broken.&lt;/em&gt;&lt;/p&gt;
+</description><pubDate>Thu, 02 May 2013 04:00:00 Z</pubDate><a10:updated>2013-05-02T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Intro to Engineering courses are a necessity.&lt;/p&gt;
+
+&lt;p&gt;Most Intro to Engineering courses are useless.&lt;/p&gt;
+
+&lt;p&gt;Intro to Engineering courses exist to help engineering students get a job after college; to help students bridge the gap between academia and a career. The problem with these intro courses is that they can't evolve quickly enough. Engineering is changing, but the courses haven't caught up.&lt;/p&gt;
+
+&lt;p&gt;Now, here's how we can fix them:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stop using the old textbooks.&lt;/strong&gt; I don't care who wrote it or when it was written, an Intro to Engineering course shouldn't focus on one text.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Start using social media.&lt;/strong&gt; Assignment idea: Have students contact someone in the industry that they respect with as many questions as they can fit within a tweet. Of course, allow those without Twitter accounts to attempt an email contact.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Contacts are everything&lt;/strong&gt;, right? Teach students how contacts are made in the modern world.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Industry mags and blog posts from experts are important.&lt;/strong&gt; If a class must contain 'summarize and respond' assignments, let students pick articles or posts they care about. The quality of their responses will instantly improve. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Presentations are important, powerpoint is not.&lt;/strong&gt; Don't put artificial slide count requirements on presentations, this only reduces the number of good slides in a presentation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focus on solo presentations.&lt;/strong&gt; There are times when presentations must be given as a group. Even so, when learning public speaking, working as a group can be extremely stressful and provides little return. Don't force students to work with a group, especially on their first few presentations.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;PS: I'll write a post detailing what was wrong with the Intro to Engineering course that I took later on. I am publishing this post first because I'd rather focus on things that can be improved rather than rag on things that are broken.&lt;/em&gt;&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/04/converting-lmde-into-debian-testing.html/</guid><link>http://www.genericmaker.com/2013/04/converting-lmde-into-debian-testing.html/</link><title>Converting LMDE into Debian Testing: Results</title><description>&lt;p&gt;Yesterday, I replaced the LMDE entries in my sources.list with entries for Debian Testing. Then I ran a dist-upgrade.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;685 upgraded, 10 newly installed, 1 to remove and 0 not upgraded.
+Need to get 581 MB of archives.
+After this operation, 32.8 MB disk space will be freed.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I'm not sure exactly how long the process took, but it was done within a couple hours. When I came back to my laptop, all text was invisible. This problem went away after a reboot.&lt;/p&gt;
+
+&lt;p&gt;I haven't removed all installed mint packages yet, and I plan to stay with Cinnamon. As such, everything feels quite the same. In fact, I'd have a hard time pointing out any changes at all. The only significant thing I've gained from this endeavor is the knowledge that my packages will now be more up to date. &lt;/p&gt;
+</description><pubDate>Thu, 25 Apr 2013 04:00:00 Z</pubDate><a10:updated>2013-04-25T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Yesterday, I replaced the LMDE entries in my sources.list with entries for Debian Testing. Then I ran a dist-upgrade.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;685 upgraded, 10 newly installed, 1 to remove and 0 not upgraded.
+Need to get 581 MB of archives.
+After this operation, 32.8 MB disk space will be freed.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I'm not sure exactly how long the process took, but it was done within a couple hours. When I came back to my laptop, all text was invisible. This problem went away after a reboot.&lt;/p&gt;
+
+&lt;p&gt;I haven't removed all installed mint packages yet, and I plan to stay with Cinnamon. As such, everything feels quite the same. In fact, I'd have a hard time pointing out any changes at all. The only significant thing I've gained from this endeavor is the knowledge that my packages will now be more up to date. &lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/04/converting-linux-mint-debian-edition.html/</guid><link>http://www.genericmaker.com/2013/04/converting-linux-mint-debian-edition.html/</link><title>Converting Linux Mint Debian Edition (LMDE) into Debian Testing</title><description>&lt;p&gt;Linux Mint Debian Edition is built on Debian Testing. After months of dealing with flaky mirrors and a not-so-impressive distro, I decided it was time to flip the switch. (Other than Cinnamon and/or MATE, Mint doesn't offer much.)&lt;/p&gt;
+
+&lt;p&gt;I am going to attempt to perform an in-place switch by modifying my sources.list. We'll see how it turns out - either it will work, or I'll be installing Debian Testing later tonight.&lt;/p&gt;
+
+&lt;p&gt;I generated a new sources.list from &lt;a href="http://debgen.simplylinux.ch/"&gt;http://debgen.simplylinux.ch/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Old sources.list:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deb http://packages.linuxmint.com/ debian main upstream import
+deb http://mirror.metrocast.net/linuxmint-debian/latest testing main contrib non-free
+deb http://mirror.metrocast.net/linuxmint-debian/latest/security testing/updates main contrib non-free
+deb http://mirror.metrocast.net/linuxmint-debian/latest/multimedia testing main non-free
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;New sources.list (for x86-64)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deb http://ftp.us.debian.org/debian testing main contrib non-free
+deb http://ftp.debian.org/debian/ wheezy-updates main contrib non-free
+deb http://security.debian.org/ wheezy/updates main contrib non-free
+
+# Third Parties Repos
+
+# deb-multimedia.org
+deb http://www.deb-multimedia.org squeeze main non-free
+
+# Oracle VM VirtualBox # Don't care to have right now.
+# deb http://download.virtualbox.org/virtualbox/debian wheezy contrib non-free
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I'll check in later and let you know how it goes! &lt;/p&gt;
+</description><pubDate>Wed, 24 Apr 2013 04:00:00 Z</pubDate><a10:updated>2013-04-24T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Linux Mint Debian Edition is built on Debian Testing. After months of dealing with flaky mirrors and a not-so-impressive distro, I decided it was time to flip the switch. (Other than Cinnamon and/or MATE, Mint doesn't offer much.)&lt;/p&gt;
+
+&lt;p&gt;I am going to attempt to perform an in-place switch by modifying my sources.list. We'll see how it turns out - either it will work, or I'll be installing Debian Testing later tonight.&lt;/p&gt;
+
+&lt;p&gt;I generated a new sources.list from &lt;a href="http://debgen.simplylinux.ch/"&gt;http://debgen.simplylinux.ch/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Old sources.list:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deb http://packages.linuxmint.com/ debian main upstream import
+deb http://mirror.metrocast.net/linuxmint-debian/latest testing main contrib non-free
+deb http://mirror.metrocast.net/linuxmint-debian/latest/security testing/updates main contrib non-free
+deb http://mirror.metrocast.net/linuxmint-debian/latest/multimedia testing main non-free
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;New sources.list (for x86-64)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deb http://ftp.us.debian.org/debian testing main contrib non-free
+deb http://ftp.debian.org/debian/ wheezy-updates main contrib non-free
+deb http://security.debian.org/ wheezy/updates main contrib non-free
+
+# Third Parties Repos
+
+# deb-multimedia.org
+deb http://www.deb-multimedia.org squeeze main non-free
+
+# Oracle VM VirtualBox # Don't care to have right now.
+# deb http://download.virtualbox.org/virtualbox/debian wheezy contrib non-free
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I'll check in later and let you know how it goes! &lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/03/bridging-upverter-and-oshpark.html/</guid><link>http://www.genericmaker.com/2013/03/bridging-upverter-and-oshpark.html/</link><title>Bridging Upverter and OSHPark</title><description>&lt;p&gt;&lt;a href="http://upverter.com/"&gt;Upverter&lt;/a&gt; is the best online circuit creation platform, and OSHPark is one of the best circuit board production services. Put the two together, and you should find bliss - but you won't. Anyone who has had an Upverter-designed board built by OSHPark will be familiar with this problem. When you download gerbers from Upverter, you get a zip full of files like bottom&lt;em&gt;copper.ger and top&lt;/em&gt;paste.ger. OSHPark, on the other hand, wants names like Bottom Layer.ger and Board Outline.ger.&lt;/p&gt;
+
+&lt;p&gt;Here are the name transformations - each pair consists of the Upverter name followed by the OSHPark name. If a file isn't listed here, it should not be uploaded to OSHPark.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var filepairs = new TupleList&amp;lt;string, string&amp;gt;
+{
+ { "layers.cfg", "layers.cfg" },
+ { "hole.ger", "Drills.xln" },
+ { "mechanical_details.ger", "Board Outline.ger" },
+
+ { "top_copper.ger", "Top Layer.ger" },
+ { "top_silkscreen.ger", "Top Silk Screen.ger" },
+ { "top_solder_mask.ger", "Top Solder Mask.ger" },
+
+ { "bottom_copper.ger", "Bottom Layer.ger" },
+ { "bottom_silkscreen.ger", "Bottom Silk Screen.ger" },
+ { "bottom_solder_mask.ger", "Bottom Solder Mask.ger" }
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I wrote a quick C# command line app to do the transformation automatically. If you drop a Upverter zip onto the app, it will create an &lt;em&gt;osh_&lt;/em&gt; zipfile using the OSHPark naming conventions.&lt;/p&gt;
+
+&lt;p&gt;You can find the source and the binary at &lt;a href="https://bitbucket.org/George_Hahn/upvertertooshpark"&gt;https://bitbucket.org/George_Hahn/upvertertooshpark&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;BONUS: Create a shortcut to the binary in the &lt;code&gt;%APPDATA%\Microsoft\Windows\SendTo&lt;/code&gt; directory! This will allow you to right click on an Upverter zip and choose Send to: OSHPark!&lt;/p&gt;
+</description><pubDate>Thu, 14 Mar 2013 04:00:00 Z</pubDate><a10:updated>2013-03-14T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;&lt;a href="http://upverter.com/"&gt;Upverter&lt;/a&gt; is the best online circuit creation platform, and OSHPark is one of the best circuit board production services. Put the two together, and you should find bliss - but you won't. Anyone who has had an Upverter-designed board built by OSHPark will be familiar with this problem. When you download gerbers from Upverter, you get a zip full of files like bottom&lt;em&gt;copper.ger and top&lt;/em&gt;paste.ger. OSHPark, on the other hand, wants names like Bottom Layer.ger and Board Outline.ger.&lt;/p&gt;
+
+&lt;p&gt;Here are the name transformations - each pair consists of the Upverter name followed by the OSHPark name. If a file isn't listed here, it should not be uploaded to OSHPark.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var filepairs = new TupleList&amp;lt;string, string&amp;gt;
+{
+ { "layers.cfg", "layers.cfg" },
+ { "hole.ger", "Drills.xln" },
+ { "mechanical_details.ger", "Board Outline.ger" },
+
+ { "top_copper.ger", "Top Layer.ger" },
+ { "top_silkscreen.ger", "Top Silk Screen.ger" },
+ { "top_solder_mask.ger", "Top Solder Mask.ger" },
+
+ { "bottom_copper.ger", "Bottom Layer.ger" },
+ { "bottom_silkscreen.ger", "Bottom Silk Screen.ger" },
+ { "bottom_solder_mask.ger", "Bottom Solder Mask.ger" }
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I wrote a quick C# command line app to do the transformation automatically. If you drop a Upverter zip onto the app, it will create an &lt;em&gt;osh_&lt;/em&gt; zipfile using the OSHPark naming conventions.&lt;/p&gt;
+
+&lt;p&gt;You can find the source and the binary at &lt;a href="https://bitbucket.org/George_Hahn/upvertertooshpark"&gt;https://bitbucket.org/George_Hahn/upvertertooshpark&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;BONUS: Create a shortcut to the binary in the &lt;code&gt;%APPDATA%\Microsoft\Windows\SendTo&lt;/code&gt; directory! This will allow you to right click on an Upverter zip and choose Send to: OSHPark!&lt;/p&gt;
+</a10:content></item></channel></rss>
