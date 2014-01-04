@@ -12,6 +12,8 @@ I performed this on [Ubuntu Saucy 13.10 from ARMhf](http://www.armhf.com/index.p
 1. Wait a long time (hours)
 1. git clone git://github.com/mono/mono.git
 1. cd mono
+1. git submodule init
+1. git submodule update
 1. `./autogen.sh --prefix=/usr/local --enable-nls=no --with-sgen=yes --with-xen-opt=no --with-ikvm-native=no`  
 1. make
 1. Wait a long time (hours again)
