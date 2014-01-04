@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-01-04T01:53:41.6067563-05:00" />
+    <meta http-equiv="last-modified" content="2014-01-04T05:00:37.0011579-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/2014/01/mono-for-beaglebone-black.html" />
@@ -59,6 +59,8 @@
 <li>Wait a long time (hours)</li>
 <li>git clone git://github.com/mono/mono.git</li>
 <li>cd mono</li>
+<li>git submodule init</li>
+<li>git submodule update</li>
 <li><code>./autogen.sh --prefix=/usr/local --enable-nls=no --with-sgen=yes --with-xen-opt=no --with-ikvm-native=no</code>  </li>
 <li>make</li>
 <li>Wait a long time (hours again)</li>
