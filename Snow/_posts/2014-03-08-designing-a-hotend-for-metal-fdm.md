@@ -42,7 +42,10 @@ In my mind, this hotend looks a lot like an E3d hotend made from steel or titani
 - How will molten aluminum interact with titanium? Would it be an appropriate nozzle material? How about steel?
 - Any idea how to figure out a graph of extrusion force vs temperature for aluminum (w/ a given diameter nozzle)?
 - How horrible is it going to be to deal with thermal expansion across this entire design? If more than one metal is used, everything needs to be matched up for expansion, yes?
-
+- What sort of surface will be able to handle the thermal stress of being printed onto?
+- How can part adhesion to the print bed be maintained with high levels of material shrinkage?
+- Ceramics are exciting and could open a lot of opportunities, but I have no idea where to start with designing and specifying ceramic parts.
+- **I know there are some additional issues I haven't mentioned here and certainly some I haven't even considered. Feel free to chime in an any of them!**
 
 ![][0] 
 
