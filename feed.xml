@@ -71,7 +71,7 @@
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src="http://e3d-online.com/image/data/v5/hotside.jpg" alt="" /&gt; &lt;/p&gt;
-</description><pubDate>Sat, 08 Mar 2014 05:00:00 Z</pubDate><a10:updated>2014-03-08T05:00:00Z</a10:updated><a10:content type="html">&lt;h2&gt;Hotend &amp;amp; nozzle metal&lt;/h2&gt;
+</description><pubDate>Sat, 08 Mar 2014 05:00:00 Z</pubDate><a10:updated>2014-03-08T05:00:00Z</a10:updated><a10:content type="text">&lt;h2&gt;Hotend &amp;amp; nozzle metal&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Able to withstand 700-1100C&lt;/li&gt;
@@ -146,7 +146,7 @@
 &lt;p&gt;&lt;img src="http://e3d-online.com/image/data/v5/hotside.jpg" alt="" /&gt; &lt;/p&gt;
 </a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2014/02/kinivo-bluetooth-module.html</guid><link>http://www.genericmaker.com/2014/02/kinivo-bluetooth-module.html</link><title>Kinivo Bluetooth module</title><description>&lt;h2&gt;Module Overview&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href="http://www.amazon.com/Kinivo-BTC450-Bluetooth-Hands-Free-Input/dp/B009NLTW60/ref=sr_1_1?s=electronics&amp;amp;ie=UTF8&amp;amp;tag=generi0c-20&amp;amp;qid=1393638641&amp;amp;sr=1-1&amp;amp;keywords=btc450"&gt;&lt;img src="http://www.genericmaker.com/images/kinivomodule.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.amazon.com/Kinivo-BTC450-Bluetooth-Hands-Free-Input/dp/B009NLTW60/ref=sr_1_1?s=electronics&amp;amp;ie=UTF8&amp;amp;tag=generi0c-20&amp;amp;qid=1393638641&amp;amp;sr=1-1&amp;amp;keywords=btc450"&gt;&lt;img src="/images/kinivomodule.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://www.amazon.com/Kinivo-BTC450-Bluetooth-Hands-Free-Input/dp/B009NLTW60/ref=sr_1_1?s=electronics&amp;amp;ie=UTF8&amp;amp;tag=generi0c-20&amp;amp;qid=1393638641&amp;amp;sr=1-1&amp;amp;keywords=btc450"&gt;Kinivo BTC 450&lt;/a&gt;&lt;/p&gt;
 
@@ -156,7 +156,7 @@
 &lt;li&gt;Runs at 3.3v&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src="http://www.genericmaker.com/images/usbbtpcb.jpg" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/usbbtpcb.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;h3&gt;Wiring&lt;/h3&gt;
 
@@ -174,7 +174,7 @@
 
 &lt;h2&gt;Remote Overview&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href="http://www.amazon.com/Metra-Universal-Steering-Control-Interface/dp/B0052HXPAI/?_encoding=UTF8&amp;amp;tag=generi0c-20&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;linkCode=ur2"&gt;&lt;img src="http://www.genericmaker.com/images/axxessmodule.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.amazon.com/Metra-Universal-Steering-Control-Interface/dp/B0052HXPAI/?_encoding=UTF8&amp;amp;tag=generi0c-20&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;linkCode=ur2"&gt;&lt;img src="/images/axxessmodule.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://www.amazon.com/Metra-Universal-Steering-Control-Interface/dp/B0052HXPAI/?_encoding=UTF8&amp;amp;tag=generi0c-20&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;linkCode=ur2"&gt;Axxess RF remote&lt;/a&gt;&lt;/p&gt;
 
@@ -188,7 +188,7 @@
 &lt;/ul&gt;
 
 &lt;p&gt;I used a custom firmware to toggle test points on the receiver when buttons are pressed. I preserved all radio communications so I can still control the radio station or CD track (as if I'd ever want to).&lt;/p&gt;
-</description><pubDate>Fri, 28 Feb 2014 05:00:00 Z</pubDate><a10:updated>2014-02-28T05:00:00Z</a10:updated><a10:content type="html">&lt;h2&gt;Module Overview&lt;/h2&gt;
+</description><pubDate>Fri, 28 Feb 2014 05:00:00 Z</pubDate><a10:updated>2014-02-28T05:00:00Z</a10:updated><a10:content type="text">&lt;h2&gt;Module Overview&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href="http://www.amazon.com/Kinivo-BTC450-Bluetooth-Hands-Free-Input/dp/B009NLTW60/ref=sr_1_1?s=electronics&amp;amp;ie=UTF8&amp;amp;tag=generi0c-20&amp;amp;qid=1393638641&amp;amp;sr=1-1&amp;amp;keywords=btc450"&gt;&lt;img src="http://www.genericmaker.com/images/kinivomodule.jpg" alt="" /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -253,7 +253,7 @@
 &lt;/ol&gt;
 
 &lt;p&gt;Post based off of: &lt;a href="http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/"&gt;http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/&lt;/a&gt;&lt;/p&gt;
-</description><pubDate>Fri, 03 Jan 2014 05:00:00 Z</pubDate><a10:updated>2014-01-03T05:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;I performed this on &lt;a href="http://www.armhf.com/index.php/boards/beaglebone-black/"&gt;Ubuntu Saucy 13.10 from ARMhf&lt;/a&gt; (running from an 8Gb SD card)&lt;/p&gt;
+</description><pubDate>Fri, 03 Jan 2014 05:00:00 Z</pubDate><a10:updated>2014-01-03T05:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;I performed this on &lt;a href="http://www.armhf.com/index.php/boards/beaglebone-black/"&gt;Ubuntu Saucy 13.10 from ARMhf&lt;/a&gt; (running from an 8Gb SD card)&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Launch a terminal window/ssh into your BBB&lt;/li&gt;
@@ -280,12 +280,12 @@
 
 &lt;p&gt;View image for full resolution.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://www.genericmaker.com/images/razrhd_1.jpeg" alt="" /&gt;
-&lt;img src="http://www.genericmaker.com/images/razrhd_2.jpeg" alt="" /&gt;
-&lt;img src="http://www.genericmaker.com/images/razrhd_3.jpeg" alt="" /&gt;
-&lt;img src="http://www.genericmaker.com/images/razrhd_4.jpeg" alt="" /&gt;
-&lt;img src="http://www.genericmaker.com/images/razrhd_5.jpeg" alt="" /&gt;&lt;/p&gt;
-</description><pubDate>Thu, 10 Oct 2013 04:00:00 Z</pubDate><a10:updated>2013-10-10T04:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;A friend accidentally ran over his RAZR HD Maxx, so I rescued the motherboard and tore it down!&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/razrhd_1.jpeg" alt="" /&gt;
+&lt;img src="/images/razrhd_2.jpeg" alt="" /&gt;
+&lt;img src="/images/razrhd_3.jpeg" alt="" /&gt;
+&lt;img src="/images/razrhd_4.jpeg" alt="" /&gt;
+&lt;img src="/images/razrhd_5.jpeg" alt="" /&gt;&lt;/p&gt;
+</description><pubDate>Thu, 10 Oct 2013 04:00:00 Z</pubDate><a10:updated>2013-10-10T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;A friend accidentally ran over his RAZR HD Maxx, so I rescued the motherboard and tore it down!&lt;/p&gt;
 
 &lt;p&gt;I wasn't too kind when removing the RF shielding, so the copper is torn off in a few places.&lt;/p&gt;
 
@@ -322,7 +322,7 @@
 
 &lt;p&gt;One source, because I'm lazy:
 &lt;a href="http://www.ifixit.com/Info/why"&gt;IFIXIT&lt;/a&gt;&lt;/p&gt;
-</description><pubDate>Fri, 13 Sep 2013 04:00:00 Z</pubDate><a10:updated>2013-09-13T04:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;It's a physics issue. Signals in modern devices are extremely high speed; the easiest and cheapest way to combat this is to bring components closer together. For example, the wireless radios, RAM, and processor in all modern phones exist as one chip. They essentially put the CPU and wireless magic on the same silicon die (or on a separate die in the same package) and pop a RAM chip on top ("Package on Package").&lt;/p&gt;
+</description><pubDate>Fri, 13 Sep 2013 04:00:00 Z</pubDate><a10:updated>2013-09-13T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;It's a physics issue. Signals in modern devices are extremely high speed; the easiest and cheapest way to combat this is to bring components closer together. For example, the wireless radios, RAM, and processor in all modern phones exist as one chip. They essentially put the CPU and wireless magic on the same silicon die (or on a separate die in the same package) and pop a RAM chip on top ("Package on Package").&lt;/p&gt;
 
 &lt;p&gt;It's a communication issue. All of the ICs in a phone don't communicate over a single bus - almost every one ties directly into specific processor pins. This would restrict block size and placement.&lt;/p&gt;
 
@@ -348,12 +348,12 @@
 
 &lt;p&gt;One source, because I'm lazy:
 &lt;a href="http://www.ifixit.com/Info/why"&gt;IFIXIT&lt;/a&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/08/abandoning-efm32g210f128-breakout.html</guid><link>http://www.genericmaker.com/2013/08/abandoning-efm32g210f128-breakout.html</link><title>Abandoning the EFM32G210F128 Breakout</title><description>&lt;p&gt;&lt;img src="http://www.genericmaker.com/images/efm32_breakout.jpg" alt="" /&gt;&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/08/abandoning-efm32g210f128-breakout.html</guid><link>http://www.genericmaker.com/2013/08/abandoning-efm32g210f128-breakout.html</link><title>Abandoning the EFM32G210F128 Breakout</title><description>&lt;p&gt;&lt;img src="/images/efm32_breakout.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I'm officially abandoning my Energy Micro EFM32G210F128 breakout. The design files are all on Upverter and are released into the public domain.&lt;/p&gt;
 
 &lt;p&gt;Energy Micro has microprocessors with native USB, so there's no reason for me to continue working on a design that needs an expensive USB-UART converter. This is a straightforward case of subpar research and some flawed reasoning coming to bite after the design work has been completed.&lt;/p&gt;
-</description><pubDate>Wed, 28 Aug 2013 04:00:00 Z</pubDate><a10:updated>2013-08-28T04:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;&lt;img src="http://www.genericmaker.com/images/efm32_breakout.jpg" alt="" /&gt;&lt;/p&gt;
+</description><pubDate>Wed, 28 Aug 2013 04:00:00 Z</pubDate><a10:updated>2013-08-28T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;&lt;img src="http://www.genericmaker.com/images/efm32_breakout.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I'm officially abandoning my Energy Micro EFM32G210F128 breakout. The design files are all on Upverter and are released into the public domain.&lt;/p&gt;
 
@@ -377,7 +377,7 @@
 &lt;p&gt;George Hahn.&lt;/p&gt;
 
 &lt;p&gt;2013.&lt;/p&gt;
-</description><pubDate>Sat, 13 Jul 2013 04:00:00 Z</pubDate><a10:updated>2013-07-13T04:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Earlier this week, I returned from an eight day visit to Toronto, Ontario. I'm from rural New Jersey and, though there are some 'population centers' near me, there isn't anything like a three million person city.&lt;/p&gt;
+</description><pubDate>Sat, 13 Jul 2013 04:00:00 Z</pubDate><a10:updated>2013-07-13T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Earlier this week, I returned from an eight day visit to Toronto, Ontario. I'm from rural New Jersey and, though there are some 'population centers' near me, there isn't anything like a three million person city.&lt;/p&gt;
 
 &lt;p&gt;In some ways, the visit was scary - this was the first time I've ever heard someone get mugged. We ran outside to see what was going on, but there wasn't anyone around. We didn't know what had happened until the police stopped by later to ask questions. Yikes, that's new.&lt;/p&gt;
 
@@ -409,7 +409,7 @@
 &lt;p&gt;A desire to move the status quo is why I'm hoping to intern at Upverter in the coming months. They're a small Candadian startup doing work in the electronic design automation (EDA) space. While the product they're creating isn't essential yet, it has the potential to change how we design and test electronic systems. This is no easy goal, but for something that could transform the EDA market before this decade is out, it's worth the effort.&lt;/p&gt;
 
 &lt;p&gt;Engineering is not for everyone, but it is everything for me. I find engineering intriguing, exciting and fulfilling. If I have changed the world by the time I die, I will rest easily. I do not ask to be remembered and I care little if my name stays around, but I want to leave the world a better place than it was when I entered it.&lt;/p&gt;
-</description><pubDate>Wed, 08 May 2013 04:00:00 Z</pubDate><a10:updated>2013-05-08T04:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;&lt;em&gt;Term paper for a generic Intro to Engineering class.&lt;/em&gt;&lt;/p&gt;
+</description><pubDate>Wed, 08 May 2013 04:00:00 Z</pubDate><a10:updated>2013-05-08T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;&lt;em&gt;Term paper for a generic Intro to Engineering class.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Should I be an engineer? Surely this is a question every student wrestles with at some point. Many who ask it may decide not to become engineers. While it may be a tough decision for some, it's a given for me. I love designing, analyzing, building, and testing systems. I thrive on tough situations – there's nothing that gets my brain going quite like a malfunctioning circuit or a buggy piece of software.&lt;/p&gt;
 
@@ -442,7 +442,7 @@
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;em&gt;PS: I'll write a post detailing what was wrong with the Intro to Engineering course that I took later on. I am publishing this post first because I'd rather focus on things that can be improved rather than rag on things that are broken.&lt;/em&gt;&lt;/p&gt;
-</description><pubDate>Thu, 02 May 2013 04:00:00 Z</pubDate><a10:updated>2013-05-02T04:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Intro to Engineering courses are a necessity.&lt;/p&gt;
+</description><pubDate>Thu, 02 May 2013 04:00:00 Z</pubDate><a10:updated>2013-05-02T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Intro to Engineering courses are a necessity.&lt;/p&gt;
 
 &lt;p&gt;Most Intro to Engineering courses are useless.&lt;/p&gt;
 
@@ -472,7 +472,7 @@ After this operation, 32.8 MB disk space will be freed.
 &lt;p&gt;I'm not sure exactly how long the process took, but it was done within a couple hours. When I came back to my laptop, all text was invisible. This problem went away after a reboot.&lt;/p&gt;
 
 &lt;p&gt;I haven't removed all installed mint packages yet, and I plan to stay with Cinnamon. As such, everything feels quite the same. In fact, I'd have a hard time pointing out any changes at all. The only significant thing I've gained from this endeavor is the knowledge that my packages will now be more up to date. &lt;/p&gt;
-</description><pubDate>Thu, 25 Apr 2013 04:00:00 Z</pubDate><a10:updated>2013-04-25T04:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Yesterday, I replaced the LMDE entries in my sources.list with entries for Debian Testing. Then I ran a dist-upgrade.&lt;/p&gt;
+</description><pubDate>Thu, 25 Apr 2013 04:00:00 Z</pubDate><a10:updated>2013-04-25T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Yesterday, I replaced the LMDE entries in my sources.list with entries for Debian Testing. Then I ran a dist-upgrade.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;685 upgraded, 10 newly installed, 1 to remove and 0 not upgraded.
 Need to get 581 MB of archives.
