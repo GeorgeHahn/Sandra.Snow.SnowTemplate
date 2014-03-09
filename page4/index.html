@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-03-01T00:12:55.2216446-05:00" />
+    <meta http-equiv="last-modified" content="2014-03-08T19:29:25.3968899-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page4/" />
@@ -33,6 +33,75 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/11/building-monodevelop-on-lmde.html">Building MonoDevelop on LMDE</a> 
+        <span>posted on 19 Nov 2012</span>
+      </h1> 
+      
+      <p>I had a fair bit of trouble installing MonoDevelop on my LMDE machine the first time around. As I write this, the current version is 3.0.5 (commit <a href="https://github.com/mono/monodevelop/commit/5542f6c0aaa19e016f627f8bb202494c1db68888">5542f6c0aa</a>)</p>
+
+<p><strong>Warning: This goes against Mono best practices; if you want do be safe with your system, you should do this in a parallel mono environment. By building on top of your main environment, you risk breaking Mono on your machine.</strong> If you want to know more about setting up a parallel environment, <a href="http://www.mono-project.com/Parallel_Mono_Environments">read this</a>.</p>
+
+<ol>
+<li><p>Install some prereqs</p>
+
+<pre><code>sudo apt-get install git autoconf automake mono-devel mono-gmcs libmono-addins-cil-dev libmono-addins-gui-cil-dev libmono-addins-gui0.2-cil libmono-addins-msbuild-cil-dev libmono-addins-msbuild0.2-cil libmono-addins0.2-cil mono-addins-utils libglade2-dev gtk-sharp2 gnome-sharp2
+</code></pre></li>
+<li><p>Get the source</p>
+
+<pre><code>git clone git://github.com/mono/monodevelop.git
+git submodule init
+git submodule update
+</code></pre></li>
+<li><p>Configure the build - I built main, MonoDevelop.Database and MonoDevelop.Debugger.Gdb; that is, options 1, 4, and 5. Other packages may have prerequisites not outlined here.</p>
+
+<pre><code>./configure
+</code></pre></li>
+<li><p>Build the code</p>
+
+<pre><code>make
+</code></pre></li>
+<li><p>Install the built binaries</p>
+
+<pre><code>sudo make install
+</code></pre></li>
+</ol>
+
+      <p><a href="/2012/11/building-monodevelop-on-lmde.html">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/11/working-on-droid-razr-hd-maxx-case.html">Working on a Droid RAZR HD Maxx Case</a> 
+        <span>posted on 17 Nov 2012</span>
+      </h1> 
+      
+      <p>Available on Thingiverse: <a href="http://www.thingiverse.com/thing:34668">http://www.thingiverse.com/thing:34668</a></p>
+
+<p>My workflow for this sort of project is to start by designing the part my custom piece needs to fit - so I started by designing my phone.</p>
+
+<p><img src="/images/Phone.png" alt="" /></p>
+
+<p>Once I had a decent model of the phone, I started working on the dock prototype. It didn't take long to realize I would need to print a partial prototype to verify that the micro USB connector fit correctly.</p>
+
+<p><img src="/images/2012-11-15+18.55.00.jpg" alt="" /></p>
+
+<p>Once the micro USB slot was verified, I polished the design - for example, by adding this cable strain relief slot to the base.</p>
+
+<p><img src="/images/Dock.png" alt="" /></p>
+
+<p>There are three 130mm long x 6.35mm square spaces internal to the base to allow weight to be added mid-print.</p>
+
+<p>I was pretty worried about this working correctly - I had never designed or printed anything that must be paused mid-print. Other than being fairly inconvenient, it worked out great.</p>
+
+<p><img src="/images/2012-11-15+19.59.19.jpg" alt="" /></p>
+
+<p>I am very happy with how the dock turned out. It's well weighted and everything fits. I am holding off on final assembly (gluing the USB connector in place) until I discover the proper resistor value to put this phone into dock mode. I plan to use a fancy resistor box at work to accomplish this - I should have it done within the week.</p>
+
+<p><img src="/images/2012-11-16+00.35.22.jpg" alt="" /></p>
+
+      <p><a href="/2012/11/working-on-droid-razr-hd-maxx-case.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2012/10/3d-printed-headphones.html">3D Printed Headphones</a> 
@@ -327,105 +396,6 @@ donkey</p>
 
       <p><a href="/2012/04/etching-pcb-using-electrolysis.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/04/simple-usb-audio-device.html">A Simple USB Audio Device</a> 
-        <span>posted on 02 Apr 2012</span>
-      </h1> 
-      
-      <p>About four months ago, I came across the <a href="http://www.ti.com/product/pcm2707">TI PCM2707</a>. The PCM2707 is a standard USB 1.1 audio IC. As such, it can play audio without any custom drivers. My device closely follows the reference design shown in TI's datasheet. The PCM2707 can play 16 bit stereo audio at a maximum sampling rate of 48kHz. It has a built in 175mW headphone amplifier for analog output. Additionally, it can output S/PDIF and I2S digital audio. The former might be used to connect to a consumer audio receiver, while the latter could be used to interface with a more powerful amplifier IC.</p>
-
-<p>The PCM2707 has a built in 3.3 volt regulator. I was tempted to use this regulator's output to power a separate headphone amplifier, but TI specifically warns against this. Doing so would probably risk blowing the built in regulator or going over USB's 500mA current limit. As I'm not a fan of toasting $10 chips, I opted to stay with the reference design.</p>
-
-<p>The PCM2707 was brought to market in 2003. While it offers simplicity, it sacrifices a number of attractive features present in modern USB audio devices. The USB 1.1 audio standard has provisions for stereo audio at a bit depth of 16 and a sampling rate of up to 48kHz. If you want more, you need a custom driver. Any of these features is likely to require more bandwidth than USB 1.1 can offer, so you probably need a USB 2.0 device, too. As far as I am aware, there is no USB 2.0 equivalent to the PCM2707 on the market - all solutions seem to be based around a processor with a USB hardware interface and a DAC. I didn't want to bother with an unfamiliar MCU, custom drivers, and expensive development kits - so I picked the dinosaur.</p>
-
-<h2>Hardware</h2>
-
-<p>I did not need any exceptional features, so I opted to use TI's reference design. I copied the schematic into OrCAD and broke out the lines that looked interesting. From OrCAD, I exported a netlist to PADS for hardware layout. (To glue the two pieces of software together, I used the <a href="http://pcbstandards.com/forums/showthread.php?t=2247">PowerNET</a> netlister.) This workflow was painful to set up, but very efficient once it was operational. I opted to use these two software packages over Eagle because my coworkers are familiar with them.</p>
-
-<p>The layout was scrapped three times before I arrived at my final design - I planned to buy boards from BatchPCB, so I foolishly forced my design into one square inch. By the time I was done carving bits from my design, I had a haphazardly placed double sided board with no access to a number of useful pins. For the first layout iteration, I hand placed all components and hand routed all traces. For the subsequent layouts, I kept the hand placement and autorouted the traces. This saved neither time nor effort - I spent so much time tweaking and optimizing the traces that it would have been faster to route them manually.</p>
-
-<p>In my final design, all resistors and ceramic capacitors are 0603 size. I like 0603 because it offers a good compromise between size and hand-solderability.</p>
-
-<p><img src="/images/usbdac-barepcb.jpg" alt="" /></p>
-
-<h2>Assembly</h2>
-
-<p>When the boards arrived, I performed a quick inspection. BatchPCB's board house had put the silkscreen for both sides on the top! Additionally, the soldermask was thin and uneven. I wasn't too happy - nonetheless, I hurriedly assembled one and plugged it into a USB port. The PCM2707 on-board promptly let out its magical smoke. After a few hours spent debugging, I determined that my USB footprint was numbered backwards and the data lines were swapped. After soldering a USB cable directly to my board, everything worked as expected.</p>
-
-<p><img src="/images/usbdac-during-debugging.jpg" alt="" /></p>
-
-<p>Once I was satisfied that nothing would spontaneously explode, I printed a small case with my reprap. Because I failed to add mounting holes to my PCB, I designed a case that would contact the perimeter of the PCB while avoiding any nearby components. To help avoid any mistakes, I modeled the assembled part and built a box around it.</p>
-
-<p><img src="/images/DACCase.jpg" alt="" /></p>
-
-<p>The four small pins visible in the above rendering did not print correctly, so I glued the two halves together.</p>
-
-<p><img src="/images/usbdac-in-case.jpg" alt="" /></p>
-
-<h2>Performance</h2>
-
-<p>This little guy sounds great! The "low res" audio sounds stellar on everything from my pair of Sony MDR-V500s to my friend's Sennheiser HD555s. The device is absolutely silent when no audio is playing. It delivers clean mids and highs and a reasonable amount of bass.</p>
-
-<h2>Mistakes</h2>
-
-<ul>
-<li>Micro USB connector on a prototype</li>
-<li>Components right next to the edge of the PCB</li>
-<li>Components on both sides of the PCB</li>
-<li>Autorouted traces</li>
-<li>Minimum size traces (6mil)</li>
-<li>No locating holes or cutouts</li>
-<li>No revision letter (or number)</li>
-<li>Ordered a lot of PCBs to 'make up for' the BatchPCB setup fee</li>
-</ul>
-
-<p>In the future, I will use:</p>
-
-<ul>
-<li>Mini USB</li>
-<li>0.1" edge clearance for all non-connector components</li>
-<li>Components on one side</li>
-<li>Larger traces</li>
-<li>Manual routing</li>
-<li>Locating holes</li>
-<li><a href="http://dorkbotpdx.org/wiki/pcb_order">DorkbotPDX</a></li>
-</ul>
-
-<p><em>Added 4/7/2012</em></p>
-
-<p>I found another bug - the channels are swapped! This issue would be tough to fix by cutting traces, so I solved it by flipping the 3.5mm jack upside-down and wiring its pins to the proper pads. This is fixed in rev B - the files for which will be up as soon as I have verified their integrity.</p>
-
-<p><em>Added 4/11/2012</em></p>
-
-<p>Gerbers: <a href="http://dl.dropbox.com/u/11414619/Gerbers_R16.zip">http://dl.dropbox.com/u/11414619/Gerbers_R16.zip</a></p>
-
-<p>Schematic:</p>
-
-<p><img src="/images/usbdac-schematic.png" alt="" /></p>
-
-      <p><a href="/2012/04/simple-usb-audio-device.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/02/hardware-design-workflow-my-mistakes.html">Hardware Design Workflow: My Mistakes</a> 
-        <span>posted on 13 Feb 2012</span>
-      </h1> 
-      
-      <p>During my recent foray into PCB layout, I made a few mistakes. Here are the most egregious:</p>
-
-<p>The biggest mistake I made was starting to route traces before I was happy with part placement. I can't stress this enough, <strong>figure out your part placement before you start routing</strong>. Of course, if you have an autorouter available, it is acceptable to use it periodically to gauge your part placement.</p>
-
-<p><strong>Nail down your schematic before you start laying out your board.</strong> If your schematic is a moving target, layout will be impossible.</p>
-
-<p><strong>If you know you are going to need small parts, use them from the start.</strong> On my first design, I started with 0805 passives and had to switch to 0603's when I realized I wasn't going to be able to pack 0805's as tightly as I wanted to. I scrapped the entire 0805 based layout and started from scratch with 0603 parts.</p>
-
-<p><strong>Take it one step at a time.</strong> I may have made this point already, but it is important enough to warrant restating. Do not start placing parts until your schematic is done. Do not start routing traces until you are happy with part placement. Do not write a BOM until your PCB is complete.</p>
-
-<p><strong>It is a good idea to know the approximate price of parts you are using.</strong> If you use prohibitively expensive or unavailable parts on your design, you may have to make changes as far back as the schematic. Essentially, you may have to make changes to every single step. Save yourself the frustration and know the parts you use. </p>
-
-      <p><a href="/2012/02/hardware-design-workflow-my-mistakes.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -465,26 +435,28 @@ donkey</p>
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
-                          <li><a href="/archive#2014January">January, 2014</a></li>
-                          <li><a href="/archive#2013October">October, 2013</a></li>
-                          <li><a href="/archive#2013September">September, 2013</a></li>
-                          <li><a href="/archive#2013August">August, 2013</a></li>
-                          <li><a href="/archive#2013July">July, 2013</a></li>
-                          <li><a href="/archive#2013May">May, 2013</a></li>
-                          <li><a href="/archive#2013April">April, 2013</a></li>
-                          <li><a href="/archive#2013March">March, 2013</a></li>
-                          <li><a href="/archive#2013February">February, 2013</a></li>
-                          <li><a href="/archive#2013January">January, 2013</a></li>
-                          <li><a href="/archive#2012December">December, 2012</a></li>
-                          <li><a href="/archive#2012November">November, 2012</a></li>
-                          <li><a href="/archive#2012October">October, 2012</a></li>
-                          <li><a href="/archive#2012September">September, 2012</a></li>
-                          <li><a href="/archive#2012May">May, 2012</a></li>
-                          <li><a href="/archive#2012April">April, 2012</a></li>
-                          <li><a href="/archive#2012February">February, 2012</a></li>
-                          <li><a href="/archive#2012January">January, 2012</a></li>
-                          <li><a href="/archive#2011July">July, 2011</a></li>
-                          <li><a href="/archive#2011May">May, 2011</a></li>
+                          <li><a href="/archive#20143">March, 2014</a></li>
+                          <li><a href="/archive#20142">February, 2014</a></li>
+                          <li><a href="/archive#20141">January, 2014</a></li>
+                          <li><a href="/archive#201310">October, 2013</a></li>
+                          <li><a href="/archive#20139">September, 2013</a></li>
+                          <li><a href="/archive#20138">August, 2013</a></li>
+                          <li><a href="/archive#20137">July, 2013</a></li>
+                          <li><a href="/archive#20135">May, 2013</a></li>
+                          <li><a href="/archive#20134">April, 2013</a></li>
+                          <li><a href="/archive#20133">March, 2013</a></li>
+                          <li><a href="/archive#20132">February, 2013</a></li>
+                          <li><a href="/archive#20131">January, 2013</a></li>
+                          <li><a href="/archive#201212">December, 2012</a></li>
+                          <li><a href="/archive#201211">November, 2012</a></li>
+                          <li><a href="/archive#201210">October, 2012</a></li>
+                          <li><a href="/archive#20129">September, 2012</a></li>
+                          <li><a href="/archive#20125">May, 2012</a></li>
+                          <li><a href="/archive#20124">April, 2012</a></li>
+                          <li><a href="/archive#20122">February, 2012</a></li>
+                          <li><a href="/archive#20121">January, 2012</a></li>
+                          <li><a href="/archive#20117">July, 2011</a></li>
+                          <li><a href="/archive#20115">May, 2011</a></li>
                     </ul>
                 </aside>
             </div>

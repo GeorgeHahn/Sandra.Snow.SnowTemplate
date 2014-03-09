@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-03-01T00:12:55.2216446-05:00" />
+    <meta http-equiv="last-modified" content="2014-03-08T19:29:25.3968899-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page2/" />
@@ -33,6 +33,79 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2013/04/converting-linux-mint-debian-edition.html">Converting Linux Mint Debian Edition (LMDE) into Debian Testing</a> 
+        <span>posted on 24 Apr 2013</span>
+      </h1> 
+      
+      <p>Linux Mint Debian Edition is built on Debian Testing. After months of dealing with flaky mirrors and a not-so-impressive distro, I decided it was time to flip the switch. (Other than Cinnamon and/or MATE, Mint doesn't offer much.)</p>
+
+<p>I am going to attempt to perform an in-place switch by modifying my sources.list. We'll see how it turns out - either it will work, or I'll be installing Debian Testing later tonight.</p>
+
+<p>I generated a new sources.list from <a href="http://debgen.simplylinux.ch/">http://debgen.simplylinux.ch/</a>.</p>
+
+<p>Old sources.list:</p>
+
+<pre><code>deb http://packages.linuxmint.com/ debian main upstream import
+deb http://mirror.metrocast.net/linuxmint-debian/latest testing main contrib non-free
+deb http://mirror.metrocast.net/linuxmint-debian/latest/security testing/updates main contrib non-free
+deb http://mirror.metrocast.net/linuxmint-debian/latest/multimedia testing main non-free
+</code></pre>
+
+<p>New sources.list (for x86-64)</p>
+
+<pre><code>deb http://ftp.us.debian.org/debian testing main contrib non-free
+deb http://ftp.debian.org/debian/ wheezy-updates main contrib non-free
+deb http://security.debian.org/ wheezy/updates main contrib non-free
+
+# Third Parties Repos
+
+# deb-multimedia.org
+deb http://www.deb-multimedia.org squeeze main non-free
+
+# Oracle VM VirtualBox # Don't care to have right now.
+# deb http://download.virtualbox.org/virtualbox/debian wheezy contrib non-free
+</code></pre>
+
+<p>I'll check in later and let you know how it goes! </p>
+
+      <p><a href="/2013/04/converting-linux-mint-debian-edition.html">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2013/03/bridging-upverter-and-oshpark.html">Bridging Upverter and OSHPark</a> 
+        <span>posted on 14 Mar 2013</span>
+      </h1> 
+      
+      <p><a href="http://upverter.com/">Upverter</a> is the best online circuit creation platform, and OSHPark is one of the best circuit board production services. Put the two together, and you should find bliss - but you won't. Anyone who has had an Upverter-designed board built by OSHPark will be familiar with this problem. When you download gerbers from Upverter, you get a zip full of files like bottom<em>copper.ger and top</em>paste.ger. OSHPark, on the other hand, wants names like Bottom Layer.ger and Board Outline.ger.</p>
+
+<p>Here are the name transformations - each pair consists of the Upverter name followed by the OSHPark name. If a file isn't listed here, it should not be uploaded to OSHPark.</p>
+
+<pre><code>var filepairs = new TupleList&lt;string, string&gt;
+{
+ { "layers.cfg", "layers.cfg" },
+ { "hole.ger", "Drills.xln" },
+ { "mechanical_details.ger", "Board Outline.ger" },
+
+ { "top_copper.ger", "Top Layer.ger" },
+ { "top_silkscreen.ger", "Top Silk Screen.ger" },
+ { "top_solder_mask.ger", "Top Solder Mask.ger" },
+
+ { "bottom_copper.ger", "Bottom Layer.ger" },
+ { "bottom_silkscreen.ger", "Bottom Silk Screen.ger" },
+ { "bottom_solder_mask.ger", "Bottom Solder Mask.ger" }
+};
+</code></pre>
+
+<p>I wrote a quick C# command line app to do the transformation automatically. If you drop a Upverter zip onto the app, it will create an <em>osh_</em> zipfile using the OSHPark naming conventions.</p>
+
+<p>You can find the source and the binary at <a href="https://bitbucket.org/George_Hahn/upvertertooshpark">https://bitbucket.org/George_Hahn/upvertertooshpark</a>.</p>
+
+<p>BONUS: Create a shortcut to the binary in the <code>%APPDATA%\Microsoft\Windows\SendTo</code> directory! This will allow you to right click on an Upverter zip and choose Send to: OSHPark!</p>
+
+      <p><a href="/2013/03/bridging-upverter-and-oshpark.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2013/03/the-roles-of-professors.html">The Roles of Professors</a> 
@@ -557,82 +630,6 @@ namespace PinToggling
 
       <p><a href="/2012/12/in-support-of-net-on-embedded-systems.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/12/aspnet-newbie-protip.html">ASP.Net Newbie Protip</a> 
-        <span>posted on 26 Dec 2012</span>
-      </h1> 
-      
-      <p>When building ASP.NET projects and hosting with local IIS, don't play with the build output path in Visual Studio. The issue here is that IIS Express loads libraries from the bin\ directory. Change that to something like bin\Release\, and the running code is no longer updated when Visual Studio builds.</p>
-
-<p>A simple gotcha, but it may take a little coffee to get past if you haven't experienced it before.</p>
-
-<p><img src="/images/aspnet_buildpath.png" alt="" /></p>
-
-<p>PS: I dug around in an attempt to find a setting related to this path, but was unable to. Apologies!</p>
-
-      <p><a href="/2012/12/aspnet-newbie-protip.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/12/journal-database-is-finally-working-and.html">Journal: Database is Finally Working and Enabling Sessions.</a> 
-        <span>posted on 16 Dec 2012</span>
-      </h1> 
-      
-      <p><strong>Finally</strong>, I can write some code. First things first, though, here's what I had to do to get to this point.</p>
-
-<p>I am running on a fairly fresh Windows 8 virtual machine with VS2012.</p>
-
-<p>Installed EF5, Nancy, and Nancy.Hosting.Aspnet from NuGet.</p>
-
-<p>Added this to web.config</p>
-
-<pre><code>&lt;connectionStrings&gt;
-  &lt;add name="QAContext" 
-    providerName="System.Data.SqlClient"
-    connectionString="Server=(LocalDB)\v11.0; Integrated Security=True; MultipleActiveResultSets=True"/&gt;
-&lt;/connectionStrings&gt; 
-</code></pre>
-
-<p>If memory serves, that's all it took. My sample code looks something like this</p>
-
-<pre><code>using (var db = new QAContext())
-{
-    var user = new User();
-    user.Name = userName;
-    db.Users.Add(user);
-    db.SaveChanges();
-}
-</code></pre>
-
-<p>And it runs! I can query db with LINQ (though I am not very skilled with LINQ), and view the database in the Server Explorer window.</p>
-
-<p>Now, I'm going to enable cookie based sessions. To do this, I'll subclass DefaultNancyBootstrapper and override the ApplicationStartup method.</p>
-
-<pre><code>public class Bootstrapper: DefaultNancyBootstrapper
-{
-    protected override void ApplicationStartup(TinyIoCContainer container,
-                                               IPipelines pipelines)
-    {
-        CookieBasedSessions.Enable(pipelines);
-    }
-}
-</code></pre>
-
-<p>With sessions enabled, we can now put something like this in the constructor of a class that derives from NancyModule to test sessions.</p>
-
-<pre><code>Get["/sessiontest/{val}"] = parameters =&gt; { 
-    Session["test"] = parameters.val.ToString();
-    return Session["test"].ToString();
-};
-
-Get["/sessiontest"] = parameters =&gt; Session["test"].ToString();
-</code></pre>
-
-<p>Now localhost/sessiontest/testtesttest will show "testtesttest" and http://localhost:15818/sessiontest will show the same. </p>
-
-      <p><a href="/2012/12/journal-database-is-finally-working-and.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -672,26 +669,28 @@ Get["/sessiontest"] = parameters =&gt; Session["test"].ToString();
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
-                          <li><a href="/archive#2014January">January, 2014</a></li>
-                          <li><a href="/archive#2013October">October, 2013</a></li>
-                          <li><a href="/archive#2013September">September, 2013</a></li>
-                          <li><a href="/archive#2013August">August, 2013</a></li>
-                          <li><a href="/archive#2013July">July, 2013</a></li>
-                          <li><a href="/archive#2013May">May, 2013</a></li>
-                          <li><a href="/archive#2013April">April, 2013</a></li>
-                          <li><a href="/archive#2013March">March, 2013</a></li>
-                          <li><a href="/archive#2013February">February, 2013</a></li>
-                          <li><a href="/archive#2013January">January, 2013</a></li>
-                          <li><a href="/archive#2012December">December, 2012</a></li>
-                          <li><a href="/archive#2012November">November, 2012</a></li>
-                          <li><a href="/archive#2012October">October, 2012</a></li>
-                          <li><a href="/archive#2012September">September, 2012</a></li>
-                          <li><a href="/archive#2012May">May, 2012</a></li>
-                          <li><a href="/archive#2012April">April, 2012</a></li>
-                          <li><a href="/archive#2012February">February, 2012</a></li>
-                          <li><a href="/archive#2012January">January, 2012</a></li>
-                          <li><a href="/archive#2011July">July, 2011</a></li>
-                          <li><a href="/archive#2011May">May, 2011</a></li>
+                          <li><a href="/archive#20143">March, 2014</a></li>
+                          <li><a href="/archive#20142">February, 2014</a></li>
+                          <li><a href="/archive#20141">January, 2014</a></li>
+                          <li><a href="/archive#201310">October, 2013</a></li>
+                          <li><a href="/archive#20139">September, 2013</a></li>
+                          <li><a href="/archive#20138">August, 2013</a></li>
+                          <li><a href="/archive#20137">July, 2013</a></li>
+                          <li><a href="/archive#20135">May, 2013</a></li>
+                          <li><a href="/archive#20134">April, 2013</a></li>
+                          <li><a href="/archive#20133">March, 2013</a></li>
+                          <li><a href="/archive#20132">February, 2013</a></li>
+                          <li><a href="/archive#20131">January, 2013</a></li>
+                          <li><a href="/archive#201212">December, 2012</a></li>
+                          <li><a href="/archive#201211">November, 2012</a></li>
+                          <li><a href="/archive#201210">October, 2012</a></li>
+                          <li><a href="/archive#20129">September, 2012</a></li>
+                          <li><a href="/archive#20125">May, 2012</a></li>
+                          <li><a href="/archive#20124">April, 2012</a></li>
+                          <li><a href="/archive#20122">February, 2012</a></li>
+                          <li><a href="/archive#20121">January, 2012</a></li>
+                          <li><a href="/archive#20117">July, 2011</a></li>
+                          <li><a href="/archive#20115">May, 2011</a></li>
                     </ul>
                 </aside>
             </div>

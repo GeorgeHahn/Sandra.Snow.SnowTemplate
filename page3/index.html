@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-03-01T00:12:55.2216446-05:00" />
+    <meta http-equiv="last-modified" content="2014-03-08T19:29:25.3968899-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page3/" />
@@ -33,6 +33,82 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/12/aspnet-newbie-protip.html">ASP.Net Newbie Protip</a> 
+        <span>posted on 26 Dec 2012</span>
+      </h1> 
+      
+      <p>When building ASP.NET projects and hosting with local IIS, don't play with the build output path in Visual Studio. The issue here is that IIS Express loads libraries from the bin\ directory. Change that to something like bin\Release\, and the running code is no longer updated when Visual Studio builds.</p>
+
+<p>A simple gotcha, but it may take a little coffee to get past if you haven't experienced it before.</p>
+
+<p><img src="/images/aspnet_buildpath.png" alt="" /></p>
+
+<p>PS: I dug around in an attempt to find a setting related to this path, but was unable to. Apologies!</p>
+
+      <p><a href="/2012/12/aspnet-newbie-protip.html">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/12/journal-database-is-finally-working-and.html">Journal: Database is Finally Working and Enabling Sessions.</a> 
+        <span>posted on 16 Dec 2012</span>
+      </h1> 
+      
+      <p><strong>Finally</strong>, I can write some code. First things first, though, here's what I had to do to get to this point.</p>
+
+<p>I am running on a fairly fresh Windows 8 virtual machine with VS2012.</p>
+
+<p>Installed EF5, Nancy, and Nancy.Hosting.Aspnet from NuGet.</p>
+
+<p>Added this to web.config</p>
+
+<pre><code>&lt;connectionStrings&gt;
+  &lt;add name="QAContext" 
+    providerName="System.Data.SqlClient"
+    connectionString="Server=(LocalDB)\v11.0; Integrated Security=True; MultipleActiveResultSets=True"/&gt;
+&lt;/connectionStrings&gt; 
+</code></pre>
+
+<p>If memory serves, that's all it took. My sample code looks something like this</p>
+
+<pre><code>using (var db = new QAContext())
+{
+    var user = new User();
+    user.Name = userName;
+    db.Users.Add(user);
+    db.SaveChanges();
+}
+</code></pre>
+
+<p>And it runs! I can query db with LINQ (though I am not very skilled with LINQ), and view the database in the Server Explorer window.</p>
+
+<p>Now, I'm going to enable cookie based sessions. To do this, I'll subclass DefaultNancyBootstrapper and override the ApplicationStartup method.</p>
+
+<pre><code>public class Bootstrapper: DefaultNancyBootstrapper
+{
+    protected override void ApplicationStartup(TinyIoCContainer container,
+                                               IPipelines pipelines)
+    {
+        CookieBasedSessions.Enable(pipelines);
+    }
+}
+</code></pre>
+
+<p>With sessions enabled, we can now put something like this in the constructor of a class that derives from NancyModule to test sessions.</p>
+
+<pre><code>Get["/sessiontest/{val}"] = parameters =&gt; { 
+    Session["test"] = parameters.val.ToString();
+    return Session["test"].ToString();
+};
+
+Get["/sessiontest"] = parameters =&gt; Session["test"].ToString();
+</code></pre>
+
+<p>Now localhost/sessiontest/testtesttest will show "testtesttest" and http://localhost:15818/sessiontest will show the same. </p>
+
+      <p><a href="/2012/12/journal-database-is-finally-working-and.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2012/12/journal-starting-out-with-nancy-on-mono_16.html">Journal: Starting out with Nancy on Mono Pt.3</a> 
@@ -334,75 +410,6 @@ sudo make install
 
       <p><a href="/2012/11/apple-30-pin-connector-giveaway.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/11/building-monodevelop-on-lmde.html">Building MonoDevelop on LMDE</a> 
-        <span>posted on 19 Nov 2012</span>
-      </h1> 
-      
-      <p>I had a fair bit of trouble installing MonoDevelop on my LMDE machine the first time around. As I write this, the current version is 3.0.5 (commit <a href="https://github.com/mono/monodevelop/commit/5542f6c0aaa19e016f627f8bb202494c1db68888">5542f6c0aa</a>)</p>
-
-<p><strong>Warning: This goes against Mono best practices; if you want do be safe with your system, you should do this in a parallel mono environment. By building on top of your main environment, you risk breaking Mono on your machine.</strong> If you want to know more about setting up a parallel environment, <a href="http://www.mono-project.com/Parallel_Mono_Environments">read this</a>.</p>
-
-<ol>
-<li><p>Install some prereqs</p>
-
-<pre><code>sudo apt-get install git autoconf automake mono-devel mono-gmcs libmono-addins-cil-dev libmono-addins-gui-cil-dev libmono-addins-gui0.2-cil libmono-addins-msbuild-cil-dev libmono-addins-msbuild0.2-cil libmono-addins0.2-cil mono-addins-utils libglade2-dev gtk-sharp2 gnome-sharp2
-</code></pre></li>
-<li><p>Get the source</p>
-
-<pre><code>git clone git://github.com/mono/monodevelop.git
-git submodule init
-git submodule update
-</code></pre></li>
-<li><p>Configure the build - I built main, MonoDevelop.Database and MonoDevelop.Debugger.Gdb; that is, options 1, 4, and 5. Other packages may have prerequisites not outlined here.</p>
-
-<pre><code>./configure
-</code></pre></li>
-<li><p>Build the code</p>
-
-<pre><code>make
-</code></pre></li>
-<li><p>Install the built binaries</p>
-
-<pre><code>sudo make install
-</code></pre></li>
-</ol>
-
-      <p><a href="/2012/11/building-monodevelop-on-lmde.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/11/working-on-droid-razr-hd-maxx-case.html">Working on a Droid RAZR HD Maxx Case</a> 
-        <span>posted on 17 Nov 2012</span>
-      </h1> 
-      
-      <p>Available on Thingiverse: <a href="http://www.thingiverse.com/thing:34668">http://www.thingiverse.com/thing:34668</a></p>
-
-<p>My workflow for this sort of project is to start by designing the part my custom piece needs to fit - so I started by designing my phone.</p>
-
-<p><img src="/images/Phone.png" alt="" /></p>
-
-<p>Once I had a decent model of the phone, I started working on the dock prototype. It didn't take long to realize I would need to print a partial prototype to verify that the micro USB connector fit correctly.</p>
-
-<p><img src="/images/2012-11-15+18.55.00.jpg" alt="" /></p>
-
-<p>Once the micro USB slot was verified, I polished the design - for example, by adding this cable strain relief slot to the base.</p>
-
-<p><img src="/images/Dock.png" alt="" /></p>
-
-<p>There are three 130mm long x 6.35mm square spaces internal to the base to allow weight to be added mid-print.</p>
-
-<p>I was pretty worried about this working correctly - I had never designed or printed anything that must be paused mid-print. Other than being fairly inconvenient, it worked out great.</p>
-
-<p><img src="/images/2012-11-15+19.59.19.jpg" alt="" /></p>
-
-<p>I am very happy with how the dock turned out. It's well weighted and everything fits. I am holding off on final assembly (gluing the USB connector in place) until I discover the proper resistor value to put this phone into dock mode. I plan to use a fancy resistor box at work to accomplish this - I should have it done within the week.</p>
-
-<p><img src="/images/2012-11-16+00.35.22.jpg" alt="" /></p>
-
-      <p><a href="/2012/11/working-on-droid-razr-hd-maxx-case.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -442,26 +449,28 @@ git submodule update
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
-                          <li><a href="/archive#2014January">January, 2014</a></li>
-                          <li><a href="/archive#2013October">October, 2013</a></li>
-                          <li><a href="/archive#2013September">September, 2013</a></li>
-                          <li><a href="/archive#2013August">August, 2013</a></li>
-                          <li><a href="/archive#2013July">July, 2013</a></li>
-                          <li><a href="/archive#2013May">May, 2013</a></li>
-                          <li><a href="/archive#2013April">April, 2013</a></li>
-                          <li><a href="/archive#2013March">March, 2013</a></li>
-                          <li><a href="/archive#2013February">February, 2013</a></li>
-                          <li><a href="/archive#2013January">January, 2013</a></li>
-                          <li><a href="/archive#2012December">December, 2012</a></li>
-                          <li><a href="/archive#2012November">November, 2012</a></li>
-                          <li><a href="/archive#2012October">October, 2012</a></li>
-                          <li><a href="/archive#2012September">September, 2012</a></li>
-                          <li><a href="/archive#2012May">May, 2012</a></li>
-                          <li><a href="/archive#2012April">April, 2012</a></li>
-                          <li><a href="/archive#2012February">February, 2012</a></li>
-                          <li><a href="/archive#2012January">January, 2012</a></li>
-                          <li><a href="/archive#2011July">July, 2011</a></li>
-                          <li><a href="/archive#2011May">May, 2011</a></li>
+                          <li><a href="/archive#20143">March, 2014</a></li>
+                          <li><a href="/archive#20142">February, 2014</a></li>
+                          <li><a href="/archive#20141">January, 2014</a></li>
+                          <li><a href="/archive#201310">October, 2013</a></li>
+                          <li><a href="/archive#20139">September, 2013</a></li>
+                          <li><a href="/archive#20138">August, 2013</a></li>
+                          <li><a href="/archive#20137">July, 2013</a></li>
+                          <li><a href="/archive#20135">May, 2013</a></li>
+                          <li><a href="/archive#20134">April, 2013</a></li>
+                          <li><a href="/archive#20133">March, 2013</a></li>
+                          <li><a href="/archive#20132">February, 2013</a></li>
+                          <li><a href="/archive#20131">January, 2013</a></li>
+                          <li><a href="/archive#201212">December, 2012</a></li>
+                          <li><a href="/archive#201211">November, 2012</a></li>
+                          <li><a href="/archive#201210">October, 2012</a></li>
+                          <li><a href="/archive#20129">September, 2012</a></li>
+                          <li><a href="/archive#20125">May, 2012</a></li>
+                          <li><a href="/archive#20124">April, 2012</a></li>
+                          <li><a href="/archive#20122">February, 2012</a></li>
+                          <li><a href="/archive#20121">January, 2012</a></li>
+                          <li><a href="/archive#20117">July, 2011</a></li>
+                          <li><a href="/archive#20115">May, 2011</a></li>
                     </ul>
                 </aside>
             </div>

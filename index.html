@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-03-01T00:12:55.2216446-05:00" />
+    <meta http-equiv="last-modified" content="2014-03-08T19:29:25.3968899-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/" />
@@ -33,6 +33,141 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/03/designing-a-hotend-for-metal-fdm.html">Hotend for Metal FDM</a> 
+        <span>posted on 08 Mar 2014</span>
+      </h1> 
+      
+      <h2>Hotend &amp; nozzle metal</h2>
+
+<ul>
+<li>Able to withstand 700-1100C</li>
+<li>Not going to interact badly with molten aluminum, zinc, or copper</li>
+<li>Hard enough that a 0.5mm hole is still 0.5mm after extruding a bunch of molten metal through it</li>
+</ul>
+
+<h2>Hotend design</h2>
+
+<ul>
+<li>Thermal expansion from worst metal shouldn't cause a jam
+<ul>
+<li>worst case expansion * worst case tolerance + magic extra tolerance</li>
+</ul></li>
+<li>Minimum amount of metal is molten at any given moment.</li>
+</ul>
+
+<h2>Nozzle design</h2>
+
+<ul>
+<li>Metal should extrude with minimum turbulence
+<ul>
+<li>Nozzle 10x longer than diameter of extrusion?</li>
+</ul></li>
+</ul>
+
+<h2>Coldend design</h2>
+
+<ul>
+<li>Thermal transfer up filament should be minimized</li>
+</ul>
+
+<h2>Heat break design</h2>
+
+<ul>
+<li>Heat leakage into the coldend should be minimized</li>
+<li>Filament must be supported enough that it won't bend under the pressure of extrusion
+<ul>
+<li>Ceramic sheath? Stainless tube?</li>
+</ul></li>
+<li>If the heat break can't withstand the full pressure of extrusion, the hotend will need to be anchored to the coldend externally</li>
+</ul>
+
+<h2>Extruder design</h2>
+
+<ul>
+<li>Filament should not be marred (eg, by a sharp gear) to minimize the risk of jamming in the cold end or damaging any components</li>
+<li>Filament must be pushed with enough force to extrude
+<ul>
+<li>Need to find data on how soft metals are at various temps</li>
+</ul></li>
+</ul>
+
+<h2>Filament research</h2>
+
+<ul>
+<li>Find filament of multiple metals in the same diameter &amp; tolerance (at/near extrusion temperature after thermal expansion)</li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>In my mind, this hotend looks a lot like an E3d hotend made from steel or titanium, but with a directly mounted extruder and a lot more cooling (possibly water cooled?). It would be heated with a high temp heater cartridge (maybe?) and have a much heftier heat break, possibly supplemented by external thin steel wires.</p>
+
+<h2>General questions</h2>
+
+<ul>
+<li>How will molten aluminum interact with titanium? Would it be an appropriate nozzle material? How about steel?</li>
+<li>Any idea how to figure out a graph of extrusion force vs temperature for aluminum (w/ a given diameter nozzle)?</li>
+<li>How horrible is it going to be to deal with thermal expansion across this entire design? If more than one metal is used, everything needs to be matched up for expansion, yes?</li>
+</ul>
+
+<p><img src="http://e3d-online.com/image/data/v5/hotside.jpg" alt="" /> </p>
+
+      <p><a href="/2014/03/designing-a-hotend-for-metal-fdm.html">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/02/kinivo-bluetooth-module.html">Kinivo Bluetooth module</a> 
+        <span>posted on 28 Feb 2014</span>
+      </h1> 
+      
+      <h2>Module Overview</h2>
+
+<p><a href="http://www.amazon.com/Kinivo-BTC450-Bluetooth-Hands-Free-Input/dp/B009NLTW60/ref=sr_1_1?s=electronics&amp;ie=UTF8&amp;tag=generi0c-20&amp;qid=1393638641&amp;sr=1-1&amp;keywords=btc450"><img src="/images/kinivomodule.jpg" alt="" /></a></p>
+
+<p><a href="http://www.amazon.com/Kinivo-BTC450-Bluetooth-Hands-Free-Input/dp/B009NLTW60/ref=sr_1_1?s=electronics&amp;ie=UTF8&amp;tag=generi0c-20&amp;qid=1393638641&amp;sr=1-1&amp;keywords=btc450">Kinivo BTC 450</a></p>
+
+<ul>
+<li>Held together with four T6 screws</li>
+<li>Contains a <a href="http://www.k-mate.com/en/displayproduct001.html?proID=101813595&amp;proTypeID=100128337&amp;fid=100128337">KMBT007A bluetooth module</a></li>
+<li>Runs at 3.3v</li>
+</ul>
+
+<p><img src="/images/usbbtpcb.jpg" alt="" /></p>
+
+<h3>Wiring</h3>
+
+<p>Audio wire colors: Left: blue, Gnd: red/copper twist, Right: green</p>
+
+<p>Power wire colors: Positive: red, Negative: copper (both are in thin plastic sheaths)</p>
+
+<h3>IO</h3>
+
+<p>All switches are NO with 10k pullups to 3.3v</p>
+
+<p>Has exposed SPI and UART ports</p>
+
+<hr />
+
+<h2>Remote Overview</h2>
+
+<p><a href="http://www.amazon.com/Metra-Universal-Steering-Control-Interface/dp/B0052HXPAI/?_encoding=UTF8&amp;tag=generi0c-20&amp;camp=1789&amp;creative=9325&amp;linkCode=ur2"><img src="/images/axxessmodule.jpg" alt="" /></a></p>
+
+<p><a href="http://www.amazon.com/Metra-Universal-Steering-Control-Interface/dp/B0052HXPAI/?_encoding=UTF8&amp;tag=generi0c-20&amp;camp=1789&amp;creative=9325&amp;linkCode=ur2">Axxess RF remote</a></p>
+
+<p>Been running for almost two years on the same battery! Surprisingly, the plastic is visibly worn where it's been rubbing under my radio.</p>
+
+<ul>
+<li>8 buttons</li>
+<li>Powered by a coin cell</li>
+<li>uC is an rfPIC</li>
+<li>Receiver uses a PIC18F2520</li>
+</ul>
+
+<p>I used a custom firmware to toggle test points on the receiver when buttons are pressed. I preserved all radio communications so I can still control the radio station or CD track (as if I'd ever want to).</p>
+
+      <p><a href="/2014/02/kinivo-bluetooth-module.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2014/01/mono-for-beaglebone-black.html">Building Mono on a BeagleBone Black (Hard Float)</a> 
@@ -230,79 +365,6 @@ After this operation, 32.8 MB disk space will be freed.
 
       <p><a href="/2013/04/converting-lmde-into-debian-testing.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2013/04/converting-linux-mint-debian-edition.html">Converting Linux Mint Debian Edition (LMDE) into Debian Testing</a> 
-        <span>posted on 24 Apr 2013</span>
-      </h1> 
-      
-      <p>Linux Mint Debian Edition is built on Debian Testing. After months of dealing with flaky mirrors and a not-so-impressive distro, I decided it was time to flip the switch. (Other than Cinnamon and/or MATE, Mint doesn't offer much.)</p>
-
-<p>I am going to attempt to perform an in-place switch by modifying my sources.list. We'll see how it turns out - either it will work, or I'll be installing Debian Testing later tonight.</p>
-
-<p>I generated a new sources.list from <a href="http://debgen.simplylinux.ch/">http://debgen.simplylinux.ch/</a>.</p>
-
-<p>Old sources.list:</p>
-
-<pre><code>deb http://packages.linuxmint.com/ debian main upstream import
-deb http://mirror.metrocast.net/linuxmint-debian/latest testing main contrib non-free
-deb http://mirror.metrocast.net/linuxmint-debian/latest/security testing/updates main contrib non-free
-deb http://mirror.metrocast.net/linuxmint-debian/latest/multimedia testing main non-free
-</code></pre>
-
-<p>New sources.list (for x86-64)</p>
-
-<pre><code>deb http://ftp.us.debian.org/debian testing main contrib non-free
-deb http://ftp.debian.org/debian/ wheezy-updates main contrib non-free
-deb http://security.debian.org/ wheezy/updates main contrib non-free
-
-# Third Parties Repos
-
-# deb-multimedia.org
-deb http://www.deb-multimedia.org squeeze main non-free
-
-# Oracle VM VirtualBox # Don't care to have right now.
-# deb http://download.virtualbox.org/virtualbox/debian wheezy contrib non-free
-</code></pre>
-
-<p>I'll check in later and let you know how it goes! </p>
-
-      <p><a href="/2013/04/converting-linux-mint-debian-edition.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2013/03/bridging-upverter-and-oshpark.html">Bridging Upverter and OSHPark</a> 
-        <span>posted on 14 Mar 2013</span>
-      </h1> 
-      
-      <p><a href="http://upverter.com/">Upverter</a> is the best online circuit creation platform, and OSHPark is one of the best circuit board production services. Put the two together, and you should find bliss - but you won't. Anyone who has had an Upverter-designed board built by OSHPark will be familiar with this problem. When you download gerbers from Upverter, you get a zip full of files like bottom<em>copper.ger and top</em>paste.ger. OSHPark, on the other hand, wants names like Bottom Layer.ger and Board Outline.ger.</p>
-
-<p>Here are the name transformations - each pair consists of the Upverter name followed by the OSHPark name. If a file isn't listed here, it should not be uploaded to OSHPark.</p>
-
-<pre><code>var filepairs = new TupleList&lt;string, string&gt;
-{
- { "layers.cfg", "layers.cfg" },
- { "hole.ger", "Drills.xln" },
- { "mechanical_details.ger", "Board Outline.ger" },
-
- { "top_copper.ger", "Top Layer.ger" },
- { "top_silkscreen.ger", "Top Silk Screen.ger" },
- { "top_solder_mask.ger", "Top Solder Mask.ger" },
-
- { "bottom_copper.ger", "Bottom Layer.ger" },
- { "bottom_silkscreen.ger", "Bottom Silk Screen.ger" },
- { "bottom_solder_mask.ger", "Bottom Solder Mask.ger" }
-};
-</code></pre>
-
-<p>I wrote a quick C# command line app to do the transformation automatically. If you drop a Upverter zip onto the app, it will create an <em>osh_</em> zipfile using the OSHPark naming conventions.</p>
-
-<p>You can find the source and the binary at <a href="https://bitbucket.org/George_Hahn/upvertertooshpark">https://bitbucket.org/George_Hahn/upvertertooshpark</a>.</p>
-
-<p>BONUS: Create a shortcut to the binary in the <code>%APPDATA%\Microsoft\Windows\SendTo</code> directory! This will allow you to right click on an Upverter zip and choose Send to: OSHPark!</p>
-
-      <p><a href="/2013/03/bridging-upverter-and-oshpark.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -340,26 +402,28 @@ deb http://www.deb-multimedia.org squeeze main non-free
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
-                          <li><a href="/archive#2014January">January, 2014</a></li>
-                          <li><a href="/archive#2013October">October, 2013</a></li>
-                          <li><a href="/archive#2013September">September, 2013</a></li>
-                          <li><a href="/archive#2013August">August, 2013</a></li>
-                          <li><a href="/archive#2013July">July, 2013</a></li>
-                          <li><a href="/archive#2013May">May, 2013</a></li>
-                          <li><a href="/archive#2013April">April, 2013</a></li>
-                          <li><a href="/archive#2013March">March, 2013</a></li>
-                          <li><a href="/archive#2013February">February, 2013</a></li>
-                          <li><a href="/archive#2013January">January, 2013</a></li>
-                          <li><a href="/archive#2012December">December, 2012</a></li>
-                          <li><a href="/archive#2012November">November, 2012</a></li>
-                          <li><a href="/archive#2012October">October, 2012</a></li>
-                          <li><a href="/archive#2012September">September, 2012</a></li>
-                          <li><a href="/archive#2012May">May, 2012</a></li>
-                          <li><a href="/archive#2012April">April, 2012</a></li>
-                          <li><a href="/archive#2012February">February, 2012</a></li>
-                          <li><a href="/archive#2012January">January, 2012</a></li>
-                          <li><a href="/archive#2011July">July, 2011</a></li>
-                          <li><a href="/archive#2011May">May, 2011</a></li>
+                          <li><a href="/archive#20143">March, 2014</a></li>
+                          <li><a href="/archive#20142">February, 2014</a></li>
+                          <li><a href="/archive#20141">January, 2014</a></li>
+                          <li><a href="/archive#201310">October, 2013</a></li>
+                          <li><a href="/archive#20139">September, 2013</a></li>
+                          <li><a href="/archive#20138">August, 2013</a></li>
+                          <li><a href="/archive#20137">July, 2013</a></li>
+                          <li><a href="/archive#20135">May, 2013</a></li>
+                          <li><a href="/archive#20134">April, 2013</a></li>
+                          <li><a href="/archive#20133">March, 2013</a></li>
+                          <li><a href="/archive#20132">February, 2013</a></li>
+                          <li><a href="/archive#20131">January, 2013</a></li>
+                          <li><a href="/archive#201212">December, 2012</a></li>
+                          <li><a href="/archive#201211">November, 2012</a></li>
+                          <li><a href="/archive#201210">October, 2012</a></li>
+                          <li><a href="/archive#20129">September, 2012</a></li>
+                          <li><a href="/archive#20125">May, 2012</a></li>
+                          <li><a href="/archive#20124">April, 2012</a></li>
+                          <li><a href="/archive#20122">February, 2012</a></li>
+                          <li><a href="/archive#20121">January, 2012</a></li>
+                          <li><a href="/archive#20117">July, 2011</a></li>
+                          <li><a href="/archive#20115">May, 2011</a></li>
                     </ul>
                 </aside>
             </div>
