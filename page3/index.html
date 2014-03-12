@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-03-08T21:04:02.1172325-05:00" />
+    <meta http-equiv="last-modified" content="2014-03-11T23:03:57.8307214-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page3/" />
@@ -13,7 +13,9 @@
         <header id="masthead" class="site-header fancy-container lightgreen" role="banner">
             <hgroup>
                 <h1 class="site-title"><a href="/" title="genericmaker.com" rel="home">Generic Maker</a></h1>
+                <h2><small>Written by George Hahn</small></h2>
             </hgroup>
+            <img src="http://www.gravatar.com/avatar/48c0c409de48c55d7e1f1e3f151aa600?s=200" />
             <nav role="navigation" class="site-navigation main-navigation">
                 <h1 class="assistive-text">Menu</h1>
                 <div class="assistive-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
@@ -33,6 +35,143 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/12/in-support-of-net-on-embedded-systems.html">In Support of .Net on Embedded Systems</a> 
+        <span>posted on 29 Dec 2012</span>
+      </h1> 
+      
+      <p>I am going to address some of the hostility towards .Net on embedded systems - known as the .Net Micro framework, or NetMF.</p>
+
+<p>Let's take a quick look at the benefits of .Net:</p>
+
+<ul>
+<li>Better developer productivity</li>
+<li>Visual Studio &amp; plugins</li>
+<li>Strong debugging environment</li>
+<li>Huge FOSS code ecosystem</li>
+</ul>
+
+<p>The costs:</p>
+
+<ul>
+<li>Loss of deterministic real time behavior</li>
+<li>RAM</li>
+<li>Flash</li>
+</ul>
+
+<p>Judging by this quick cost-benefit analysis, NetMF doesn't make sense in an environment where hard real time is an absolute requirement. Other than that, RAM and flash are cheap. In many cases, there is a 2 to 4 dollar difference between non-NetMF capable processors and those that are. Seems like a no-brainer for any quick-turn, low quantity shop.</p>
+
+<p>Let's take a look at some basic code to toggle a pin in C:</p>
+
+<pre><code>#include &lt;mfr_library.h&gt;
+
+int main (void)
+{
+    LED_TRIS_BIT = PIN_OUTPUT;
+
+    while(1)
+    {
+        LED ^= 1;
+    }
+}
+</code></pre>
+
+<p>And in NetMF:</p>
+
+<pre><code>using System;
+using Microsoft.SPOT;
+using Microsoft.SPOT.Hardware;
+
+namespace PinToggling
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            OutputPort port = new OutputPort(Cpu.Pin.GPIO_Pin1, false);
+            bool value = false;
+
+            while (true)
+            {
+                port.Write(value);
+                value ^= true;
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>Ignoring the header file(s) for the C code, this example shows a nearly 2x increase in the number of lines required.</p>
+
+<p>Now for something that should also be pretty easy, toggling an LED every second:</p>
+
+<pre><code>#include &lt;mfr_library.h&gt;
+
+byte _1ms_tick;
+
+INTERRUPT_HANDLER OneMillisecondTick (void)
+{
+    _1ms_tick = 1;
+}
+
+void WaitOneSecond (void)
+{
+    unsigned short counter;
+    for(counter = 0; counter &lt; 1000; counter++)
+    {
+        while(!_1ms_tick)
+            NOP();
+        _1ms_tick = 0;
+    }
+}
+
+int main (void)
+{
+    Configure_Interrupt();
+    LED_TRIS_BIT = PIN_OUTPUT;
+
+    while(1)
+    {
+        LED = !LED;
+        WaitOneSecond();
+    }
+}
+</code></pre>
+
+<p>And in NetMF:</p>
+
+<pre><code>using System;
+using System.Threading;
+using Microsoft.SPOT;
+using Microsoft.SPOT.Hardware;
+
+namespace PinToggling
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            OutputPort port = new OutputPort(Cpu.Pin.GPIO_Pin1, false);
+            bool value = false;
+
+            while (true)
+            {
+                Thread.Sleep(1000);
+                port.Write(value);
+                value ^= true;
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>And here's where the benefits of C# start to become apparent. Adding a delay only took one extra line, whereas it took 20 in C. Here, a user would have to know how interrupts work on a specific processor. They would also have to know how the compiler has defined the various numeric types. Is it byte, BYTE, uint8, char, or something different? C# doesn't hide all of this complexity, but it does standardize it. Need eight unsigned bits? Use an unsigned byte, easy. Need 32 signed bits? Use an int. Again, easy.</p>
+
+<p>Less memorization for the developer means maintainable code, written sooner, and with fewer bugs. That is why embedded systems should be developed on the .Net Micro Framework. </p>
+
+      <p><a href="/2012/12/in-support-of-net-on-embedded-systems.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2012/12/aspnet-newbie-protip.html">ASP.Net Newbie Protip</a> 
@@ -395,20 +534,6 @@ sudo make install
 <p><img src="/images/IMG_20121120_223042_787.jpg" alt="" /></p>
 
       <p><a href="/2012/11/extemporaneous-project-ingress-art.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/11/apple-30-pin-connector-giveaway.html">Apple 30 Pin Connector Giveaway</a> 
-        <span>posted on 19 Nov 2012</span>
-      </h1> 
-      
-      <p>I have had these connectors sitting around for months - it's time they move on to a better home! Leave a comment here or catch me on Twitter at <a href="https://twitter.com/George_Hahn">@George_Hahn</a></p>
-
-<p>![][0]</p>
-
-<p>[0]: /images/2012-11-19 20.32.13.jpg</p>
-
-      <p><a href="/2012/11/apple-30-pin-connector-giveaway.html">Read more...</a></p>
     </li>
   </ul> 
 
