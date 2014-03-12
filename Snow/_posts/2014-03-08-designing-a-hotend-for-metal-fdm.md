@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hotend for Metal FDM 
-category: hardware, brainstorming
+category: 3d printing, hardware, brainstorming
 ---
 
 ## Hotend & nozzle metal
