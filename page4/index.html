@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-04-01T23:10:58.7883904-04:00" />
+    <meta http-equiv="last-modified" content="2014-05-11T15:42:39.9918511-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page4/" />
@@ -35,6 +35,49 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/11/building-gmediarender-on-lmde.html">Building GMediaRender on LMDE</a> 
+        <span>posted on 29 Nov 2012</span>
+      </h1> 
+      
+      <p>Note: I don't know that this will work for you. It builds fine on my system, but <em>gmediarender --list-outputs</em> shows only "Dummy output module (default)". If you have better luck, let me know!</p>
+
+<p>This is a short tutorial for building GMediaRender on Linux Mint Debian Edition.</p>
+
+<p>I used Henner Zeller's <em>gmrender-resurrect</em> project: he has taken the time to add some great features, for example, volume control and seeking support.</p>
+
+<p>You'll want to grab the source for LibUPNP
+LibUPNP: <a href="http://sourceforge.net/projects/pupnp/files/latest/download">http://sourceforge.net/projects/pupnp/files/latest/download</a></p>
+
+<p>First, extract LibUPNP to an accessible directory</p>
+
+<p>Build it and install the binary to your system directory</p>
+
+<pre><code>cd libupnp-1.6.17
+./configure
+make
+sudo make install
+</code></pre>
+
+<p>Get the source for <em>gmrender-resurrect</em></p>
+
+<pre><code>git clone git://github.com/hzeller/gmrender-resurrect.git
+cd gmrender-resurrect
+</code></pre>
+
+<p><strong>Edit configure.in, add "-lm" to CFLAGS (near line 22)</strong></p>
+
+<p>Build and install</p>
+
+<pre><code>./autogen.sh
+./configure
+make
+sudo make install  
+</code></pre>
+
+      <p><a href="/2012/11/building-gmediarender-on-lmde.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2012/11/extemporaneous-project-ingress-art.html">Extemporaneous Project: Ingress Art</a> 
@@ -342,28 +385,6 @@ donkey</p>
 
       <p><a href="/2012/09/njit-high-school-programming-contest.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/05/unboxing-energy-micro-efm32-tiny-gecko.html">Unboxing: Energy Micro EFM32 Tiny Gecko Starter Kit</a> 
-        <span>posted on 11 May 2012</span>
-      </h1> 
-      
-      <p>Today I received a Tiny Gecko starter kit (http://www.energymicro.com/tools/efm32-tiny-gecko-starter-kit)</p>
-
-<p>Thanks to <a href="http://www.eevblog.com/">EEVBlog</a> and <a href="http://energymicro.com/">EnergyMicro</a> for the kit!</p>
-
-<p><img src="/images/DSC_0470.JPG" alt="" /></p>
-
-<p><img src="/images/DSC_0471.JPG" alt="" /></p>
-
-<p><img src="/images/DSC_0472.JPG" alt="" /></p>
-
-<p><img src="/images/DSC_0473.JPG" alt="" /></p>
-
-<p><img src="/images/DSC_0474.JPG" alt="" /></p>
-
-      <p><a href="/2012/05/unboxing-energy-micro-efm32-tiny-gecko.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -403,6 +424,7 @@ donkey</p>
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2014May">May, 2014</a></li>
                           <li><a href="/archive#2014April">April, 2014</a></li>
                           <li><a href="/archive#2014March">March, 2014</a></li>
                           <li><a href="/archive#2014February">February, 2014</a></li>

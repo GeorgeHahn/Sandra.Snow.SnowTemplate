@@ -6,7 +6,7 @@
     <meta http-equiv="last-modified" content="2014-05-11T15:42:39.9918511-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://www.genericmaker.com/2013/01/moonjar-concept.html" />
+    <link rel="canonical" href="http://www.genericmaker.com/2014/05/fixing-markdownpad-livepreview-high-dpi.html" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -35,11 +35,12 @@
                   
 
 <div id="post">
-    <h1>MoonJar Concept</h1>
+    <h1>Fixing MarkdownPad live preview on Lenovo Yoga 2 Pro (and other high DPI screens)</h1>
 
     <div class="post-note">
-      posted on 14 Jan 2013
-       | <a href="/category/pictures">pictures</a>
+      posted on 11 May 2014
+       | <a href="/category/tools">tools</a>
+       | <a href="/category/bugs">bugs</a>
       
       <div class="addthis_toolbox addthis_default_style" style="float:right;">
         <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -52,9 +53,11 @@
     
     
         
-    <p><img src="/images/MoonJar_Final.jpg" alt="" /></p>
+    <p>Here's a quick and dirty font size fix I applied to the Markdownpad-github.css file. I just switched all font-size items to use <code>em</code> instead of <code>px</code>. It probably formats some things totally incorrectly, but it's good enough for me for the moment.</p>
 
-<p>I drew this out a few years ago. The design is all wrong, but I like the concept. </p>
+<p>To use, open Tools -> Options -> Stylesheets and replace the contents of <code>markdownpad-github.css</code> (or create a new stylesheet)</p>
+
+<p><a href="https://gist.github.com/GeorgeHahn/46d809262f3be67ea13e">See gist</a></p>
 
 
     <div id="disqus_thread"></div>
@@ -64,14 +67,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://www.genericmaker.com/2013/01/moonjar-concept.html';
+                this.page.url = 'http://www.genericmaker.com/2014/05/fixing-markdownpad-livepreview-high-dpi.html';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'genericmaker';
-    var disqus_url = 'http://www.genericmaker.com/2013/01/moonjar-concept.html';
+    var disqus_url = 'http://www.genericmaker.com/2014/05/fixing-markdownpad-livepreview-high-dpi.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
