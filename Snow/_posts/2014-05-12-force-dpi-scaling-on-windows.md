@@ -21,3 +21,17 @@ To maintain Windows 8 compatibility, I didn't hook [SetProcessDpiAwareness](http
 To use DPIMangler yourself, get the [binaries here](https://github.com/GeorgeHahn/DPIMangler/releases/tag/v1.0.0). Next, get [CFF Explorer](http://www.ntcore.com/exsuite.php) or a similar tool. Open the target executable in CFF Explorer, go to the Import Adder, and click Add. Select the appropriate DPIMangler binary, then choose any exported function and click Import By Name. Next, click Rebuild Import Table and save the application. That's it! Next time you run the program, calls to SetProcessDPIAware will be blocked.
 
 If this isn't working for you, make sure the application doesn't declare DpiAware in its manifest. Additionally, it's possible the program is calling SetProcessDPIAwareness, which I haven't hooked here. If that's the case, feel free to [contact me on Twitter](https://twitter.com/George_Hahn/), and I'll try to get a new release out.
+
+# Results
+
+Before; no scaling
+
+![][0]
+
+After; forced scaling
+
+![][1]
+
+[0]: /images/OrCADNoScaling.png
+[1]: /images/OrCADScaled.png
+
