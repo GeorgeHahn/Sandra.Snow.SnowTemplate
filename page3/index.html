@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-05-11T15:42:39.9918511-04:00" />
+    <meta http-equiv="last-modified" content="2014-05-12T14:00:11.0500177-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page3/" />
@@ -35,6 +35,166 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2013/01/circuitsio-vs-upverter.html">Circuits.IO vs Upverter</a> 
+        <span>posted on 19 Jan 2013</span>
+      </h1> 
+      
+      <p><img src="/images/circuitsioVSupverter.jpg" alt="" /></p>
+
+<p>There are currently two big players in the online <a href="http://en.wikipedia.org/wiki/Electronic_design_automation">EDA</a> space. Let's put them side by side and see which one comes out on top!</p>
+
+<h1>General Features</h1>
+
+<p><img src="/images/UpverterAddComponent.png" alt="" /></p>
+
+<p><em>Upverter gives detailed part information during selection</em></p>
+
+<h3>Upverter</h3>
+
+<ul>
+<li>Octopart integration</li>
+<li>Bill of materials with pricing through Octopart</li>
+<li>GitHub integration</li>
+<li>Open format files - export to KiCad, gEDA, Fritzing, Eagle, and more.</li>
+<li>Circuit import</li>
+<li>All changes are recorded</li>
+<li>Custom comment system</li>
+<li>Said to have simulation capability; was unable to get it to work</li>
+</ul>
+
+<p><img src="/images/CircuitIOAddComponent.png" alt="" /></p>
+
+<p><em>Circuits.io gives a brief summary of each part</em></p>
+
+<h3>Circuits.io</h3>
+
+<ul>
+<li>Octopart integration</li>
+<li>Bill of materials with pricing through Octopart</li>
+<li>Excellent tutorial videos</li>
+<li>Comments powered by DISQUS</li>
+</ul>
+
+<h2>Winner: Upverter</h2>
+
+<p>While both applications show part information from Octopart, Upverter's implementation is much more seamless. There is rarely a time where one must visit the Octopart website for additional information. Combined with their powerful open source import/export library, Upverter easily takes the crown for general features. Both apps have good BOM (bill of materials) and commenting implementations. It is worth noting that Circuit.io's comments are powered by DISQUS, and - as usual - they feel like glued on third party controls.</p>
+
+<h1>Schematic Capture</h1>
+
+<p><img src="/images/CircuitIOAlignment.png" alt="" /></p>
+
+<p><em>Circuit.io's part alignment feature</em></p>
+
+<h3>Circuits.io</h3>
+
+<ul>
+<li>Innovative part alignment feature</li>
+<li>Generic parts</li>
+<li>Can't manually place wires</li>
+<li>Can't graphically place signal lines</li>
+<li>Cannot change component reference description (particularly annoying because part prefixes cannot be changed without creating a new device)</li>
+<li>No visible grid</li>
+<li>Parts are zero indexed with no way to change</li>
+</ul>
+
+<h3>Upverter</h3>
+
+<ul>
+<li>Multiple selection</li>
+<li>Visible grid</li>
+<li>Can edit reference descriptions</li>
+<li>Substandard search tool</li>
+</ul>
+
+<h2>Winner: Upverter</h2>
+
+<p>With multiple part selection and a visible grid, drawing a circuit in Upverter feels identical to drawing a circuit in a desktop EDA application. Circuits.io departs from the feel of traditional EDA applications, but does so in a very intuitive way. I was particularly impressed with their part alignment tool - something I've enjoyed in GUI designers in the past. The problem with Circuit.io's schematic capture is that expected features like part editing were nowhere to be found. Another big pet peeve of mine was that signal wires could not be moved manually. While I love the idea of having one less thing to worry about, I quickly found myself tweaking the placement of parts just to make the wires look less tangled. Both tools have a lot of potential, but they are going to need some features before they will be usable in larger designs - for example, neither has a way to define a bus with multiple signal wires.</p>
+
+<h1>Circuit Board Layout</h1>
+
+<p><img src="/images/UpverterLayout.png" alt="" /></p>
+
+<p><em>Test layout from Upverter</em></p>
+
+<h3>Upverter</h3>
+
+<ul>
+<li>Multiple selection</li>
+<li>Visible grid w/ snapping</li>
+<li>Custom grid sizes</li>
+<li>Custom vias</li>
+<li>Doesn't give a list of premade packages for all parts</li>
+<li>Polyfills are complicated to use (I had to ask Upverter support how to use them. Apparently this tool was launched recently, so we can expect improvements soon.)</li>
+<li>Had some trouble with generic parts - could not add a footprint for the built-in BJTs</li>
+<li>Cannot restore deleted reference descriptor text</li>
+<li>Added text size cannot be changed</li>
+<li>Part alignment marks are visually intrusive</li>
+</ul>
+
+<p><img src="/images/CircuitsIOLayout.png" alt="" /></p>
+
+<p><em>Test layout from Circuits.io</em></p>
+
+<h3>Circuits.io</h3>
+
+<ul>
+<li>Excellent part alignment tool</li>
+<li>Polyfills are easy to create and are awesome by default</li>
+<li>Gives a list of available packages for all parts</li>
+<li>Keeps all text facing the same direction</li>
+<li>Circuit board outline can be dragged around
+Test layout from Circuits.io</li>
+<li>Initial rat's nest creation is very tedious - parts are stacked on top of each other and can be hard to select (and easy to create traces when attempting to drag)</li>
+<li>No apparent way to add text labels</li>
+<li>Traces are hard to delete (select trace, press escape, press delete)</li>
+<li>Dragging components attempts to keep traces intact. Cute, but often painful.</li>
+<li>Trace widths cannot be changed on the fly</li>
+<li>No way to view net names</li>
+</ul>
+
+<h2>Winner: Circuits.io</h2>
+
+<p>Circuits.io has a clear lead in circuit board layout. Their friendly part alignment tool is present, along with an intuitive implementation of polyfills (for ground planes, etc). The most glaring issue with both tools was trace placement - traces are universally troublesome to place, move, and tear up. Circuits.io was slightly worse in this regard - to tear up a trace, one must select it, press ESC to cancel drawing a new trace, and then press delete. To be competitive with desktop based layout tools, both websites will need significant work in this area.</p>
+
+<h1>Platform</h1>
+
+<h3>Circuits.io</h3>
+
+<ul>
+<li>Collaboration</li>
+<li>Funding</li>
+<li>Sharing</li>
+<li>Manufacturing (PCBs only)</li>
+</ul>
+
+<h3>Upverter</h3>
+
+<ul>
+<li>Collaboration</li>
+<li>Sharing</li>
+<li>Manufacturing (PCBs only)</li>
+</ul>
+
+<h2>Winner: Circuits.io</h2>
+
+<p>This is a category where web applications really start to show their power. With collaboration and sharing built in from the start, both websites are natural choices for open source hardware. Circuits.io has an advantage in their choice of business model - they are building a manufacturing and funding platform that will enable hobbyists and help fund further development. On the other hand, Upverter's business model is largely centered around people and businesses paying for private design slots and simulation CPU cycles. While their tool is passable for hobbyist use, they are far from a state where they can compete with desktop based tools. Upverter also provides PCB manufacturing facilities, but it feels like a second class feature.</p>
+
+<h1>Overall Winner: Circuits.io</h1>
+
+<p>Both tools are equally usable and both have their share of annoyances and shortcomings. While it is hard to pick one based on features alone, Circuits.io is an easy choice when the overall platform is considered. Circuits.io currently has a more solid business model than Upverter. Even so, that could change overnight if, for example, Upverter joined up with Tindie as a funding and commerce platform.</p>
+
+<p>To get familiar with each application, I drew a simple 2 transistor LED blinker circuit. I kept the circuit layout single sided. Due to the design of the circuit, a trace must either cross between leads on a component or move to a second signal plane. In both layouts, I routed this trace between the pins of a SOT23 transistor - this goes against best practices, so I would warn against manufacture of either design.</p>
+
+<p><a href="http://www.circuits.io/circuits/1837">Circuits.io test project</a></p>
+
+<p><a href="https://upverter.com/GeorgeHahn/ebe6364f9b68e3d5/Upverter-Comparison/">Upverter test project</a></p>
+
+<p><strong>Shout out to <a href="https://www.circuitlab.com/">CircuitLab</a> for having an excellent web based schematic capture and simulation application.</strong></p>
+
+      <p><a href="/2013/01/circuitsio-vs-upverter.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2013/01/moonjar-concept.html">MoonJar Concept</a> 
@@ -490,33 +650,6 @@ exec mono --runtime=v4.0 "/usr/local/lib/dbus-explorer/DBusExplorer.exe" "$@"
 </code></pre>
 
       <p><a href="/2012/12/building-dbus-explorer-on-lmde.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/11/a-new-furnace-is-born.html">A New Furnace is Born</a> 
-        <span>posted on 29 Nov 2012</span>
-      </h1> 
-      
-      <p>I was going to write a post about this, but it's been months and it still hasn't happened, so I'll just post the pictures for now.</p>
-
-<p><img src="/images/DSC_0001.JPG" alt="" />
-<img src="/images/DSC_0004.JPG" alt="" />
-<img src="/images/DSC_0005.JPG" alt="" />
-<img src="/images/DSC_0006.JPG" alt="" />
-<img src="/images/DSC_0010.JPG" alt="" />
-<img src="/images/DSC_0011.JPG" alt="" />
-<img src="/images/DSC_0018.JPG" alt="" />
-<img src="/images/DSC_0025.JPG" alt="" />
-<img src="/images/DSC_0028.JPG" alt="" />
-<img src="/images/DSC_0029.JPG" alt="" />
-<img src="/images/DSC_0030.JPG" alt="" />
-<img src="/images/DSC_0031.JPG" alt="" />
-<img src="/images/DSC_0032.JPG" alt="" />
-<img src="/images/DSC_0033.JPG" alt="" />
-<img src="/images/DSC_0034.JPG" alt="" />
-<img src="/images/DSC_0035.JPG" alt="" /></p>
-
-      <p><a href="/2012/11/a-new-furnace-is-born.html">Read more...</a></p>
     </li>
   </ul> 
 

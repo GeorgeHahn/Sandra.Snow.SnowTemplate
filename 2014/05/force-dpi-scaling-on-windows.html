@@ -6,7 +6,7 @@
     <meta http-equiv="last-modified" content="2014-05-12T14:00:11.0500177-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://www.genericmaker.com/2012/11/a-new-furnace-is-born.html" />
+    <link rel="canonical" href="http://www.genericmaker.com/2014/05/force-dpi-scaling-on-windows.html" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -35,12 +35,12 @@
                   
 
 <div id="post">
-    <h1>A New Furnace is Born</h1>
+    <h1>Force DPI Scaling on Windows</h1>
 
     <div class="post-note">
-      posted on 29 Nov 2012
-       | <a href="/category/pictures">pictures</a>
-       | <a href="/category/furnace">furnace</a>
+      posted on 12 May 2014
+       | <a href="/category/tools">tools</a>
+       | <a href="/category/bugs">bugs</a>
       
       <div class="addthis_toolbox addthis_default_style" style="float:right;">
         <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -53,24 +53,23 @@
     
     
         
-    <p>I was going to write a post about this, but it's been months and it still hasn't happened, so I'll just post the pictures for now.</p>
+    <p>Windows exposes a number of ways to disable DPI scaling, but no way to forcefully enable it. This is a problem when apps tell windows they support high DPI but then go on to render at exactly the same size - making for unreadable text and unclickable buttons.</p>
 
-<p><img src="/images/DSC_0001.JPG" alt="" />
-<img src="/images/DSC_0004.JPG" alt="" />
-<img src="/images/DSC_0005.JPG" alt="" />
-<img src="/images/DSC_0006.JPG" alt="" />
-<img src="/images/DSC_0010.JPG" alt="" />
-<img src="/images/DSC_0011.JPG" alt="" />
-<img src="/images/DSC_0018.JPG" alt="" />
-<img src="/images/DSC_0025.JPG" alt="" />
-<img src="/images/DSC_0028.JPG" alt="" />
-<img src="/images/DSC_0029.JPG" alt="" />
-<img src="/images/DSC_0030.JPG" alt="" />
-<img src="/images/DSC_0031.JPG" alt="" />
-<img src="/images/DSC_0032.JPG" alt="" />
-<img src="/images/DSC_0033.JPG" alt="" />
-<img src="/images/DSC_0034.JPG" alt="" />
-<img src="/images/DSC_0035.JPG" alt="" /></p>
+<p>I tried editing the application's manifest to set DpiAware to false, but that had no effect. Rather than switch my laptop's resolution every time I needed to use Cadence OrCAD, I did a little debugging with Ollydbg. Turns out, at some point, <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms633543%28v=vs.85%29.aspx">SetProcessDPIAware</a> is called. I already had an idea on how to solve it, so I didn't stick around to find the offending library (though I suspect it was being set by gdiplus).</p>
+
+<p>I probably could have patched OrCAD (less so gdiplus), but there is a far more flexible solution. All we need to do is hook the SetProcessDPIAware function as a program is starting, and we gain the ability to block the function call, leaving the target application no way to tell windows not to scale it.</p>
+
+<p>I used the <a href="https://github.com/RaMMicHaeL/minhook">minhook</a> library to build a DLL that will do just that. When it is loaded by an application, the code replaces SetProcessDPIAware with an implementation that does nothing.</p>
+
+<p>The DLL must be present right as the app is initializing, else it won't be able to block the function call. Rather than inject the DLL per se, I just used CFF Explorer to add it to the misbehaving application's import table. This causes it to be loaded as the application is starting up.</p>
+
+<p>To maintain Windows 8 compatibility, I didn't hook <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302122%28v=vs.85%29.aspx">SetProcessDpiAwareness</a>.</p>
+
+<h1>Using the tool</h1>
+
+<p>To use DPIMangler yourself, get the <a href="https://github.com/GeorgeHahn/DPIMangler/releases/tag/v1.0.0">binaries here</a>. Next, get <a href="http://www.ntcore.com/exsuite.php">CFF Explorer</a> or a similar tool. Open the target executable in CFF Explorer, go to the Import Adder, and click Add. Select the appropriate DPIMangler binary, then choose any exported function and click Import By Name. Next, click Rebuild Import Table and save the application. That's it! Next time you run the program, calls to SetProcessDPIAware will be blocked.</p>
+
+<p>If this isn't working for you, make sure the application doesn't declare DpiAware in its manifest. Additionally, it's possible the program is calling SetProcessDPIAwareness, which I haven't hooked here. If that's the case, feel free to <a href="https://twitter.com/George_Hahn/">contact me on Twitter</a>, and I'll try to get a new release out.</p>
 
 
     <div id="disqus_thread"></div>
@@ -80,14 +79,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://www.genericmaker.com/2012/11/a-new-furnace-is-born.html';
+                this.page.url = 'http://www.genericmaker.com/2014/05/force-dpi-scaling-on-windows.html';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'genericmaker';
-    var disqus_url = 'http://www.genericmaker.com/2012/11/a-new-furnace-is-born.html';
+    var disqus_url = 'http://www.genericmaker.com/2014/05/force-dpi-scaling-on-windows.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
