@@ -18,11 +18,11 @@
 
 &lt;h1&gt;Results&lt;/h1&gt;
 
-&lt;p&gt;Before; no scaling&lt;/p&gt;
+&lt;p&gt;Before; OrCAD on high DPI is practically unusable with no scaling&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="/images/OrCADNoScaling.png" alt="" /&gt;&lt;/p&gt;
 
-&lt;p&gt;After; forced scaling&lt;/p&gt;
+&lt;p&gt;After; much more usable with forced scaling&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="/images/OrCADScaled.png" alt="" /&gt;&lt;/p&gt;
 </description><pubDate>Mon, 12 May 2014 04:00:00 Z</pubDate><a10:updated>2014-05-12T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Windows exposes a number of ways to disable DPI scaling, but no way to forcefully enable it. This is a problem when apps tell windows they support high DPI but then go on to render at exactly the same size - making for unreadable text and unclickable buttons.&lt;/p&gt;
@@ -45,11 +45,11 @@
 
 &lt;h1&gt;Results&lt;/h1&gt;
 
-&lt;p&gt;Before; no scaling&lt;/p&gt;
+&lt;p&gt;Before; OrCAD on high DPI is practically unusable with no scaling&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="http://www.genericmaker.com/images/OrCADNoScaling.png" alt="" /&gt;&lt;/p&gt;
 
-&lt;p&gt;After; forced scaling&lt;/p&gt;
+&lt;p&gt;After; much more usable with forced scaling&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="http://www.genericmaker.com/images/OrCADScaled.png" alt="" /&gt;&lt;/p&gt;
 </a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2014/05/fixing-markdownpad-livepreview-high-dpi.html</guid><link>http://www.genericmaker.com/2014/05/fixing-markdownpad-livepreview-high-dpi.html</link><title>Fixing MarkdownPad live preview on Lenovo Yoga 2 Pro (and other high DPI screens)</title><description>&lt;p&gt;Here's a quick and dirty font size fix I applied to the Markdownpad-github.css file. I just switched all font-size items to use &lt;code&gt;em&lt;/code&gt; instead of &lt;code&gt;px&lt;/code&gt;. It probably formats some things totally incorrectly, but it's good enough for me for the moment.&lt;/p&gt;
