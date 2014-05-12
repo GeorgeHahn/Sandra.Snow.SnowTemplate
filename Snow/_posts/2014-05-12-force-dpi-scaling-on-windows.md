@@ -24,11 +24,11 @@ If this isn't working for you, make sure the application doesn't declare DpiAwar
 
 # Results
 
-Before; no scaling
+Before; OrCAD on high DPI is practically unusable with no scaling
 
 ![][0]
 
-After; forced scaling
+After; much more usable with forced scaling
 
 ![][1]
 
