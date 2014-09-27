@@ -1,4 +1,18 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title /><link>http://www.genericmaker.com/feed.xml</link><description /><item><guid isPermaLink="true">http://www.genericmaker.com/2014/05/force-dpi-scaling-on-windows.html</guid><link>http://www.genericmaker.com/2014/05/force-dpi-scaling-on-windows.html</link><title>Force DPI Scaling on Windows</title><description>&lt;p&gt;Windows exposes a number of ways to disable DPI scaling, but no way to forcefully enable it. This is a problem when apps tell windows they support high DPI but then go on to render at exactly the same size - making for unreadable text and unclickable buttons.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title /><link>http://www.genericmaker.com/feed.xml</link><description /><item><guid isPermaLink="true">http://www.genericmaker.com/2014/09/cc3200-launchpad.html</guid><link>http://www.genericmaker.com/2014/09/cc3200-launchpad.html</link><title>Playing with a TI CC3200 launchpad</title><description>&lt;p&gt;I recently got a new &lt;a href="http://canada.newark.com/texas-instruments/cc3200-launchxl/simplelink-cc3200-wi-fi-launchpad/dp/53X9474"&gt;TI CC3200&lt;/a&gt; launchpad from Newark. This weekend, I finally had the chance to play with it. One word - WOW.&lt;/p&gt;
+
+&lt;p&gt;Alright, so the demo that ships with the board isn't really impressive. What is impressive, however, is the CC3200 IC on the board. This chip costs about $9 in 1k quantities and contains everything you need to build a wifi connected embedded system. If you're familiar with the previous CC3000 wifi module, this IC is very similar, except it comes as a 64 pin QFN and includes an ARM Cortex-M4 applications processor.&lt;/p&gt;
+
+&lt;p&gt;I haven't had the chance to get Energia up and running with the CC3200 yet; I'm holding off until they ship a stable version with CC3200 support.&lt;/p&gt;
+
+&lt;p&gt;Since I haven't actually worked with this chip, I can't really give it a recommendation. Still, if you're designing a cost sensitive product that needs wifi connectivity, you would be crazy to leave this chip out of your evaluation list.&lt;/p&gt;
+</description><pubDate>Mon, 01 Sep 2014 04:00:00 Z</pubDate><a10:updated>2014-09-01T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;I recently got a new &lt;a href="http://canada.newark.com/texas-instruments/cc3200-launchxl/simplelink-cc3200-wi-fi-launchpad/dp/53X9474"&gt;TI CC3200&lt;/a&gt; launchpad from Newark. This weekend, I finally had the chance to play with it. One word - WOW.&lt;/p&gt;
+
+&lt;p&gt;Alright, so the demo that ships with the board isn't really impressive. What is impressive, however, is the CC3200 IC on the board. This chip costs about $9 in 1k quantities and contains everything you need to build a wifi connected embedded system. If you're familiar with the previous CC3000 wifi module, this IC is very similar, except it comes as a 64 pin QFN and includes an ARM Cortex-M4 applications processor.&lt;/p&gt;
+
+&lt;p&gt;I haven't had the chance to get Energia up and running with the CC3200 yet; I'm holding off until they ship a stable version with CC3200 support.&lt;/p&gt;
+
+&lt;p&gt;Since I haven't actually worked with this chip, I can't really give it a recommendation. Still, if you're designing a cost sensitive product that needs wifi connectivity, you would be crazy to leave this chip out of your evaluation list.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2014/05/force-dpi-scaling-on-windows.html</guid><link>http://www.genericmaker.com/2014/05/force-dpi-scaling-on-windows.html</link><title>Force DPI Scaling on Windows</title><description>&lt;p&gt;Windows exposes a number of ways to disable DPI scaling, but no way to forcefully enable it. This is a problem when apps tell windows they support high DPI but then go on to render at exactly the same size - making for unreadable text and unclickable buttons.&lt;/p&gt;
 
 &lt;p&gt;I tried editing the application's manifest to set DpiAware to false, but that had no effect. Rather than switch my laptop's resolution every time I needed to use Cadence OrCAD, I did a little debugging with Ollydbg. Turns out, at some point, &lt;a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms633543%28v=vs.85%29.aspx"&gt;SetProcessDPIAware&lt;/a&gt; is called. I already had an idea on how to solve it, so I didn't stick around to find the offending library (though I suspect it was being set by gdiplus).&lt;/p&gt;
 
@@ -498,14 +512,4 @@
 
 &lt;p&gt;One source, because I'm lazy:
 &lt;a href="http://www.ifixit.com/Info/why"&gt;IFIXIT&lt;/a&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/08/abandoning-efm32g210f128-breakout.html</guid><link>http://www.genericmaker.com/2013/08/abandoning-efm32g210f128-breakout.html</link><title>Abandoning the EFM32G210F128 Breakout</title><description>&lt;p&gt;&lt;img src="/images/efm32_breakout.jpg" alt="" /&gt;&lt;/p&gt;
-
-&lt;p&gt;I'm officially abandoning my Energy Micro EFM32G210F128 breakout. The design files are all on Upverter and are released into the public domain.&lt;/p&gt;
-
-&lt;p&gt;Energy Micro has microprocessors with native USB, so there's no reason for me to continue working on a design that needs an expensive USB-UART converter. This is a straightforward case of subpar research and some flawed reasoning coming to bite after the design work has been completed.&lt;/p&gt;
-</description><pubDate>Wed, 28 Aug 2013 04:00:00 Z</pubDate><a10:updated>2013-08-28T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;&lt;img src="http://www.genericmaker.com/images/efm32_breakout.jpg" alt="" /&gt;&lt;/p&gt;
-
-&lt;p&gt;I'm officially abandoning my Energy Micro EFM32G210F128 breakout. The design files are all on Upverter and are released into the public domain.&lt;/p&gt;
-
-&lt;p&gt;Energy Micro has microprocessors with native USB, so there's no reason for me to continue working on a design that needs an expensive USB-UART converter. This is a straightforward case of subpar research and some flawed reasoning coming to bite after the design work has been completed.&lt;/p&gt;
 </a10:content></item></channel></rss>

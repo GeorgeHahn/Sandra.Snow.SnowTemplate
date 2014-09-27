@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-05-12T14:39:43.9686033-04:00" />
+    <meta http-equiv="last-modified" content="2014-09-27T18:40:15.7557935-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page3/" />
@@ -35,6 +35,83 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2013/01/ugly-duck-model-binding-in-nancy.html">Ugly Duck Model Binding in Nancy</a> 
+        <span>posted on 27 Jan 2013</span>
+      </h1> 
+      
+      <p>It's been a while since I last wrote about my pet web development project. I have made a couple large changes - most importantly, I am now using RavenDB. The second big change is that I have begun dual booting Windows 8 as my development system. While running Windows in a VM is enough to get into Visual Studio, the little pauses began to drive me crazy. I went out and bought a 240 GB Corsair Force GT and couldn't be happier.</p>
+
+<p>Onto my main reason for writing this post - data binding!</p>
+
+<p>I ran into an issue when attempting to bind a HTTP POST to a complex type. The type I was attempting to bind to was <em>QuestionModel</em>, as defined below.</p>
+
+<pre><code>public class QuestionModel
+{
+ public string Question;
+ public List&lt;AnswerModel&gt; Answers;
+ public int CorrectAnswer;
+ public string Section;
+}
+
+public class AnswerModel
+{
+ public int Id;
+ public ChemicalModel ChemicalModel;
+}
+
+public class ChemicalModel
+{
+ public string SMILESString;
+}
+</code></pre>
+
+<p>Binding to the base <em>QuestionModel</em> variables was no problem, <em>this.Bind<QuestionModel>()</em> worked great. The problem came about in binding to the <em>List of AnswerModels</em> - namely, in that binding simply didn't happen. After a lot of searching, I came across a <a href="http://stackoverflow.com/questions/11649385/nancy-model-binding-to-child-class">StackOverflow post</a> regarding binding to types with complex children. It looks like the proper way to handle this situation is to write a custom model binder. One alternative I did not investigate was POSTing a JSON object.</p>
+
+<p>Rather than do things the right way, I chose to apply some ugly duck tape.</p>
+
+<pre><code>Post["/add"] = o =&gt;
+ {
+  // Doesn't bind much
+  var question = this.Bind&lt;QuestionModel&gt;();
+
+  // Bind the rest
+  for (int i = 0; i &lt; 20; i++) // Bind a max of 20 children
+  {
+   bool hitSomething = false;
+   if (Request.Form["Answers[" + i + "].AnswerString"] != null) // Bind the AnswerString property
+   {
+    while (question.Answers.Count &lt;= i) // If the index doesn't exist yet, create it and every index before
+     question.Answers.Add(new AnswerModel());
+    question.Answers[i].AnswerString = Request.Form["Answers[" + i + "].AnswerString"];
+    hitSomething = true;
+   }
+
+   if (Request.Form["Answers[" + i + "].SMILESString"] != null) // Bind the SMILESString property
+   {
+    while (question.Answers.Count &lt; i - 1)
+     question.Answers.Add(new AnswerModel());
+    question.Answers[i].ChemicalModel =
+     new ChemicalModel(Request.Form["Answers[" + i + "].SMILESString"]);
+    hitSomething = true;
+   }
+   if (!hitSomething)
+    break;
+  }
+
+  DocumentSession.Store(question);
+  DocumentSession.SaveChanges();
+
+  Model.question = question;
+  return View["ShowQuestion", Model];
+ };
+</code></pre>
+
+<p>This is going to come back to bite me shortly, but it is adequate for the time being. I suppose the moral of the story today is that if you find yourself needing a model binder that is capable of binding to array-indexed names, bother me - hopefully I'll have written it by the time you read this. </p>
+
+      <p><a href="/2013/01/ugly-duck-model-binding-in-nancy.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2013/01/circuitsio-vs-upverter.html">Circuits.IO vs Upverter</a> 
@@ -586,71 +663,6 @@ Get["/sessiontest"] = parameters =&gt; Session["test"].ToString();
 
       <p><a href="/2012/12/journal-starting-out-with-nancy-on-mono.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/12/building-dbus-explorer-on-lmde.html">Building DBus Explorer on LMDE</a> 
-        <span>posted on 11 Dec 2012</span>
-      </h1> 
-      
-      <p>Nice easy build today. DBus Explorer is a handy C# application for probing DBus.</p>
-
-<p>DBus Explorer is developed on GitHub: <a href="https://github.com/garuma/dbus-explorer">https://github.com/garuma/dbus-explorer</a></p>
-
-<p><img src="/images/Screenshot-2012-12-11-23-01-40.png" alt="" /></p>
-
-<p>DBus Explorer relies on DBus-Sharp-GLib, which relies on DBus-Sharp, so all three will need to be built.</p>
-
-<pre><code>git clone https://github.com/mono/dbus-sharp.git
-git clone https://github.com/mono/dbus-sharp-glib.git
-git clone https://github.com/garuma/dbus-explorer.git 
-</code></pre>
-
-<p>Build and install DBus-Sharp. Expect a few warnings, but it should compile successfully.</p>
-
-<pre><code>cd dbus-sharp
-./autogen.sh
-make
-sudo make install
-</code></pre>
-
-<p>Build and install DBus-Sharp-GLib. I was able to compile this library without errors.</p>
-
-<pre><code>cd ../dbus-sharp-glib
-./autogen.sh
-make
-sudo make install
-</code></pre>
-
-<p>Build DBus Explorer</p>
-
-<pre><code>cd ../dbus-explorer
-./autogen.sh
-make
-</code></pre>
-
-<p>If you just want to run DBus Explorer, you can launch it from the terminal right now.</p>
-
-<pre><code>mono --runtime=v4.0 src/bin/Debug/DBusExplorer.exe
-</code></pre>
-
-<p>If you want a shortcut, two more steps must be performed.</p>
-
-<p>Open src/bin/Debug/dbus-explorer in a text editor and change <em>exec mono</em> to <em>exec mono --runtime=v4.0</em></p>
-
-<p>The modified file should look like this:</p>
-
-<pre><code>#!/bin/sh
-
-exec mono --runtime=v4.0 "/usr/local/lib/dbus-explorer/DBusExplorer.exe" "$@"
-</code></pre>
-
-<p>DBus Explorer can now be installed (Run from the dbus-explorer/ directory)</p>
-
-<pre><code>sudo make install
-</code></pre>
-
-      <p><a href="/2012/12/building-dbus-explorer-on-lmde.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -690,6 +702,7 @@ exec mono --runtime=v4.0 "/usr/local/lib/dbus-explorer/DBusExplorer.exe" "$@"
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>
                           <li><a href="/archive#2014April">April, 2014</a></li>
                           <li><a href="/archive#2014March">March, 2014</a></li>

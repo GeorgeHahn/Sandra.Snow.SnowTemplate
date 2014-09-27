@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-05-12T14:39:43.9686033-04:00" />
+    <meta http-equiv="last-modified" content="2014-09-27T18:40:15.7557935-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page4/" />
@@ -35,6 +35,71 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/12/building-dbus-explorer-on-lmde.html">Building DBus Explorer on LMDE</a> 
+        <span>posted on 11 Dec 2012</span>
+      </h1> 
+      
+      <p>Nice easy build today. DBus Explorer is a handy C# application for probing DBus.</p>
+
+<p>DBus Explorer is developed on GitHub: <a href="https://github.com/garuma/dbus-explorer">https://github.com/garuma/dbus-explorer</a></p>
+
+<p><img src="/images/Screenshot-2012-12-11-23-01-40.png" alt="" /></p>
+
+<p>DBus Explorer relies on DBus-Sharp-GLib, which relies on DBus-Sharp, so all three will need to be built.</p>
+
+<pre><code>git clone https://github.com/mono/dbus-sharp.git
+git clone https://github.com/mono/dbus-sharp-glib.git
+git clone https://github.com/garuma/dbus-explorer.git 
+</code></pre>
+
+<p>Build and install DBus-Sharp. Expect a few warnings, but it should compile successfully.</p>
+
+<pre><code>cd dbus-sharp
+./autogen.sh
+make
+sudo make install
+</code></pre>
+
+<p>Build and install DBus-Sharp-GLib. I was able to compile this library without errors.</p>
+
+<pre><code>cd ../dbus-sharp-glib
+./autogen.sh
+make
+sudo make install
+</code></pre>
+
+<p>Build DBus Explorer</p>
+
+<pre><code>cd ../dbus-explorer
+./autogen.sh
+make
+</code></pre>
+
+<p>If you just want to run DBus Explorer, you can launch it from the terminal right now.</p>
+
+<pre><code>mono --runtime=v4.0 src/bin/Debug/DBusExplorer.exe
+</code></pre>
+
+<p>If you want a shortcut, two more steps must be performed.</p>
+
+<p>Open src/bin/Debug/dbus-explorer in a text editor and change <em>exec mono</em> to <em>exec mono --runtime=v4.0</em></p>
+
+<p>The modified file should look like this:</p>
+
+<pre><code>#!/bin/sh
+
+exec mono --runtime=v4.0 "/usr/local/lib/dbus-explorer/DBusExplorer.exe" "$@"
+</code></pre>
+
+<p>DBus Explorer can now be installed (Run from the dbus-explorer/ directory)</p>
+
+<pre><code>sudo make install
+</code></pre>
+
+      <p><a href="/2012/12/building-dbus-explorer-on-lmde.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2012/11/a-new-furnace-is-born.html">A New Furnace is Born</a> 
@@ -323,36 +388,6 @@ I did not complete this mod.</p>
 
       <p><a href="/2012/10/the-problem-with-embedded-development.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/09/maker-faire-2012.html">Maker Faire 2012</a> 
-        <span>posted on 29 Sep 2012</span>
-      </h1> 
-      
-      <p>A friend asked what got my attention at Maker Faire. My response:</p>
-
-<p>Everything on the Make Live stage was amazing. Intel's futurist, Brian David Johnson, had a very interesting talk. The makerspace panel was absolutely stunning; life changing, even.</p>
-
-<p>I was super impressed by the Rostock Max printer (<a href="http://www.seemecnc.com/">www.SeeMeCNC.com</a>). (re)Designed by a bunch of injection molding guys. They'll be shipping kits of the hard-to-print parts alongside their full kits. These guys had a really neat injection molded business card! I'll post pictures soon.</p>
-
-<p>Trinity Labs (<a href="http://www.trinitylabs.com/">www.trinitylabs.com</a>) is absolutely AMAZING. They have Mike Payson (maxbots), Triffid Hunter, and Arthur Wolf on the payroll. They're moving forward on the excellent Smoothieboard, and have a very sturdy MendelMax offering. Think: single linear motion extrusion on the y axis rather than a pair. Eric took a lot of time to talk to me; it was pretty cool to connect over our plans to build Rostocks.</p>
-
-<p>Listened (and asked a lot of questions) to Edward P. Ryan (<a href="http://www.tb-iplaw.com/">www.tb-iplaw.com</a>), a patent attorney. He was great, and gave me a few good bits of information that I didn't know before. For example, if you create a PCB that, once populated, will infringe upon a patent, selling the bare PCB puts you at risk for a suit.</p>
-
-<p>Qu-Bd (<a href="http://www.qu-bd.com/">http://www.qu-bd.com/</a>) gave me a few feet of their 'nanolinks' mini cable chain. At $3/foot, it's awesome and affordable!</p>
-
-<p>I enjoyed seeing the DLP resin printers. Stunning resolution, but the cured plastic isn't very rigid. It's also best in one color - red - because they're using visible-color (blue?) curing plastic. I think I'll wait until someone's built a specialized UV projector.</p>
-
-<p>iDigi gave me a business card with a bare XBee board. If I can find a BOM, I'm going to populate it ;)</p>
-
-<p>The Shopbot tools on display were impressive - they had a CNC-lathe combo on display! I wouldn't want one for the house, but would definitely reccomend to otherse.</p>
-
-<p>I glanced the Helios Robot (<a href="http://kick.st/Spjaw0">http://kick.st/Spjaw0</a>). Looked like an interesting toy.</p>
-
-<p>I enjoyed seeing the AeroQuad (<a href="http://www.aeroquad.com/">www.AeroQuad.com</a>) multicopters buzzing about all day. They also have very impressive business cards (as much as a paper business card can be impressive).</p>
-
-      <p><a href="/2012/09/maker-faire-2012.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -392,6 +427,7 @@ I did not complete this mod.</p>
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>
                           <li><a href="/archive#2014April">April, 2014</a></li>
                           <li><a href="/archive#2014March">March, 2014</a></li>
