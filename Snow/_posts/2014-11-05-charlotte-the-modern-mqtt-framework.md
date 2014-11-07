@@ -1,4 +1,9 @@
-MQTT and C#
+---
+layout: post
+title: MQTT and C#
+category: MQTT, C#
+published: draft
+---
 
 M2MQTT is a pretty great library - it's stable and appears to be standards compliant. However, the programming interface it exposes isn't so great:
 

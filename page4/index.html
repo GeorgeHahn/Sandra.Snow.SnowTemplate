@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-10-14T17:34:22.2106201-04:00" />
+    <meta http-equiv="last-modified" content="2014-11-07T12:41:06.8189450-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page4/" />
@@ -36,6 +36,53 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/12/journal-starting-out-with-nancy-on-mono.html">Journal: Starting out with Nancy on Mono Pt.1</a> 
+        <span>posted on 12 Dec 2012</span>
+      </h1> 
+      
+      <p>Before starting out, I installed NuGet, per these combined instructions:</p>
+
+<p><a href="http://monomvc.wordpress.com/2012/03/06/nuget-on-mono/">http://monomvc.wordpress.com/2012/03/06/nuget-on-mono/</a> <br/>
+<a href="http://grhughes.com/32/using-nuget-in-mono">http://grhughes.com/32/using-nuget-in-mono</a> <br/>
+<a href="http://nuget.codeplex.com/workitem/1271">http://nuget.codeplex.com/workitem/1271</a></p>
+
+<p>Special note on the last item there. I had to put Microsoft.Build.dll into the same directory as NuGet.exe before it would run. (Was failing for 'Could not load type 'NuGet.Commands.ProjectFactory')</p>
+
+<p>Now that I was ready to move on to some code, I created a new C# ASP.NET project in MonoDevelop. I'm using MonoDevelop 3.0.5 that I built from source, but all other versions should have this option.</p>
+
+<p>I downloaded the latest Nancy build from their CI server here:
+<a href="http://teamcity.codebetter.com/project.html?projectId=project112&amp;tab=projectOverview&amp;guest=true">http://teamcity.codebetter.com/project.html?projectId=project112&amp;tab=projectOverview&amp;guest=true</a></p>
+
+<p>Added references to Nancy.dll and Nancy.Hosting.Aspnet.dll in MonoDevelop.</p>
+
+<p>On the Nancy wiki's into page, there is a Hello World snippet. Before running it, a web.config file must be created.</p>
+
+<p>I found the default configuration here: https://github.com/NancyFx/Nancy/wiki/Hosting-nancy-with-asp.net</p>
+
+<pre><code>&lt;configuration&gt;
+  &lt;system.web&gt;
+    &lt;compilation debug="true" targetFramework="4.0" /&gt;
+    &lt;httpHandlers&gt;
+      &lt;add verb="*" type="Nancy.Hosting.Aspnet.NancyHttpRequestHandler" path="*"/&gt;
+    &lt;/httpHandlers&gt;
+  &lt;/system.web&gt;
+
+  &lt;system.webServer&gt;
+    &lt;modules runAllManagedModulesForAllRequests="true"/&gt;
+    &lt;validation validateIntegratedModeConfiguration="false"/&gt;
+    &lt;handlers&gt;
+      &lt;add name="Nancy" verb="*" type="Nancy.Hosting.Aspnet.NancyHttpRequestHandler" path="*"/&gt;
+    &lt;/handlers&gt;
+  &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<p>Pressed <em>Start program without debugging</em> and watched magic happen! </p>
+
+      <p><a href="/2012/12/journal-starting-out-with-nancy-on-mono.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2012/12/building-dbus-explorer-on-lmde.html">Building DBus Explorer on LMDE</a> 
@@ -364,31 +411,6 @@ I did not complete this mod.</p>
 
       <p><a href="/2012/10/linux-mint-cinnamon-set-workspace-names.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/10/the-problem-with-embedded-development.html">The Problem with Embedded Development</a> 
-        <span>posted on 13 Oct 2012</span>
-      </h1> 
-      
-      <p>Embedded development sits in a remarkably odd position - somewhere between electrical engineering and computer science. It is such an odd position that there isn't even a college degree for it!</p>
-
-<p>There is one big problem with embedded development today - tools. On the electrical engineering side, there are great tools. An electrical design can be created by a group ranging in size from one person to hundreds, and can be thoroughly simulated, tested, and verified before it is built. Software that runs on full computers is in an even better position. Best practices exist for all common tasks; software written in any language can be thoroughly tested. Every iteration of code can be evaluated based on one metric or another - primarily: do the tests pass?</p>
-
-<p>In embedded development, none of this is true. Unit testing is almost unheard of. Whether or not the code "works" is defined by (hopefully) a third party (probably, a fellow developer) putting a device through its paces.</p>
-
-<p>What we need:</p>
-
-<ul>
-<li>Unit testing (Desktop based?)</li>
-<li>A way to put code through its paces on a desktop before it is deployed. I'm imagining a tiny package that defines all of a processor's registers so code will compile and run on a desktop. Bonuses would be a system to generate various interrupts and a robust plugin system that would allow for IO.</li>
-</ul>
-
-<p>From there, it would be trivial to set up a build server to continuously check the code in a repository.</p>
-
-<p><em>Sorry for the unpolished post. Better early than never!</em></p>
-
-      <p><a href="/2012/10/the-problem-with-embedded-development.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -428,6 +450,7 @@ I did not complete this mod.</p>
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2014November">November, 2014</a></li>
                           <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>
                           <li><a href="/archive#2014April">April, 2014</a></li>

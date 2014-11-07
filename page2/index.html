@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-10-14T17:34:22.2106201-04:00" />
+    <meta http-equiv="last-modified" content="2014-11-07T12:41:06.8189450-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page2/" />
@@ -36,6 +36,41 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2013/09/why-phonebloks-phone-will-never-happen.html">Why the PhoneBloks phone will never happen</a> 
+        <span>posted on 13 Sep 2013</span>
+      </h1> 
+      
+      <p>It's a physics issue. Signals in modern devices are extremely high speed; the easiest and cheapest way to combat this is to bring components closer together. For example, the wireless radios, RAM, and processor in all modern phones exist as one chip. They essentially put the CPU and wireless magic on the same silicon die (or on a separate die in the same package) and pop a RAM chip on top ("Package on Package").</p>
+
+<p>It's a communication issue. All of the ICs in a phone don't communicate over a single bus - almost every one ties directly into specific processor pins. This would restrict block size and placement.</p>
+
+<p>If we aim a little lower and try for a modular design, the interconnects needed to ensure signal integrity at high speed are still very expensive. This project would require serious economies of scale to succeed. Each high speed component - CPU, RAM, storage, modem - would need an expensive socket.</p>
+
+<p>Technically, the storage could be put on a socket pretty easily. It's not fast enough to warrant a very expensive socket, but would still add ~$2-5 to the final design. (Keep in mind, that means the consumer would be paying $4-20 extra, just to have the option to upgrade the storage.)</p>
+
+<p>It's an interoperability issue. Going a little further, even if the device could be built in some fashion - there isn't much standardization in this area. I've spent days wrestling with a display peripheral on a processor to get it to interface with a specific display or video input IC - and that's with the benefit of thousands of pages of documentation, a field application engineer on call, and a ~$15000 oscilloscope. The amount of effort in testing and debugging that would be required to ensure the compatibility of each component would be absolutely enormous.</p>
+
+<p>--</p>
+
+<p>All of that said, I think the modular idea is excellent and could be done right - maybe not with blocks as described and - optimally - not with electrical signals. I could see it happening with optical interconnects, but we're a few years out from that. On chip optical interconnects are still in research, but there's a lot of money being put into them. Intel has demonstrated some very impressive optical tech that should come to market within the next five years. Eventually, we may be able to tie ICs together through optical traces for extreme high speed communication.</p>
+
+<p>Finally, the stated motivation for this design is to reduce electrical waste. The best way to do that in the short term is to ensure devices are more repairable. An emphasis on user-serviceable batteries would make a significant difference in how long our devices remain useful without adversely impacting their cost or limiting their design.</p>
+
+<p>It's worth noting that the smartphone market is starting to mature. Phones aren't improving by the massive leaps and bounds that they were. The technological differences are trivial - few people notice the difference between a 1GHz and 1.2GHz processor or 1GB and 2GB of RAM. Now, the main thing that separates generations of phones are millimeters of extra display space, grams of saved space, and milliamphours of extra battery life.</p>
+
+<p>One major driver of phone sales right now is software. This is where the problem lies, not in hardware. Users need the right to unlock our phone modems and bootloaders. Unlocking the modems to allow use on different carriers would give used phones a wider market. Unlocking bootloaders would let users completely replace the original software, adding improvements and features to otherwise uninteresting devices.</p>
+
+<p>We definitely have an e-waste problem - and I give this person credit for thinking outside the box - but this isn't the solution we need.</p>
+
+<p>--</p>
+
+<p>One source, because I'm lazy:
+<a href="http://www.ifixit.com/Info/why">IFIXIT</a></p>
+
+      <p><a href="/2013/09/why-phonebloks-phone-will-never-happen.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2013/08/abandoning-efm32g210f128-breakout.html">Abandoning the EFM32G210F128 Breakout</a> 
@@ -267,44 +302,6 @@ deb http://www.deb-multimedia.org squeeze main non-free
 
       <p><a href="/2013/02/listing-product-on-tindie.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2013/01/more-online-eda-thoughts.html">More Online EDA Thoughts - Upverter/Circuits.IO</a> 
-        <span>posted on 30 Jan 2013</span>
-      </h1> 
-      
-      <p>Some little annoyances I came up with as I was drawing out a simple Micro USB breakout board.</p>
-
-<h1>Upverter</h1>
-
-<ul>
-<li>A layout measurement tool would help while drawing part footprints</li>
-<li>Can't set default part prefix when creating/editing a part</li>
-<li>The part update notification is great, but could use some ironing</li>
-</ul>
-
-<p><img src="/images/PartChanges.png" alt="" /></p>
-
-<ul>
-<li>Footprint rotation is in radians? Seriously?</li>
-<li>No way to edit text in layout</li>
-<li>Can't put text on a copper layer</li>
-<li>Tooltips can really get in your way (a problem when you're zoomed in on a layout)</li>
-<li>Orders allow negative qty all the way up until order submission</li>
-<li><strong>Credit card details are saved without any permission (not okay!)</strong></li>
-<li>What's with the project urls? http://upverter.com/GeorgeHahn/<strong>3d6ead6de4b3dbee</strong>/MicroUSB-Breakout-Board/</li>
-</ul>
-
-<h1>Circuits.IO</h1>
-
-<ul>
-<li><strong>Footprint creation is <s>clunky</s> terrifying</strong> (bad enough I didn't even try to finish making my part).</li>
-<li>On the schematic symbol editor (http://www.circuits.io/schematic_symbols/1202/edit), the user as asked to enter a 'coma-separated list' <strong>comma</strong>.</li>
-<li>Schematic symbol page shows a hex number for the user: <code>#&lt;User:0x00000009b39c60</code>></li>
-</ul>
-
-      <p><a href="/2013/01/more-online-eda-thoughts.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -344,6 +341,7 @@ deb http://www.deb-multimedia.org squeeze main non-free
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2014November">November, 2014</a></li>
                           <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>
                           <li><a href="/archive#2014April">April, 2014</a></li>

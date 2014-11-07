@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-10-14T17:34:22.2106201-04:00" />
+    <meta http-equiv="last-modified" content="2014-11-07T12:41:06.8189450-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page3/" />
@@ -36,6 +36,44 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2013/01/more-online-eda-thoughts.html">More Online EDA Thoughts - Upverter/Circuits.IO</a> 
+        <span>posted on 30 Jan 2013</span>
+      </h1> 
+      
+      <p>Some little annoyances I came up with as I was drawing out a simple Micro USB breakout board.</p>
+
+<h1>Upverter</h1>
+
+<ul>
+<li>A layout measurement tool would help while drawing part footprints</li>
+<li>Can't set default part prefix when creating/editing a part</li>
+<li>The part update notification is great, but could use some ironing</li>
+</ul>
+
+<p><img src="/images/PartChanges.png" alt="" /></p>
+
+<ul>
+<li>Footprint rotation is in radians? Seriously?</li>
+<li>No way to edit text in layout</li>
+<li>Can't put text on a copper layer</li>
+<li>Tooltips can really get in your way (a problem when you're zoomed in on a layout)</li>
+<li>Orders allow negative qty all the way up until order submission</li>
+<li><strong>Credit card details are saved without any permission (not okay!)</strong></li>
+<li>What's with the project urls? http://upverter.com/GeorgeHahn/<strong>3d6ead6de4b3dbee</strong>/MicroUSB-Breakout-Board/</li>
+</ul>
+
+<h1>Circuits.IO</h1>
+
+<ul>
+<li><strong>Footprint creation is <s>clunky</s> terrifying</strong> (bad enough I didn't even try to finish making my part).</li>
+<li>On the schematic symbol editor (http://www.circuits.io/schematic_symbols/1202/edit), the user as asked to enter a 'coma-separated list' <strong>comma</strong>.</li>
+<li>Schematic symbol page shows a hex number for the user: <code>#&lt;User:0x00000009b39c60</code>></li>
+</ul>
+
+      <p><a href="/2013/01/more-online-eda-thoughts.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2013/01/ugly-duck-model-binding-in-nancy.html">Ugly Duck Model Binding in Nancy</a> 
@@ -617,53 +655,6 @@ Get["/sessiontest"] = parameters =&gt; Session["test"].ToString();
 
       <p><a href="/2012/12/journal-starting-out-with-nancy-on-mono_15.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/12/journal-starting-out-with-nancy-on-mono.html">Journal: Starting out with Nancy on Mono Pt.1</a> 
-        <span>posted on 12 Dec 2012</span>
-      </h1> 
-      
-      <p>Before starting out, I installed NuGet, per these combined instructions:</p>
-
-<p><a href="http://monomvc.wordpress.com/2012/03/06/nuget-on-mono/">http://monomvc.wordpress.com/2012/03/06/nuget-on-mono/</a> <br/>
-<a href="http://grhughes.com/32/using-nuget-in-mono">http://grhughes.com/32/using-nuget-in-mono</a> <br/>
-<a href="http://nuget.codeplex.com/workitem/1271">http://nuget.codeplex.com/workitem/1271</a></p>
-
-<p>Special note on the last item there. I had to put Microsoft.Build.dll into the same directory as NuGet.exe before it would run. (Was failing for 'Could not load type 'NuGet.Commands.ProjectFactory')</p>
-
-<p>Now that I was ready to move on to some code, I created a new C# ASP.NET project in MonoDevelop. I'm using MonoDevelop 3.0.5 that I built from source, but all other versions should have this option.</p>
-
-<p>I downloaded the latest Nancy build from their CI server here:
-<a href="http://teamcity.codebetter.com/project.html?projectId=project112&amp;tab=projectOverview&amp;guest=true">http://teamcity.codebetter.com/project.html?projectId=project112&amp;tab=projectOverview&amp;guest=true</a></p>
-
-<p>Added references to Nancy.dll and Nancy.Hosting.Aspnet.dll in MonoDevelop.</p>
-
-<p>On the Nancy wiki's into page, there is a Hello World snippet. Before running it, a web.config file must be created.</p>
-
-<p>I found the default configuration here: https://github.com/NancyFx/Nancy/wiki/Hosting-nancy-with-asp.net</p>
-
-<pre><code>&lt;configuration&gt;
-  &lt;system.web&gt;
-    &lt;compilation debug="true" targetFramework="4.0" /&gt;
-    &lt;httpHandlers&gt;
-      &lt;add verb="*" type="Nancy.Hosting.Aspnet.NancyHttpRequestHandler" path="*"/&gt;
-    &lt;/httpHandlers&gt;
-  &lt;/system.web&gt;
-
-  &lt;system.webServer&gt;
-    &lt;modules runAllManagedModulesForAllRequests="true"/&gt;
-    &lt;validation validateIntegratedModeConfiguration="false"/&gt;
-    &lt;handlers&gt;
-      &lt;add name="Nancy" verb="*" type="Nancy.Hosting.Aspnet.NancyHttpRequestHandler" path="*"/&gt;
-    &lt;/handlers&gt;
-  &lt;/system.webServer&gt;
-&lt;/configuration&gt;
-</code></pre>
-
-<p>Pressed <em>Start program without debugging</em> and watched magic happen! </p>
-
-      <p><a href="/2012/12/journal-starting-out-with-nancy-on-mono.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -703,6 +694,7 @@ Get["/sessiontest"] = parameters =&gt; Session["test"].ToString();
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2014November">November, 2014</a></li>
                           <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>
                           <li><a href="/archive#2014April">April, 2014</a></li>

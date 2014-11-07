@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-10-14T17:34:22.2106201-04:00" />
+    <meta http-equiv="last-modified" content="2014-11-07T12:41:06.8189450-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page5/" />
@@ -36,6 +36,31 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/10/the-problem-with-embedded-development.html">The Problem with Embedded Development</a> 
+        <span>posted on 13 Oct 2012</span>
+      </h1> 
+      
+      <p>Embedded development sits in a remarkably odd position - somewhere between electrical engineering and computer science. It is such an odd position that there isn't even a college degree for it!</p>
+
+<p>There is one big problem with embedded development today - tools. On the electrical engineering side, there are great tools. An electrical design can be created by a group ranging in size from one person to hundreds, and can be thoroughly simulated, tested, and verified before it is built. Software that runs on full computers is in an even better position. Best practices exist for all common tasks; software written in any language can be thoroughly tested. Every iteration of code can be evaluated based on one metric or another - primarily: do the tests pass?</p>
+
+<p>In embedded development, none of this is true. Unit testing is almost unheard of. Whether or not the code "works" is defined by (hopefully) a third party (probably, a fellow developer) putting a device through its paces.</p>
+
+<p>What we need:</p>
+
+<ul>
+<li>Unit testing (Desktop based?)</li>
+<li>A way to put code through its paces on a desktop before it is deployed. I'm imagining a tiny package that defines all of a processor's registers so code will compile and run on a desktop. Bonuses would be a system to generate various interrupts and a robust plugin system that would allow for IO.</li>
+</ul>
+
+<p>From there, it would be trivial to set up a build server to continuously check the code in a repository.</p>
+
+<p><em>Sorry for the unpolished post. Better early than never!</em></p>
+
+      <p><a href="/2012/10/the-problem-with-embedded-development.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2012/09/maker-faire-2012.html">Maker Faire 2012</a> 
@@ -362,16 +387,6 @@ donkey</p>
 
       <p><a href="/2012/01/settlers-of-catan.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/01/long-time-no-see.html">Long time, No see!</a> 
-        <span>posted on 09 Jan 2012</span>
-      </h1> 
-      
-      <p>It has been a while since my last post - a long while. I have been keeping busy, though! My reprap is now compete and is printing parts of remarkable quality. Recently, I modded a tiny zotac nettop with a large 12v fan. The mod was far from straightforward, so I plan to document it for the benefit of anyone else whose stock fan dies. In the meantime, I have been working on a website to help students study organic chemistry. Right now, the public site is feature frozen while I develop version 2, a complete rewrite. I wish it were not necessary, but the first version was procedural PHP backed only by a simple XML file. Quick and easy, perhaps, but not maintainable! Version 2 will use the <a href="http://www.yiiframework.com/">YII framework</a> and will open the door to some really nice features in the future. You can see the first version at <a href="http://www.studyorganic.com/">www.StudyOrganic.com</a></p>
-
-      <p><a href="/2012/01/long-time-no-see.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -411,6 +426,7 @@ donkey</p>
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2014November">November, 2014</a></li>
                           <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>
                           <li><a href="/archive#2014April">April, 2014</a></li>

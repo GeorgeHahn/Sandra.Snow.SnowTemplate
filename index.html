@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-10-14T17:34:22.2106201-04:00" />
+    <meta http-equiv="last-modified" content="2014-11-07T12:41:06.8189450-05:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/" />
@@ -36,6 +36,30 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/11/mqtt-rf-bridge.html">MQTT to 430MHz RF bridge</a> 
+        <span>posted on 06 Nov 2014</span>
+      </h1> 
+      
+      <p>For this project, I wanted a way to control my wireless power outlets from <a href="http://www.amazon.com/gp/product/B0087DAW46/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B0087DAW46&amp;linkCode=as2&amp;tag=generi0c-20&amp;linkId=FVZKHDNL5ZGAY5CN">Etekcity</a> with MQTT messages. <a href="http://www.mqtt.org/">MQTT</a>  is an excellent publish-subscribe protocol designed to power the internet of things; I use it along with <a href="http://nodered.org">Node-Red</a> to control devices around my apartment.</p>
+
+<p>These outlets are controlled with a very simple protocol over ASK 433MHz RF. The protocol is documented pretty well <a href="https://code.google.com/p/rc-switch/">elsewhere</a>, so I won't cover it in depth.</p>
+
+<p>Months ago, I created an identical device using a Netduino 2 Pro, but it wasn't fast enough to handle the radio protocol, so I had to pair it with a second microprocessor (I used a TI Tiva C Launchpad). This iteration of the project was created to simplify my setup and to let me attach the device to my network via Wifi rather than wired ethernet.</p>
+
+<p>To create this device, I wired a TI CC3200 Launchpad to a <a href="http://www.amazon.com/gp/product/B00INTI8R2/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B00INTI8R2&amp;linkCode=as2&amp;tag=generi0c-20&amp;linkId=IIDQZVD4UDU3VRI7">433MHz ASK transmitter</a>. These transmitters are super simple - you have to supply 5v, ground, and a transmit signal.</p>
+
+<p>Once the device was wired up, all it needed was some code. I used <a href="https://github.com/knolleary/pubsubclient">knolleary/pubsubclient</a> to communicate over MQTT. The application code is pretty simple - it subscribes to one topic and repeats any messages it receives over the RF link.</p>
+
+<p>Initially, I attempted to write the RF communications routine using the Energia supplied delay functions. Sadly, the microsecond delay function didn't work very well. When I measured the pulse timings with my logic analyzer, I saw that the delays were off, sometimes by a factor of 5x or more. Rather than troubleshoot a function I'm totally unfamiliar with, I took the easy way out - loop iteration based delays. With the help of my logic analyzer, I was easily able to create delays that perfectly matched my requirements. In a more complicated system, this wouldn't be a reasonable option, but this device is simple enough that it's not an issue.</p>
+
+<p>I've now been using this device for a few months and haven't had any issues with it. It's super reliable and can be hidden away anywhere USB power is available.</p>
+
+<p>My code is available on <a href="https://github.com/GeorgeHahn/MQTT_RF_Bridge">Github</a> along with a wiring diagram.</p>
+
+      <p><a href="/2014/11/mqtt-rf-bridge.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2014/09/cc3200-launchpad.html">Playing with a TI CC3200 launchpad</a> 
@@ -348,41 +372,6 @@
 
       <p><a href="/2013/10/razr-hd-maxx-teardown.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2013/09/why-phonebloks-phone-will-never-happen.html">Why the PhoneBloks phone will never happen</a> 
-        <span>posted on 13 Sep 2013</span>
-      </h1> 
-      
-      <p>It's a physics issue. Signals in modern devices are extremely high speed; the easiest and cheapest way to combat this is to bring components closer together. For example, the wireless radios, RAM, and processor in all modern phones exist as one chip. They essentially put the CPU and wireless magic on the same silicon die (or on a separate die in the same package) and pop a RAM chip on top ("Package on Package").</p>
-
-<p>It's a communication issue. All of the ICs in a phone don't communicate over a single bus - almost every one ties directly into specific processor pins. This would restrict block size and placement.</p>
-
-<p>If we aim a little lower and try for a modular design, the interconnects needed to ensure signal integrity at high speed are still very expensive. This project would require serious economies of scale to succeed. Each high speed component - CPU, RAM, storage, modem - would need an expensive socket.</p>
-
-<p>Technically, the storage could be put on a socket pretty easily. It's not fast enough to warrant a very expensive socket, but would still add ~$2-5 to the final design. (Keep in mind, that means the consumer would be paying $4-20 extra, just to have the option to upgrade the storage.)</p>
-
-<p>It's an interoperability issue. Going a little further, even if the device could be built in some fashion - there isn't much standardization in this area. I've spent days wrestling with a display peripheral on a processor to get it to interface with a specific display or video input IC - and that's with the benefit of thousands of pages of documentation, a field application engineer on call, and a ~$15000 oscilloscope. The amount of effort in testing and debugging that would be required to ensure the compatibility of each component would be absolutely enormous.</p>
-
-<p>--</p>
-
-<p>All of that said, I think the modular idea is excellent and could be done right - maybe not with blocks as described and - optimally - not with electrical signals. I could see it happening with optical interconnects, but we're a few years out from that. On chip optical interconnects are still in research, but there's a lot of money being put into them. Intel has demonstrated some very impressive optical tech that should come to market within the next five years. Eventually, we may be able to tie ICs together through optical traces for extreme high speed communication.</p>
-
-<p>Finally, the stated motivation for this design is to reduce electrical waste. The best way to do that in the short term is to ensure devices are more repairable. An emphasis on user-serviceable batteries would make a significant difference in how long our devices remain useful without adversely impacting their cost or limiting their design.</p>
-
-<p>It's worth noting that the smartphone market is starting to mature. Phones aren't improving by the massive leaps and bounds that they were. The technological differences are trivial - few people notice the difference between a 1GHz and 1.2GHz processor or 1GB and 2GB of RAM. Now, the main thing that separates generations of phones are millimeters of extra display space, grams of saved space, and milliamphours of extra battery life.</p>
-
-<p>One major driver of phone sales right now is software. This is where the problem lies, not in hardware. Users need the right to unlock our phone modems and bootloaders. Unlocking the modems to allow use on different carriers would give used phones a wider market. Unlocking bootloaders would let users completely replace the original software, adding improvements and features to otherwise uninteresting devices.</p>
-
-<p>We definitely have an e-waste problem - and I give this person credit for thinking outside the box - but this isn't the solution we need.</p>
-
-<p>--</p>
-
-<p>One source, because I'm lazy:
-<a href="http://www.ifixit.com/Info/why">IFIXIT</a></p>
-
-      <p><a href="/2013/09/why-phonebloks-phone-will-never-happen.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -420,6 +409,7 @@
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2014November">November, 2014</a></li>
                           <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>
                           <li><a href="/archive#2014April">April, 2014</a></li>
