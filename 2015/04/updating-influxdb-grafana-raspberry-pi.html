@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2015-05-02T16:34:30.5554049-04:00" />
+    <meta http-equiv="last-modified" content="2015-05-02T17:00:28.3742101-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/2015/04/updating-influxdb-grafana-raspberry-pi.html" />
@@ -55,14 +55,11 @@
         
     <p>Mostly for my own records, here's the straightforward way to update InfluxDB and Grafana. I'm actually running on an Odroid-C1, but these instructions should be the same on any ARM platform (and similar on other platforms).</p>
 
-<p><code>
-cd ~/gocode/src/github.com/influxdb/influxdb/
+<pre><code>cd ~/gocode/src/github.com/influxdb/influxdb/
 ./package.sh 0.9.0.pre
 sudo dpkg -i influxdb_0.9.0.pre_armhf.deb
 sudo service influxdb restart
-</code></p>
 
-<p><code>
 cd ~/gocode/src/github.com/grafana/grafana/
 godep update
 git pull origin master
@@ -71,11 +68,14 @@ npm install
 go run build.go package
 sudo dpkg -i dist/grafana_2.0.0-beta1_armhf.deb
 sudo service grafana restart
-</code></p>
+</code></pre>
 
-<p>Might need some nasty stuff in between there
-- Merge config
-- Fix service</p>
+<p>Might need some nasty stuff in between there</p>
+
+<ul>
+<li>Merge config</li>
+<li>Fix service</li>
+</ul>
 
 
     <div id="disqus_thread"></div>

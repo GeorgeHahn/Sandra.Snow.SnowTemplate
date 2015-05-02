@@ -32,14 +32,11 @@
 &lt;/ul&gt;
 </a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2015/04/updating-influxdb-grafana-raspberry-pi.html</guid><link>http://www.genericmaker.com/2015/04/updating-influxdb-grafana-raspberry-pi.html</link><title>Updating InfluxDB and Grafana on the Raspberry Pi</title><description>&lt;p&gt;Mostly for my own records, here's the straightforward way to update InfluxDB and Grafana. I'm actually running on an Odroid-C1, but these instructions should be the same on any ARM platform (and similar on other platforms).&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-cd ~/gocode/src/github.com/influxdb/influxdb/
+&lt;pre&gt;&lt;code&gt;cd ~/gocode/src/github.com/influxdb/influxdb/
 ./package.sh 0.9.0.pre
 sudo dpkg -i influxdb_0.9.0.pre_armhf.deb
 sudo service influxdb restart
-&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
 cd ~/gocode/src/github.com/grafana/grafana/
 godep update
 git pull origin master
@@ -48,21 +45,21 @@ npm install
 go run build.go package
 sudo dpkg -i dist/grafana_2.0.0-beta1_armhf.deb
 sudo service grafana restart
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Might need some nasty stuff in between there
-- Merge config
-- Fix service&lt;/p&gt;
+&lt;p&gt;Might need some nasty stuff in between there&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Merge config&lt;/li&gt;
+&lt;li&gt;Fix service&lt;/li&gt;
+&lt;/ul&gt;
 </description><pubDate>Sat, 25 Apr 2015 04:00:00 Z</pubDate><a10:updated>2015-04-25T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Mostly for my own records, here's the straightforward way to update InfluxDB and Grafana. I'm actually running on an Odroid-C1, but these instructions should be the same on any ARM platform (and similar on other platforms).&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-cd ~/gocode/src/github.com/influxdb/influxdb/
+&lt;pre&gt;&lt;code&gt;cd ~/gocode/src/github.com/influxdb/influxdb/
 ./package.sh 0.9.0.pre
 sudo dpkg -i influxdb_0.9.0.pre_armhf.deb
 sudo service influxdb restart
-&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
 cd ~/gocode/src/github.com/grafana/grafana/
 godep update
 git pull origin master
@@ -71,11 +68,14 @@ npm install
 go run build.go package
 sudo dpkg -i dist/grafana_2.0.0-beta1_armhf.deb
 sudo service grafana restart
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Might need some nasty stuff in between there
-- Merge config
-- Fix service&lt;/p&gt;
+&lt;p&gt;Might need some nasty stuff in between there&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Merge config&lt;/li&gt;
+&lt;li&gt;Fix service&lt;/li&gt;
+&lt;/ul&gt;
 </a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2014/11/mqtt-rf-bridge.html</guid><link>http://www.genericmaker.com/2014/11/mqtt-rf-bridge.html</link><title>MQTT to 430MHz RF bridge</title><description>&lt;p&gt;For this project, I wanted a way to control my wireless power outlets from &lt;a href="http://www.amazon.com/gp/product/B0087DAW46/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B0087DAW46&amp;amp;linkCode=as2&amp;amp;tag=generi0c-20&amp;amp;linkId=FVZKHDNL5ZGAY5CN"&gt;Etekcity&lt;/a&gt; with MQTT messages. &lt;a href="http://www.mqtt.org/"&gt;MQTT&lt;/a&gt;  is an excellent publish-subscribe protocol designed to power the internet of things; I use it along with &lt;a href="http://nodered.org"&gt;Node-Red&lt;/a&gt; to control devices around my apartment.&lt;/p&gt;
 
 &lt;p&gt;These outlets are controlled with a very simple protocol over ASK 433MHz RF. The protocol is documented pretty well &lt;a href="https://code.google.com/p/rc-switch/"&gt;elsewhere&lt;/a&gt;, so I won't cover it in depth.&lt;/p&gt;
@@ -106,14 +106,14 @@ sudo service grafana restart
 &lt;p&gt;I've now been using this device for a few months and haven't had any issues with it. It's super reliable and can be hidden away anywhere USB power is available.&lt;/p&gt;
 
 &lt;p&gt;My code is available on &lt;a href="https://github.com/GeorgeHahn/MQTT_RF_Bridge"&gt;Github&lt;/a&gt; along with a wiring diagram.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2014/09/cc3200-launchpad.html</guid><link>http://www.genericmaker.com/2014/09/cc3200-launchpad.html</link><title>Playing with a TI CC3200 launchpad</title><description>&lt;p&gt;I recently got a new &lt;a href="http://canada.newark.com/texas-instruments/cc3200-launchxl/simplelink-cc3200-wi-fi-launchpad/dp/53X9474"&gt;TI CC3200&lt;/a&gt; launchpad from &lt;a href="http://www.newark.com/"&gt;Newark&lt;/a&gt;. This weekend, I finally had the chance to play with it. One word - WOW.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2014/09/cc3200-launchpad.html</guid><link>http://www.genericmaker.com/2014/09/cc3200-launchpad.html</link><title>Playing with a TI CC3200 launchpad</title><description>&lt;p&gt;I recently got a new TI CC3200 launchpad from Newark. This weekend, I finally had the chance to play with it. One word - WOW.&lt;/p&gt;
 
 &lt;p&gt;Alright, so the demo that ships with the board isn't really impressive. What is impressive, however, is the CC3200 IC on the board. This chip costs about $9 in 1k quantities and contains everything you need to build a wifi connected embedded system. If you're familiar with the previous CC3000 wifi module, this IC is very similar, except it comes as a 64 pin QFN and includes an ARM Cortex-M4 applications processor.&lt;/p&gt;
 
 &lt;p&gt;I haven't had the chance to get Energia up and running with the CC3200 yet; I'm holding off until they ship a stable version with CC3200 support.&lt;/p&gt;
 
 &lt;p&gt;Since I haven't actually worked with this chip, I can't really give it a recommendation. Still, if you're designing a cost sensitive product that needs wifi connectivity, you would be crazy to leave this chip out of your evaluation list.&lt;/p&gt;
-</description><pubDate>Mon, 01 Sep 2014 04:00:00 Z</pubDate><a10:updated>2014-09-01T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;I recently got a new &lt;a href="http://canada.newark.com/texas-instruments/cc3200-launchxl/simplelink-cc3200-wi-fi-launchpad/dp/53X9474"&gt;TI CC3200&lt;/a&gt; launchpad from &lt;a href="http://www.newark.com/"&gt;Newark&lt;/a&gt;. This weekend, I finally had the chance to play with it. One word - WOW.&lt;/p&gt;
+</description><pubDate>Mon, 01 Sep 2014 04:00:00 Z</pubDate><a10:updated>2014-09-01T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;I recently got a new TI CC3200 launchpad from Newark. This weekend, I finally had the chance to play with it. One word - WOW.&lt;/p&gt;
 
 &lt;p&gt;Alright, so the demo that ships with the board isn't really impressive. What is impressive, however, is the CC3200 IC on the board. This chip costs about $9 in 1k quantities and contains everything you need to build a wifi connected embedded system. If you're familiar with the previous CC3000 wifi module, this IC is very similar, except it comes as a 64 pin QFN and includes an ARM Cortex-M4 applications processor.&lt;/p&gt;
 
