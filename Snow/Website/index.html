@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2015-05-02T16:45:53.9001232-04:00" />
+    <title>Generic Maker</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="canonical" href="http://www.genericmaker.com/" />
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        <header id="masthead" class="site-header fancy-container lightgreen" role="banner">
+            <hgroup>
+                <h1 class="site-title"><a href="/" title="genericmaker.com" rel="home">Generic Maker</a></h1>
+                <h2><small>Written by George Hahn</small></h2>
+                <h2><small>george@genericmaker.com</small></h2>
+            </hgroup>
+            <img src="http://www.gravatar.com/avatar/48c0c409de48c55d7e1f1e3f151aa600?s=200" />
+            <nav role="navigation" class="site-navigation main-navigation">
+                <h1 class="assistive-text">Menu</h1>
+                <div class="assistive-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+                <div class="menu">
+                    <ul>
+                        <!--li><a href="/about">About</a></li-->
+                        <li><a href="/category">Categories</a></li>
+                        <li><a href="/archive">Archive</a></li>
+                        <li><a href="/rss">RSS</a> / <a href="/feed">Atom</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+  <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2015/05/02/powersupplies/">Summary of Server Power Supplies</a> 
+        <span>posted on 02 May 2015</span>
+      </h1> 
+      
+      <p>For my purposes, must have a cardedge connector</p>
+
+<p>Primary: HP PS3381-1C1 - 12V@32A, 5V@5A <a href="http://www.rcgroups.com/forums/showpost.php?p=14205992&amp;postcount=7">post</a></p>
+
+<p>I've been using one of these for a few months on my Mini Kossel without any issues. It handles a 40W cartridge heater and a 120W heated bed with ease. The fan is noisy, but it could be worse. Can be had for $10 shipped!</p>
+
+<p>Other options:</p>
+
+<ul>
+<li>Dell NPS330BB A - <code>12V@18A</code>, <code>5V@35A</code>, <code>3.3V@10A</code> <a href="http://www.rcgroups.com/forums/showthread.php?t=1382457&amp;highlight=nps330bb">post</a> Looks like a great LED PSU!</li>
+<li>HP 511777-001 - <code>12V@38.3A</code> <a href="http://www.rcgroups.com/forums/showpost.php?p=15599551&amp;postcount=167">post</a></li>
+<li>Sony APS-111 - <code>12V@34A</code> <a href="http://www.rcgroups.com/forums/showthread.php?t=800379">post</a></li>
+<li>HP DPS-600PB - <code>12V@64.5A</code>, <code>5V@2A</code>, <code>3.3V@8A</code> <a href="http://www.rcgroups.com/forums/showthread.php?t=1005309&amp;page=17#post15794997">post</a></li>
+<li>Some HP - <code>12V@100A</code> <a href="http://www.rcgroups.com/forums/showthread.php?t=1005309#post11639297">post</a></li>
+<li><a href="http://www.rcgroups.com/forums/showthread.php?t=1292514">More</a></li>
+</ul>
+
+      <p><a href="/2015/05/02/powersupplies/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2015/04/25/updating-influxdb-grafana-raspberry-pi/">Updating InfluxDB and Grafana on the Raspberry Pi</a> 
+        <span>posted on 25 Apr 2015</span>
+      </h1> 
+      
+      <p>Mostly for my own records, here's the straightforward way to update InfluxDB and Grafana. I'm actually running on an Odroid-C1, but these instructions should be the same on any ARM platform (and similar on other platforms).</p>
+
+<pre><code>cd ~/gocode/src/github.com/influxdb/influxdb/
+./package.sh 0.9.0.pre
+sudo dpkg -i influxdb_0.9.0.pre_armhf.deb
+sudo service influxdb restart
+
+cd ~/gocode/src/github.com/grafana/grafana/
+godep update
+git pull origin master
+go build .
+npm install
+go run build.go package
+sudo dpkg -i dist/grafana_2.0.0-beta1_armhf.deb
+sudo service grafana restart
+</code></pre>
+
+<p>Might need some nasty stuff in between there
+- Merge config
+- Fix service</p>
+
+      <p><a href="/2015/04/25/updating-influxdb-grafana-raspberry-pi/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/11/06/mqtt-rf-bridge/">MQTT to 430MHz RF bridge</a> 
+        <span>posted on 06 Nov 2014</span>
+      </h1> 
+      
+      <p>For this project, I wanted a way to control my wireless power outlets from <a href="http://www.amazon.com/gp/product/B0087DAW46/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B0087DAW46&amp;linkCode=as2&amp;tag=generi0c-20&amp;linkId=FVZKHDNL5ZGAY5CN">Etekcity</a> with MQTT messages. <a href="http://www.mqtt.org/">MQTT</a>  is an excellent publish-subscribe protocol designed to power the internet of things; I use it along with <a href="http://nodered.org">Node-Red</a> to control devices around my apartment.</p>
+
+<p>These outlets are controlled with a very simple protocol over ASK 433MHz RF. The protocol is documented pretty well <a href="https://code.google.com/p/rc-switch/">elsewhere</a>, so I won't cover it in depth.</p>
+
+<p>Months ago, I created an identical device using a Netduino 2 Pro, but it wasn't fast enough to handle the radio protocol, so I had to pair it with a second microprocessor (I used a TI Tiva C Launchpad). This iteration of the project was created to simplify my setup and to let me attach the device to my network via Wifi rather than wired ethernet.</p>
+
+<p>To create this device, I wired a TI CC3200 Launchpad to a <a href="http://www.amazon.com/gp/product/B00INTI8R2/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B00INTI8R2&amp;linkCode=as2&amp;tag=generi0c-20&amp;linkId=IIDQZVD4UDU3VRI7">433MHz ASK transmitter</a>. These transmitters are super simple - you have to supply 5v, ground, and a transmit signal.</p>
+
+<p>Once the device was wired up, all it needed was some code. I used <a href="https://github.com/knolleary/pubsubclient">knolleary/pubsubclient</a> to communicate over MQTT. The application code is pretty simple - it subscribes to one topic and repeats any messages it receives over the RF link.</p>
+
+<p>Initially, I attempted to write the RF communications routine using the Energia supplied delay functions. Sadly, the microsecond delay function didn't work very well. When I measured the pulse timings with my logic analyzer, I saw that the delays were off, sometimes by a factor of 5x or more. Rather than troubleshoot a function I'm totally unfamiliar with, I took the easy way out - loop iteration based delays. With the help of my logic analyzer, I was easily able to create delays that perfectly matched my requirements. In a more complicated system, this wouldn't be a reasonable option, but this device is simple enough that it's not an issue.</p>
+
+<p>I've now been using this device for a few months and haven't had any issues with it. It's super reliable and can be hidden away anywhere USB power is available.</p>
+
+<p>My code is available on <a href="https://github.com/GeorgeHahn/MQTT_RF_Bridge">Github</a> along with a wiring diagram.</p>
+
+      <p><a href="/2014/11/06/mqtt-rf-bridge/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/09/01/cc3200-launchpad/">Playing with a TI CC3200 launchpad</a> 
+        <span>posted on 01 Sep 2014</span>
+      </h1> 
+      
+      <p>I recently got a new <a href="http://canada.newark.com/texas-instruments/cc3200-launchxl/simplelink-cc3200-wi-fi-launchpad/dp/53X9474">TI CC3200</a> launchpad from <a href="http://www.newark.com/">Newark</a>. This weekend, I finally had the chance to play with it. One word - WOW.</p>
+
+<p>Alright, so the demo that ships with the board isn't really impressive. What is impressive, however, is the CC3200 IC on the board. This chip costs about $9 in 1k quantities and contains everything you need to build a wifi connected embedded system. If you're familiar with the previous CC3000 wifi module, this IC is very similar, except it comes as a 64 pin QFN and includes an ARM Cortex-M4 applications processor.</p>
+
+<p>I haven't had the chance to get Energia up and running with the CC3200 yet; I'm holding off until they ship a stable version with CC3200 support.</p>
+
+<p>Since I haven't actually worked with this chip, I can't really give it a recommendation. Still, if you're designing a cost sensitive product that needs wifi connectivity, you would be crazy to leave this chip out of your evaluation list.</p>
+
+      <p><a href="/2014/09/01/cc3200-launchpad/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/05/12/force-dpi-scaling-on-windows/">Force DPI Scaling on Windows</a> 
+        <span>posted on 12 May 2014</span>
+      </h1> 
+      
+      <p>Windows exposes a number of ways to disable DPI scaling, but no way to forcefully enable it. This is a problem when apps tell windows they support high DPI but then go on to render at exactly the same size - making for unreadable text and unclickable buttons.</p>
+
+<p>I tried editing the application's manifest to set DpiAware to false, but that had no effect. Rather than switch my laptop's resolution every time I needed to use Cadence OrCAD, I did a little debugging with Ollydbg. Turns out, at some point, <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms633543%28v=vs.85%29.aspx">SetProcessDPIAware</a> is called. I already had an idea on how to solve it, so I didn't stick around to find the offending library (though I suspect it was being set by gdiplus).</p>
+
+<p>I probably could have patched OrCAD (less so gdiplus), but there is a far more flexible solution. All we need to do is hook the SetProcessDPIAware function as a program is starting, and we gain the ability to block the function call, leaving the target application no way to tell windows not to scale it.</p>
+
+<p>I used the <a href="https://github.com/RaMMicHaeL/minhook">minhook</a> library to build a DLL that will do just that. When it is loaded by an application, the code replaces SetProcessDPIAware with an implementation that does nothing.</p>
+
+<p>The DLL must be present right as the app is initializing, else it won't be able to block the function call. Rather than inject the DLL per se, I just used CFF Explorer to add it to the misbehaving application's import table. This causes it to be loaded as the application is starting up.</p>
+
+<p>To maintain Windows 8 compatibility, I didn't hook <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302122%28v=vs.85%29.aspx">SetProcessDpiAwareness</a>.</p>
+
+<h1>Using the tool</h1>
+
+<p>To use DPIMangler yourself, get the <a href="https://github.com/GeorgeHahn/DPIMangler/releases/tag/v1.0.0">binaries here</a>. Next, get <a href="http://www.ntcore.com/exsuite.php">CFF Explorer</a> or a similar tool. Open the target executable in CFF Explorer, go to the Import Adder, and click Add. Select the appropriate DPIMangler binary, then choose any exported function and click Import By Name. Next, click Rebuild Import Table and save the application. That's it! Next time you run the program, calls to SetProcessDPIAware will be blocked.</p>
+
+<p>If this isn't working for you, make sure the application doesn't declare DpiAware in its manifest. Additionally, it's possible the program is calling SetProcessDPIAwareness, which I haven't hooked here. If that's the case, feel free to <a href="https://twitter.com/George_Hahn/">contact me on Twitter</a>, and I'll try to get a new release out.</p>
+
+<h1>Results</h1>
+
+<p>Before; OrCAD on high DPI is practically unusable with no scaling</p>
+
+<p><img src="/images/OrCADNoScaling.png" alt="" /></p>
+
+<p>After; much more usable with forced scaling</p>
+
+<p><img src="/images/OrCADScaled.png" alt="" /></p>
+
+      <p><a href="/2014/05/12/force-dpi-scaling-on-windows/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/05/11/fixing-markdownpad-livepreview-high-dpi/">Fixing MarkdownPad live preview on Lenovo Yoga 2 Pro (and other high DPI screens)</a> 
+        <span>posted on 11 May 2014</span>
+      </h1> 
+      
+      <p>Here's a quick and dirty font size fix I applied to the Markdownpad-github.css file. I just switched all font-size items to use <code>em</code> instead of <code>px</code>. It probably formats some things totally incorrectly, but it's good enough for me for the moment.</p>
+
+<p>To use, open Tools -> Options -> Stylesheets and replace the contents of <code>markdownpad-github.css</code> (or create a new stylesheet)</p>
+
+<p><a href="https://gist.github.com/GeorgeHahn/46d809262f3be67ea13e">See gist</a></p>
+
+      <p><a href="/2014/05/11/fixing-markdownpad-livepreview-high-dpi/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/04/01/can-letters-in-the-kitchen/">Can letters in the kitchen</a> 
+        <span>posted on 01 Apr 2014</span>
+      </h1> 
+      
+      <p><img src="/images/can-letters-header.jpg" alt="" /> </p>
+
+<p>Earlier today, my roommate texted me a picture of a sign that her work was going to throw out. When she got home, I convinced her that we should go and retrieve it!</p>
+
+<p>First, we removed the letter faces.</p>
+
+<p><img src="/images/can-letter-faces.jpg" alt="" /></p>
+
+<p>With the faces free, we removed the screws that were holding the letters to their bulky mounting rail.</p>
+
+<p><img src="/images/can-letter-removal.jpg" alt="" /></p>
+
+<p>Letters free from the rail.</p>
+
+<p><img src="/images/can-letters-freed.jpg" alt="" /></p>
+
+<p>We were surprised to find that the letters were lit with neon. We removed the bulbs and placed them aside.</p>
+
+<p><img src="/images/can-letters-removed-neon.jpg" alt="" /></p>
+
+<p>After returning home, we cleaned the letters and lined them up to prepare for lighting.</p>
+
+<p><img src="/images/can-letters-lined-up.jpg" alt="" /></p>
+
+<p>We then stuffed the letters with string lights.</p>
+
+<p><img src="/images/can-letters-more-lights.jpg" alt="" />
+<img src="/images/can-letters-inserting-lights.jpg" alt="" /></p>
+
+<p>Letters in place above our kitchen cabinets. We were lucky they fit!</p>
+
+<p><img src="/images/can-letters-in-place.jpg" alt="" /></p>
+
+<p>This was a fun diversion for today, but we'll probably have to redo them with LEDs if we decide to keep them around for long.</p>
+
+<p>If you like this spontaneous bit of work, you should see what my roommate does over at <a href="https://www.facebook.com/LaserTrees">Electric Trees</a>!</p>
+
+      <p><a href="/2014/04/01/can-letters-in-the-kitchen/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/03/09/metal-hotend-part-two/">Hotend for Metal FDM, Part 2</a> 
+        <span>posted on 09 Mar 2014</span>
+      </h1> 
+      
+      <p>What if you could do something like SLS but with a hot tip? Take a 1200C tip and move around the work surface melting tiny metal beads. Alternatively, use a torch.</p>
+
+<p>Or perhaps metal beads could be extruded with FDM and fused later with a laser or in a kiln.</p>
+
+      <p><a href="/2014/03/09/metal-hotend-part-two/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/03/08/designing-a-hotend-for-metal-fdm/">Hotend for Metal FDM</a> 
+        <span>posted on 08 Mar 2014</span>
+      </h1> 
+      
+      <h2>Hotend &amp; nozzle metal</h2>
+
+<ul>
+<li>Able to withstand 700-1100C</li>
+<li>Not going to interact badly with molten aluminum, zinc, or copper</li>
+<li>Hard enough that a 0.5mm hole is still 0.5mm after extruding a bunch of molten metal through it</li>
+</ul>
+
+<h2>Hotend design</h2>
+
+<ul>
+<li>Thermal expansion from worst metal shouldn't cause a jam
+<ul>
+<li>worst case expansion * worst case tolerance + magic extra tolerance</li>
+</ul></li>
+<li>Minimum amount of metal is molten at any given moment.</li>
+</ul>
+
+<h2>Nozzle design</h2>
+
+<ul>
+<li>Metal should extrude with minimum turbulence
+<ul>
+<li>Nozzle 10x longer than diameter of extrusion?</li>
+</ul></li>
+</ul>
+
+<h2>Coldend design</h2>
+
+<ul>
+<li>Thermal transfer up filament should be minimized</li>
+</ul>
+
+<h2>Heat break design</h2>
+
+<ul>
+<li>Heat leakage into the coldend should be minimized</li>
+<li>Filament must be supported enough that it won't bend under the pressure of extrusion
+<ul>
+<li>Ceramic sheath? Stainless tube?</li>
+</ul></li>
+<li>If the heat break can't withstand the full pressure of extrusion, the hotend will need to be anchored to the coldend externally</li>
+</ul>
+
+<h2>Extruder design</h2>
+
+<ul>
+<li>Filament should not be marred (eg, by a sharp gear) to minimize the risk of jamming in the cold end or damaging any components</li>
+<li>Filament must be pushed with enough force to extrude
+<ul>
+<li>Need to find data on how soft metals are at various temps</li>
+</ul></li>
+</ul>
+
+<h2>Filament research</h2>
+
+<ul>
+<li>Find filament of multiple metals in the same diameter &amp; tolerance (at/near extrusion temperature after thermal expansion)</li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>In my mind, this hotend looks a lot like an E3d hotend made from steel or titanium, but with a directly mounted extruder and a lot more cooling (possibly water cooled?). It would be heated with a high temp heater cartridge (maybe?) and have a much heftier heat break, possibly supplemented by external thin steel wires.</p>
+
+<h2>General questions</h2>
+
+<ul>
+<li>How will molten aluminum interact with titanium? Would it be an appropriate nozzle material? How about steel?</li>
+<li>Any idea how to figure out a graph of extrusion force vs temperature for aluminum (w/ a given diameter nozzle)?</li>
+<li>How horrible is it going to be to deal with thermal expansion across this entire design? If more than one metal is used, everything needs to be matched up for expansion, yes?</li>
+<li>What sort of surface will be able to handle the thermal stress of being printed onto?</li>
+<li>How can part adhesion to the print bed be maintained with high levels of material shrinkage?</li>
+<li>Ceramics are exciting and could open a lot of opportunities, but I have no idea where to start with designing and specifying ceramic parts.</li>
+<li><strong>I know there are some additional issues I haven't mentioned here and certainly some I haven't even considered. Feel free to chime in an any of them!</strong></li>
+</ul>
+
+<p><img src="http://e3d-online.com/image/data/v5/hotside.jpg" alt="" /> </p>
+
+      <p><a href="/2014/03/08/designing-a-hotend-for-metal-fdm/">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2014/02/28/kinivo-bluetooth-module/">Kinivo Bluetooth module</a> 
+        <span>posted on 28 Feb 2014</span>
+      </h1> 
+      
+      <h2>Module Overview</h2>
+
+<p><a href="http://www.amazon.com/Kinivo-BTC450-Bluetooth-Hands-Free-Input/dp/B009NLTW60/ref=sr_1_1?s=electronics&amp;ie=UTF8&amp;tag=generi0c-20&amp;qid=1393638641&amp;sr=1-1&amp;keywords=btc450"><img src="/images/kinivomodule.jpg" alt="" /></a></p>
+
+<p><a href="http://www.amazon.com/Kinivo-BTC450-Bluetooth-Hands-Free-Input/dp/B009NLTW60/ref=sr_1_1?s=electronics&amp;ie=UTF8&amp;tag=generi0c-20&amp;qid=1393638641&amp;sr=1-1&amp;keywords=btc450">Kinivo BTC 450</a></p>
+
+<ul>
+<li>Held together with four T6 screws</li>
+<li>Contains a <a href="http://www.k-mate.com/en/displayproduct001.html?proID=101813595&amp;proTypeID=100128337&amp;fid=100128337">KMBT007A bluetooth module</a></li>
+<li>Runs at 3.3v</li>
+</ul>
+
+<p><img src="/images/usbbtpcb.jpg" alt="" /></p>
+
+<h3>Wiring</h3>
+
+<p>Audio wire colors: Left: blue, Gnd: red/copper twist, Right: green</p>
+
+<p>Power wire colors: Positive: red, Negative: copper (both are in thin plastic sheaths)</p>
+
+<h3>IO</h3>
+
+<p>All switches are NO with 10k pullups to 3.3v</p>
+
+<p>Has exposed SPI and UART ports</p>
+
+<hr />
+
+<h2>Remote Overview</h2>
+
+<p><a href="http://www.amazon.com/Metra-Universal-Steering-Control-Interface/dp/B0052HXPAI/?_encoding=UTF8&amp;tag=generi0c-20&amp;camp=1789&amp;creative=9325&amp;linkCode=ur2"><img src="/images/axxessmodule.jpg" alt="" /></a></p>
+
+<p><a href="http://www.amazon.com/Metra-Universal-Steering-Control-Interface/dp/B0052HXPAI/?_encoding=UTF8&amp;tag=generi0c-20&amp;camp=1789&amp;creative=9325&amp;linkCode=ur2">Axxess RF remote</a></p>
+
+<p>Been running for almost two years on the same battery! Surprisingly, the plastic is visibly worn where it's been rubbing under my radio.</p>
+
+<ul>
+<li>8 buttons</li>
+<li>Powered by a coin cell</li>
+<li>uC is an rfPIC</li>
+<li>Receiver uses a PIC18F2520</li>
+</ul>
+
+<p>I used a custom firmware to toggle test points on the receiver when buttons are pressed. I preserved all radio communications so I can still control the radio station or CD track (as if I'd ever want to).</p>
+
+      <p><a href="/2014/02/28/kinivo-bluetooth-module/">Read more...</a></p>
+    </li>
+  </ul> 
+
+  <!-- Pagination links -->
+  <div id="post-pagination" class="pagination">
+
+   
+
+      <!--<a href="/">Previous Page</a>-->
+
+    <p class="previous">
+      <a href="/page2">Next Page</a>
+    </p>
+
+  </div>
+
+
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+
+            <div id="secondary" class="widget-area fancy-container lightred" role="complementary">
+                <aside id="text-5" class="widget widget_text">
+                    <h1 class="widget-title">Follow</h1>
+                    <div class="textwidget logos">
+                        <a href="https://twitter.com/George_Hahn" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://twitter.com']);"><img src="/stylesheets/images/twitter.png"></a>
+                        <!--a href="https://www.linkedin.com/profile/view?id=250123824" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.linkedin.com']);"><img src="/stylesheets/images/linkedin.png"></a-->
+                        <a href="https://plus.google.com/u/0/114392689355099010616/" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://plus.google.com']);"><img src="/stylesheets/images/googleplus.png"></a>
+                        <a href="https://github.com/GeorgeHahn" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://github.com']);"><img src="/stylesheets/images/github.png"></a>
+                        <a href="https://stackoverflow.com/users/1042744/georgeh" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://stackoverflow.com']);"><img src="/stylesheets/images/stackoverflow.png"></a>
+                    </div>
+                        
+                        <a href="https://tindie.com/shops/George/?ref=offsite_badges&utm_source=sellers_George&utm_medium=badges&utm_campaign=badge_small" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://github.com']);"><img src="https://s3.amazonaws.com/tindie-static/badges/tindie-small.png"></a>
+                </aside>
+                <aside id="archives-4" class="widget widget_archive">
+                    <h1 class="widget-title">Archive</h1>
+                    <ul class="posts">
+                          <li><a href="/archive#20155">May, 2015</a></li>
+                          <li><a href="/archive#20154">April, 2015</a></li>
+                          <li><a href="/archive#201411">November, 2014</a></li>
+                          <li><a href="/archive#20149">September, 2014</a></li>
+                          <li><a href="/archive#20145">May, 2014</a></li>
+                          <li><a href="/archive#20144">April, 2014</a></li>
+                          <li><a href="/archive#20143">March, 2014</a></li>
+                          <li><a href="/archive#20142">February, 2014</a></li>
+                          <li><a href="/archive#20141">January, 2014</a></li>
+                          <li><a href="/archive#201310">October, 2013</a></li>
+                          <li><a href="/archive#20139">September, 2013</a></li>
+                          <li><a href="/archive#20138">August, 2013</a></li>
+                          <li><a href="/archive#20137">July, 2013</a></li>
+                          <li><a href="/archive#20135">May, 2013</a></li>
+                          <li><a href="/archive#20134">April, 2013</a></li>
+                          <li><a href="/archive#20133">March, 2013</a></li>
+                          <li><a href="/archive#20132">February, 2013</a></li>
+                          <li><a href="/archive#20131">January, 2013</a></li>
+                          <li><a href="/archive#201212">December, 2012</a></li>
+                          <li><a href="/archive#201211">November, 2012</a></li>
+                          <li><a href="/archive#201210">October, 2012</a></li>
+                          <li><a href="/archive#20129">September, 2012</a></li>
+                          <li><a href="/archive#20125">May, 2012</a></li>
+                          <li><a href="/archive#20124">April, 2012</a></li>
+                          <li><a href="/archive#20122">February, 2012</a></li>
+                          <li><a href="/archive#20121">January, 2012</a></li>
+                          <li><a href="/archive#20117">July, 2011</a></li>
+                          <li><a href="/archive#20115">May, 2011</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- #secondary .widget-area -->
+
+
+        </div>
+        <!-- #main -->
+
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="site-info">
+                Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.	
+            </div>
+            <!-- .site-info -->
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-36202871-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+    
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+</body>
+</html>

@@ -1,4 +1,82 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title /><link>http://www.genericmaker.com/feed.xml</link><description /><item><guid isPermaLink="true">http://www.genericmaker.com/2014/11/mqtt-rf-bridge.html</guid><link>http://www.genericmaker.com/2014/11/mqtt-rf-bridge.html</link><title>MQTT to 430MHz RF bridge</title><description>&lt;p&gt;For this project, I wanted a way to control my wireless power outlets from &lt;a href="http://www.amazon.com/gp/product/B0087DAW46/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B0087DAW46&amp;amp;linkCode=as2&amp;amp;tag=generi0c-20&amp;amp;linkId=FVZKHDNL5ZGAY5CN"&gt;Etekcity&lt;/a&gt; with MQTT messages. &lt;a href="http://www.mqtt.org/"&gt;MQTT&lt;/a&gt;  is an excellent publish-subscribe protocol designed to power the internet of things; I use it along with &lt;a href="http://nodered.org"&gt;Node-Red&lt;/a&gt; to control devices around my apartment.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title /><link>http://www.genericmaker.com/feed.xml</link><description /><item><guid isPermaLink="true">http://www.genericmaker.com/2015/05/powersupplies.html</guid><link>http://www.genericmaker.com/2015/05/powersupplies.html</link><title>Summary of Server Power Supplies</title><description>&lt;p&gt;For my purposes, must have a cardedge connector&lt;/p&gt;
+
+&lt;p&gt;Primary: HP PS3381-1C1 - 12V@32A, 5V@5A &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=14205992&amp;amp;postcount=7"&gt;post&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I've been using one of these for a few months on my Mini Kossel without any issues. It handles a 40W cartridge heater and a 120W heated bed with ease. The fan is noisy, but it could be worse. Can be had for $10 shipped!&lt;/p&gt;
+
+&lt;p&gt;Other options:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dell NPS330BB A - &lt;code&gt;12V@18A&lt;/code&gt;, &lt;code&gt;5V@35A&lt;/code&gt;, &lt;code&gt;3.3V@10A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=1382457&amp;amp;highlight=nps330bb"&gt;post&lt;/a&gt; Looks like a great LED PSU!&lt;/li&gt;
+&lt;li&gt;HP 511777-001 - &lt;code&gt;12V@38.3A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=15599551&amp;amp;postcount=167"&gt;post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Sony APS-111 - &lt;code&gt;12V@34A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=800379"&gt;post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;HP DPS-600PB - &lt;code&gt;12V@64.5A&lt;/code&gt;, &lt;code&gt;5V@2A&lt;/code&gt;, &lt;code&gt;3.3V@8A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=1005309&amp;amp;page=17#post15794997"&gt;post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Some HP - &lt;code&gt;12V@100A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=1005309#post11639297"&gt;post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.rcgroups.com/forums/showthread.php?t=1292514"&gt;More&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description><pubDate>Sat, 02 May 2015 04:00:00 Z</pubDate><a10:updated>2015-05-02T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;For my purposes, must have a cardedge connector&lt;/p&gt;
+
+&lt;p&gt;Primary: HP PS3381-1C1 - 12V@32A, 5V@5A &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=14205992&amp;amp;postcount=7"&gt;post&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I've been using one of these for a few months on my Mini Kossel without any issues. It handles a 40W cartridge heater and a 120W heated bed with ease. The fan is noisy, but it could be worse. Can be had for $10 shipped!&lt;/p&gt;
+
+&lt;p&gt;Other options:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dell NPS330BB A - &lt;code&gt;12V@18A&lt;/code&gt;, &lt;code&gt;5V@35A&lt;/code&gt;, &lt;code&gt;3.3V@10A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=1382457&amp;amp;highlight=nps330bb"&gt;post&lt;/a&gt; Looks like a great LED PSU!&lt;/li&gt;
+&lt;li&gt;HP 511777-001 - &lt;code&gt;12V@38.3A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showpost.php?p=15599551&amp;amp;postcount=167"&gt;post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Sony APS-111 - &lt;code&gt;12V@34A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=800379"&gt;post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;HP DPS-600PB - &lt;code&gt;12V@64.5A&lt;/code&gt;, &lt;code&gt;5V@2A&lt;/code&gt;, &lt;code&gt;3.3V@8A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=1005309&amp;amp;page=17#post15794997"&gt;post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Some HP - &lt;code&gt;12V@100A&lt;/code&gt; &lt;a href="http://www.rcgroups.com/forums/showthread.php?t=1005309#post11639297"&gt;post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.rcgroups.com/forums/showthread.php?t=1292514"&gt;More&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2015/04/updating-influxdb-grafana-raspberry-pi.html</guid><link>http://www.genericmaker.com/2015/04/updating-influxdb-grafana-raspberry-pi.html</link><title>Updating InfluxDB and Grafana on the Raspberry Pi</title><description>&lt;p&gt;Mostly for my own records, here's the straightforward way to update InfluxDB and Grafana. I'm actually running on an Odroid-C1, but these instructions should be the same on any ARM platform (and similar on other platforms).&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+cd ~/gocode/src/github.com/influxdb/influxdb/
+./package.sh 0.9.0.pre
+sudo dpkg -i influxdb_0.9.0.pre_armhf.deb
+sudo service influxdb restart
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+cd ~/gocode/src/github.com/grafana/grafana/
+godep update
+git pull origin master
+go build .
+npm install
+go run build.go package
+sudo dpkg -i dist/grafana_2.0.0-beta1_armhf.deb
+sudo service grafana restart
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Might need some nasty stuff in between there
+- Merge config
+- Fix service&lt;/p&gt;
+</description><pubDate>Sat, 25 Apr 2015 04:00:00 Z</pubDate><a10:updated>2015-04-25T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Mostly for my own records, here's the straightforward way to update InfluxDB and Grafana. I'm actually running on an Odroid-C1, but these instructions should be the same on any ARM platform (and similar on other platforms).&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+cd ~/gocode/src/github.com/influxdb/influxdb/
+./package.sh 0.9.0.pre
+sudo dpkg -i influxdb_0.9.0.pre_armhf.deb
+sudo service influxdb restart
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+cd ~/gocode/src/github.com/grafana/grafana/
+godep update
+git pull origin master
+go build .
+npm install
+go run build.go package
+sudo dpkg -i dist/grafana_2.0.0-beta1_armhf.deb
+sudo service grafana restart
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Might need some nasty stuff in between there
+- Merge config
+- Fix service&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2014/11/mqtt-rf-bridge.html</guid><link>http://www.genericmaker.com/2014/11/mqtt-rf-bridge.html</link><title>MQTT to 430MHz RF bridge</title><description>&lt;p&gt;For this project, I wanted a way to control my wireless power outlets from &lt;a href="http://www.amazon.com/gp/product/B0087DAW46/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B0087DAW46&amp;amp;linkCode=as2&amp;amp;tag=generi0c-20&amp;amp;linkId=FVZKHDNL5ZGAY5CN"&gt;Etekcity&lt;/a&gt; with MQTT messages. &lt;a href="http://www.mqtt.org/"&gt;MQTT&lt;/a&gt;  is an excellent publish-subscribe protocol designed to power the internet of things; I use it along with &lt;a href="http://nodered.org"&gt;Node-Red&lt;/a&gt; to control devices around my apartment.&lt;/p&gt;
 
 &lt;p&gt;These outlets are controlled with a very simple protocol over ASK 433MHz RF. The protocol is documented pretty well &lt;a href="https://code.google.com/p/rc-switch/"&gt;elsewhere&lt;/a&gt;, so I won't cover it in depth.&lt;/p&gt;
 
@@ -426,68 +504,4 @@
 &lt;/ul&gt;
 
 &lt;p&gt;I used a custom firmware to toggle test points on the receiver when buttons are pressed. I preserved all radio communications so I can still control the radio station or CD track (as if I'd ever want to).&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2014/01/mono-for-beaglebone-black.html</guid><link>http://www.genericmaker.com/2014/01/mono-for-beaglebone-black.html</link><title>Building Mono on a BeagleBone Black (Hard Float)</title><description>&lt;p&gt;I performed this on &lt;a href="http://www.armhf.com/index.php/boards/beaglebone-black/"&gt;Ubuntu Saucy 13.10 from ARMhf&lt;/a&gt; (running from an 8Gb SD card)&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Launch a terminal window/ssh into your BBB&lt;/li&gt;
-&lt;li&gt;sudo apt-get update&lt;/li&gt;
-&lt;li&gt;sudo apt-get install mono-complete git automake libtool&lt;/li&gt;
-&lt;li&gt;Wait a long time (hours)&lt;/li&gt;
-&lt;li&gt;git clone git://github.com/mono/mono.git&lt;/li&gt;
-&lt;li&gt;cd mono&lt;/li&gt;
-&lt;li&gt;git submodule init&lt;/li&gt;
-&lt;li&gt;git submodule update&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./autogen.sh --prefix=/usr/local --enable-nls=no --with-sgen=yes --with-xen-opt=no --with-ikvm-native=no&lt;/code&gt;  &lt;/li&gt;
-&lt;li&gt;make&lt;/li&gt;
-&lt;li&gt;Wait a long time (hours again)&lt;/li&gt;
-&lt;li&gt;Ignore the errors and hope they don’t mean anything&lt;/li&gt;
-&lt;li&gt;sudo make install&lt;/li&gt;
-&lt;li&gt;Wait some more&lt;/li&gt;
-&lt;li&gt;Ignore the errors and hope they don’t mean anything&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Post based off of: &lt;a href="http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/"&gt;http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/&lt;/a&gt;&lt;/p&gt;
-</description><pubDate>Fri, 03 Jan 2014 05:00:00 Z</pubDate><a10:updated>2014-01-03T05:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;I performed this on &lt;a href="http://www.armhf.com/index.php/boards/beaglebone-black/"&gt;Ubuntu Saucy 13.10 from ARMhf&lt;/a&gt; (running from an 8Gb SD card)&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Launch a terminal window/ssh into your BBB&lt;/li&gt;
-&lt;li&gt;sudo apt-get update&lt;/li&gt;
-&lt;li&gt;sudo apt-get install mono-complete git automake libtool&lt;/li&gt;
-&lt;li&gt;Wait a long time (hours)&lt;/li&gt;
-&lt;li&gt;git clone git://github.com/mono/mono.git&lt;/li&gt;
-&lt;li&gt;cd mono&lt;/li&gt;
-&lt;li&gt;git submodule init&lt;/li&gt;
-&lt;li&gt;git submodule update&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./autogen.sh --prefix=/usr/local --enable-nls=no --with-sgen=yes --with-xen-opt=no --with-ikvm-native=no&lt;/code&gt;  &lt;/li&gt;
-&lt;li&gt;make&lt;/li&gt;
-&lt;li&gt;Wait a long time (hours again)&lt;/li&gt;
-&lt;li&gt;Ignore the errors and hope they don’t mean anything&lt;/li&gt;
-&lt;li&gt;sudo make install&lt;/li&gt;
-&lt;li&gt;Wait some more&lt;/li&gt;
-&lt;li&gt;Ignore the errors and hope they don’t mean anything&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Post based off of: &lt;a href="http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/"&gt;http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/&lt;/a&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2013/10/razr-hd-maxx-teardown.html</guid><link>http://www.genericmaker.com/2013/10/razr-hd-maxx-teardown.html</link><title>RAZR HD Maxx Teardown</title><description>&lt;p&gt;A friend accidentally ran over his RAZR HD Maxx, so I rescued the motherboard and tore it down!&lt;/p&gt;
-
-&lt;p&gt;I wasn't too kind when removing the RF shielding, so the copper is torn off in a few places.&lt;/p&gt;
-
-&lt;p&gt;View image for full resolution.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/images/razrhd_1.jpeg" alt="" /&gt;
-&lt;img src="/images/razrhd_2.jpeg" alt="" /&gt;
-&lt;img src="/images/razrhd_3.jpeg" alt="" /&gt;
-&lt;img src="/images/razrhd_4.jpeg" alt="" /&gt;
-&lt;img src="/images/razrhd_5.jpeg" alt="" /&gt;&lt;/p&gt;
-</description><pubDate>Thu, 10 Oct 2013 04:00:00 Z</pubDate><a10:updated>2013-10-10T04:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;A friend accidentally ran over his RAZR HD Maxx, so I rescued the motherboard and tore it down!&lt;/p&gt;
-
-&lt;p&gt;I wasn't too kind when removing the RF shielding, so the copper is torn off in a few places.&lt;/p&gt;
-
-&lt;p&gt;View image for full resolution.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://www.genericmaker.com/images/razrhd_1.jpeg" alt="" /&gt;
-&lt;img src="http://www.genericmaker.com/images/razrhd_2.jpeg" alt="" /&gt;
-&lt;img src="http://www.genericmaker.com/images/razrhd_3.jpeg" alt="" /&gt;
-&lt;img src="http://www.genericmaker.com/images/razrhd_4.jpeg" alt="" /&gt;
-&lt;img src="http://www.genericmaker.com/images/razrhd_5.jpeg" alt="" /&gt;&lt;/p&gt;
 </a10:content></item></channel></rss>

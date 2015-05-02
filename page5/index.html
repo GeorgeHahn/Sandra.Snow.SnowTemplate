@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-11-07T12:41:06.8189450-05:00" />
+    <meta http-equiv="last-modified" content="2015-05-02T16:34:30.5554049-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page5/" />
@@ -36,6 +36,76 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/10/3d-printed-headphones.html">3D Printed Headphones</a> 
+        <span>posted on 13 Oct 2012</span>
+      </h1> 
+      
+      <p>The <a href="http://store.sony.com/webapp/wcs/stores/servlet/ProductDisplay?catalogId=10551&amp;storeId=10151&amp;langId=-1&amp;partNumber=MDRV500DJ#specifications">Sony MDR-V500</a> headphones were marketed as budget DJ headphones. They sound 'good enough' and are extremely durable. Their biggest fault is that they are on-the-ear headphones instead of the more comfortable over-the-ear type. I set out to fix that with a bit of 3D printing.</p>
+
+<p><s><strong>Mod Results</strong></s>
+I did not complete this mod.</p>
+
+<p>I neglected to take a 'before' picture, so here's one from someone else:</p>
+
+<p><img src="/images/sony-mdr-500-headphones.jpg" alt="" /></p>
+
+<p><em>Source: Playderecord.com</em></p>
+
+<h2>In-Progress Photos</h2>
+
+<p><img src="/images/sony-mdr-500-result.jpg" alt="" /></p>
+
+<p><img src="/images/sony-mdr-500-result2.jpg" alt="" /></p>
+
+<p>Modification Process</p>
+
+<p>First, I modeled the two part enclosure in Solidworks. When this was complete, I tweaked the dimensions to allow for pads with a diameter 3cm larger than the original.</p>
+
+<p><img src="/images/sony-mdr-500-progress1.jpg" alt="" /></p>
+
+<p>To install the larger enclosures, the original enclosures must be removed and the drivers extracted.</p>
+
+<p>First, remove the pads and the three screws under them. Carefully remove the foam that is glued over the driver.</p>
+
+<p><img src="/images/sony-mdr-500-progress2.jpg" alt="" /></p>
+
+<p>Separate the two halves of the enclosure. Flip the inner half around and remove the driver by twisting it slightly.</p>
+
+<p><img src="/images/sony-mdr-500-progress3.jpg" alt="" /></p>
+
+<p>Once the driver is free, the headphone wires will need to be removed. Grab a soldering iron and remove the wires one at a time.</p>
+
+<p><img src="/images/sony-mdr-500-progress4.jpg" alt="" /></p>
+
+<p>Cut the zip tie inside and pull the wire out from the enclosure. The enclosure can now be removed from the headband.</p>
+
+<p><img src="/images/sony-mdr-500-progress5.jpg" alt="" /></p>
+
+<p>Save the nice rubber strain relief piece for the new enclosure.</p>
+
+      <p><a href="/2012/10/3d-printed-headphones.html">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/10/linux-mint-cinnamon-set-workspace-names.html">(Linux Mint) Cinnamon Set Workspace Names</a> 
+        <span>posted on 13 Oct 2012</span>
+      </h1> 
+      
+      <p>In Cinnamon 1.6, workspaces in the expo can have custom names applied. However, these names are not carried through to the window right click menu (Move to another workspace ->).</p>
+
+<p>Workspace names in the right click menu are set by the workspace-names key in org.gnome.desktop.wm.preferences.</p>
+
+<p>For example:</p>
+
+<pre><code>gsettings set org.gnome.desktop.wm.preferences workspace-names "['Entertainment', 'Projects', 'Programming', 'Learning', 'Homework']" 
+</code></pre>
+
+<p>(Sadly, these names do synchronize with the expo names, so you'll have to set everything twice.) </p>
+
+      <p><a href="/2012/10/linux-mint-cinnamon-set-workspace-names.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2012/10/the-problem-with-embedded-development.html">The Problem with Embedded Development</a> 
@@ -359,34 +429,6 @@ donkey</p>
 
       <p><a href="/2012/02/hardware-design-workflow-my-mistakes.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/02/new-horizons.html">New Horizons</a> 
-        <span>posted on 13 Feb 2012</span>
-      </h1> 
-      
-      <p>Recently, I created a bare-bones design for TI's <a href="http://www.ti.com/product/pcm2707">PCM2707</a> USB DAC. This was the first time I designed a board layout. It was enlightening, to say the least. The board is almost entirely surface mount and comes in at a hair over 1 sq inch. I have five of them on order at BatchPCB - I'll share the schematic and layout for this one once I get a chance to play with the hardware.</p>
-
-<p>Once the basic board works, I would like to make two derivatives - one bus powered with a headphone amplifier, and one self powered with a heftier amplifier. I have not decided on a specific amplifiers yet, but I am considering the 25 watt <a href="http://www.ti.com/product/tas5713">TAS5713</a> for the board with the bigger amp. This chip sings from an I2S input, which should help keep a short analog signal path. </p>
-
-      <p><a href="/2012/02/new-horizons.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/01/settlers-of-catan.html">Settlers of Catan!</a> 
-        <span>posted on 18 Jan 2012</span>
-      </h1> 
-      
-      <p>I have been a <a href="http://en.wikipedia.org/wiki/The_Settlers_of_Catan">Settlers of Catan</a> addict for the past two years. If you enjoy board games and you have not had the chance to play this one, you are really missing out.</p>
-
-<p>Long ago, I lost one of the white settlements. As I now own a functional 3d printer, I thought I might print a replacement. When I found that someone had already uploaded models of the <a href="http://www.thingiverse.com/thing:770">Catan settlements, cities, and roads</a> to thingiverse, I decided to print an entire set of pieces.</p>
-
-<p><img src="/images/2012-01-17_01-20-32_503.jpg" alt="" /></p>
-
-<p>This was my first print in two weeks. Not long ago, I switched to grey plastic and found its thermal properties different from the transparent blue plastic I am used to. I had to recalibrate a number of settings, and my prints still have not reached the level of quality I would like to see. Once I have reached a higher level of quality, I will reprint this set. In the meantime, it is definitely suitable for use. </p>
-
-      <p><a href="/2012/01/settlers-of-catan.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -426,6 +468,8 @@ donkey</p>
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2015May">May, 2015</a></li>
+                          <li><a href="/archive#2015April">April, 2015</a></li>
                           <li><a href="/archive#2014November">November, 2014</a></li>
                           <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>

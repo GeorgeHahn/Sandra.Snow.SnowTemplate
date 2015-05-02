@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-11-07T12:41:06.8189450-05:00" />
+    <meta http-equiv="last-modified" content="2015-05-02T16:34:30.5554049-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page3/" />
@@ -36,6 +36,52 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2013/03/the-roles-of-professors.html">The Roles of Professors</a> 
+        <span>posted on 03 Mar 2013</span>
+      </h1> 
+      
+      <p>This is an assignment I wrote for my "Intro to Engineering" class. </p>
+
+<h2>Reflection: Important Roles for Professors</h2>
+
+<p>I disagree with three of seven items shown on the list of important roles for professors. Here's what I disagree with and why.</p>
+
+<p><em>Give you the benefit of the doubt on a borderline grade</em></p>
+
+<p>I am a student, not a case for charity. If my professor feels I deserve the higher of two grades, fine, I'll take it, and I'll appreciate it. In the end, though, I really don't care what they do. All I value is that my grade represents an objective view of my proficiency in a subject and the effort I put in. If a professor grades hard, that's not an issue with the professor, that's an issue with my proficiency.</p>
+
+<p><em>Monitor your progress and hold you accountable for your performance</em></p>
+
+<p>I am a student, I can take care of myself. I don't need a figure of responsibility to hold my hand throughout the learning process. Like I said before, all I ask from my professors is that my grade be representative of my skill in the subject they are teaching.</p>
+
+<p><em>Nominate you for scholarships or academic awards</em></p>
+
+<p>I am a student, I have to pay for my own schooling. Applying for scholarship and other excellence-based awards is my job, not my professors'.</p>
+
+<p>Now that I am thoroughly offended by this list, I suppose I might share the four things I do appreciate from a professor. <em>Provide you with invaluable one-on-one instruction. Give you academic advising, career guidance, <s>and personal advice</s>. <s>Help you find a summer job in industry and even</s> hire you on their research grants. Serve as a valuable reference when you apply for jobs, either while you are a student or after you graduate. Perhaps I was wrong to claim I agreed with four of the items. Two and two halves is more accurate.</em></p>
+
+<hr />
+
+<p><em>Studying Engineering</em>, by Raymond B. Landis has some helpful content and useful bits of common sense - this is not one of them. </p>
+
+      <p><a href="/2013/03/the-roles-of-professors.html">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2013/02/listing-product-on-tindie.html">Listing a Product on Tindie</a> 
+        <span>posted on 16 Feb 2013</span>
+      </h1> 
+      
+      <p>Late last month, I designed a simple micro USB breakout board on Upverter. I would have bought Sparkfun's breakout, but it does not expose the ID pin - which I needed. I ordered the tiny PCB from OSH Park, but the design <a href="http://upverter.com/GeorgeHahn/3d6ead6de4b3dbee/MicroUSB-Breakout-Board/">is available here</a> for anyone who wants to have it built themselves. Note that you'll need to rename the gerbers from Upverter's naming scheme to OSH Park's.</p>
+
+<p><img src="/images/usb_breakout.jpg" alt="" /></p>
+
+<p>Since I have a number of micro USB connectors and some extra boards, I decided to list the board on Tindie. If you happen to need a Micro USB connector with all of the pins broken out, you know where to get it! Since you're awesome and read this post, here's a discount code for $1.00 off: ADF6EE7. Cheers! </p>
+
+      <p><a href="/2013/02/listing-product-on-tindie.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2013/01/more-online-eda-thoughts.html">More Online EDA Thoughts - Upverter/Circuits.IO</a> 
@@ -590,71 +636,6 @@ Get["/sessiontest"] = parameters =&gt; Session["test"].ToString();
 
       <p><a href="/2012/12/journal-database-is-finally-working-and.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/12/journal-starting-out-with-nancy-on-mono_16.html">Journal: Starting out with Nancy on Mono Pt.3</a> 
-        <span>posted on 16 Dec 2012</span>
-      </h1> 
-      
-      <p>In the last blog post, I had some trouble finding an ORM layer I could tolerate. Since then, I have built mono 3.0.3 from source (master/df22423 Sat Dec 15 04:31:04 EST 2012). It wasn't easy - there was a lot of black magic involved. Even once I had the mono compiler and libraries built, I was unable to build Entity Framework from source. My solution was to get the EF5 binary from NuGet - so there wasn't really any point to my building mono from source!</p>
-
-<p>So, if you're here and you want to use EF, don't build it from source. Take the easy way out and download the binary from NuGet! (Not that I want to discourage anyone from contributing to an OSS project, but if you're reading this, you're probably more interested in Nancy &amp; WebDev than ORM guts.)</p>
-
-<p><strong>I was unable to get the MySQL bindings working, so I moved into a Windows 8 VM. From here on out, I'll be using EF5 (possibly moving to EF6) on "LocalDB".</strong></p>
-
-      <p><a href="/2012/12/journal-starting-out-with-nancy-on-mono_16.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/12/journal-starting-out-with-nancy-on-mono_15.html">Journal: Starting out with Nancy on Mono Pt.2</a> 
-        <span>posted on 15 Dec 2012</span>
-      </h1> 
-      
-      <p>Hello world is great, but it's time for some real code. I plan to develop a simple flash-card style application to help me study organic chemistry.</p>
-
-<p><em>I'll be developing on Debian Testing/Mono with MonoDevelop.</em></p>
-
-<p><strong>FAIL. Stop reading now, I gave up with Massive and am switching over to EntityFramework. Thus, I am currently building Mono from source.</strong></p>
-
-<h2>Setup</h2>
-
-<p>I don't like the XML mappings that are used with NHibernate, so I am going to use the excellent "<a href="https://github.com/robconery/massive">Massive</a>" from Rob Connery. Since I'm using MySQL, I'll be working with Alexander Nyquist's <a href="https://github.com/alexandernyquist/massive-mysql">MySQL fork</a> of Massive.</p>
-
-<p>Why Massive?</p>
-
-<p>Tiny and simple, a perfect compliment for our tiny and simple web framework.</p>
-
-<p>First things first, let's fork massive-mysql. I put it into a separate project; you don't have to. Whichever route you choose, you'll have to add some references to your project.</p>
-
-<p>In the project that contains your Massive.*.cs file:</p>
-
-<ul>
-<li>Install mysql.data from NuGet</li>
-<li>Add references to:
-<ul>
-<li>Microsoft.CSharp</li>
-<li>System.Configuration</li>
-<li>System.Core</li>
-<li>System.Data</li>
-<li>System.Data.Linq</li>
-<li>System.Dynamic</li>
-</ul></li>
-</ul>
-
-<p>Let's check that everything compiles and move on to some code.</p>
-
-<p><img src="/images/circuitsioVSupverter.jpg" alt="" /></p>
-
-<p><em>My project after adding references</em></p>
-
-<h2>ORM</h2>
-
-<p>The first code I'll write is the ORM code. To prepare, I have drawn a rough diagram of the tables the app will need.</p>
-
-<p><img src="/images/UpverterAddComponent.png" alt="" /></p>
-
-      <p><a href="/2012/12/journal-starting-out-with-nancy-on-mono_15.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -694,6 +675,8 @@ Get["/sessiontest"] = parameters =&gt; Session["test"].ToString();
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2015May">May, 2015</a></li>
+                          <li><a href="/archive#2015April">April, 2015</a></li>
                           <li><a href="/archive#2014November">November, 2014</a></li>
                           <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>

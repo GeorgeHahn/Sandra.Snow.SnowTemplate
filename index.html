@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-11-07T12:41:06.8189450-05:00" />
+    <meta http-equiv="last-modified" content="2015-05-02T16:34:30.5554049-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/" />
@@ -36,6 +36,63 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2015/05/powersupplies.html">Summary of Server Power Supplies</a> 
+        <span>posted on 02 May 2015</span>
+      </h1> 
+      
+      <p>For my purposes, must have a cardedge connector</p>
+
+<p>Primary: HP PS3381-1C1 - 12V@32A, 5V@5A <a href="http://www.rcgroups.com/forums/showpost.php?p=14205992&amp;postcount=7">post</a></p>
+
+<p>I've been using one of these for a few months on my Mini Kossel without any issues. It handles a 40W cartridge heater and a 120W heated bed with ease. The fan is noisy, but it could be worse. Can be had for $10 shipped!</p>
+
+<p>Other options:</p>
+
+<ul>
+<li>Dell NPS330BB A - <code>12V@18A</code>, <code>5V@35A</code>, <code>3.3V@10A</code> <a href="http://www.rcgroups.com/forums/showthread.php?t=1382457&amp;highlight=nps330bb">post</a> Looks like a great LED PSU!</li>
+<li>HP 511777-001 - <code>12V@38.3A</code> <a href="http://www.rcgroups.com/forums/showpost.php?p=15599551&amp;postcount=167">post</a></li>
+<li>Sony APS-111 - <code>12V@34A</code> <a href="http://www.rcgroups.com/forums/showthread.php?t=800379">post</a></li>
+<li>HP DPS-600PB - <code>12V@64.5A</code>, <code>5V@2A</code>, <code>3.3V@8A</code> <a href="http://www.rcgroups.com/forums/showthread.php?t=1005309&amp;page=17#post15794997">post</a></li>
+<li>Some HP - <code>12V@100A</code> <a href="http://www.rcgroups.com/forums/showthread.php?t=1005309#post11639297">post</a></li>
+<li><a href="http://www.rcgroups.com/forums/showthread.php?t=1292514">More</a></li>
+</ul>
+
+      <p><a href="/2015/05/powersupplies.html">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2015/04/updating-influxdb-grafana-raspberry-pi.html">Updating InfluxDB and Grafana on the Raspberry Pi</a> 
+        <span>posted on 25 Apr 2015</span>
+      </h1> 
+      
+      <p>Mostly for my own records, here's the straightforward way to update InfluxDB and Grafana. I'm actually running on an Odroid-C1, but these instructions should be the same on any ARM platform (and similar on other platforms).</p>
+
+<p><code>
+cd ~/gocode/src/github.com/influxdb/influxdb/
+./package.sh 0.9.0.pre
+sudo dpkg -i influxdb_0.9.0.pre_armhf.deb
+sudo service influxdb restart
+</code></p>
+
+<p><code>
+cd ~/gocode/src/github.com/grafana/grafana/
+godep update
+git pull origin master
+go build .
+npm install
+go run build.go package
+sudo dpkg -i dist/grafana_2.0.0-beta1_armhf.deb
+sudo service grafana restart
+</code></p>
+
+<p>Might need some nasty stuff in between there
+- Merge config
+- Fix service</p>
+
+      <p><a href="/2015/04/updating-influxdb-grafana-raspberry-pi.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2014/11/mqtt-rf-bridge.html">MQTT to 430MHz RF bridge</a> 
@@ -322,56 +379,6 @@
 
       <p><a href="/2014/02/kinivo-bluetooth-module.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2014/01/mono-for-beaglebone-black.html">Building Mono on a BeagleBone Black (Hard Float)</a> 
-        <span>posted on 03 Jan 2014</span>
-      </h1> 
-      
-      <p>I performed this on <a href="http://www.armhf.com/index.php/boards/beaglebone-black/">Ubuntu Saucy 13.10 from ARMhf</a> (running from an 8Gb SD card)</p>
-
-<ol>
-<li>Launch a terminal window/ssh into your BBB</li>
-<li>sudo apt-get update</li>
-<li>sudo apt-get install mono-complete git automake libtool</li>
-<li>Wait a long time (hours)</li>
-<li>git clone git://github.com/mono/mono.git</li>
-<li>cd mono</li>
-<li>git submodule init</li>
-<li>git submodule update</li>
-<li><code>./autogen.sh --prefix=/usr/local --enable-nls=no --with-sgen=yes --with-xen-opt=no --with-ikvm-native=no</code>  </li>
-<li>make</li>
-<li>Wait a long time (hours again)</li>
-<li>Ignore the errors and hope they don’t mean anything</li>
-<li>sudo make install</li>
-<li>Wait some more</li>
-<li>Ignore the errors and hope they don’t mean anything</li>
-</ol>
-
-<p>Post based off of: <a href="http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/">http://neildanson.wordpress.com/2013/12/10/building-mono-on-a-raspberry-pi-hard-float/</a></p>
-
-      <p><a href="/2014/01/mono-for-beaglebone-black.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2013/10/razr-hd-maxx-teardown.html">RAZR HD Maxx Teardown</a> 
-        <span>posted on 10 Oct 2013</span>
-      </h1> 
-      
-      <p>A friend accidentally ran over his RAZR HD Maxx, so I rescued the motherboard and tore it down!</p>
-
-<p>I wasn't too kind when removing the RF shielding, so the copper is torn off in a few places.</p>
-
-<p>View image for full resolution.</p>
-
-<p><img src="/images/razrhd_1.jpeg" alt="" />
-<img src="/images/razrhd_2.jpeg" alt="" />
-<img src="/images/razrhd_3.jpeg" alt="" />
-<img src="/images/razrhd_4.jpeg" alt="" />
-<img src="/images/razrhd_5.jpeg" alt="" /></p>
-
-      <p><a href="/2013/10/razr-hd-maxx-teardown.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -409,6 +416,8 @@
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2015May">May, 2015</a></li>
+                          <li><a href="/archive#2015April">April, 2015</a></li>
                           <li><a href="/archive#2014November">November, 2014</a></li>
                           <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>

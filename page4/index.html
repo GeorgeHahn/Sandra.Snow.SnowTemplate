@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2014-11-07T12:41:06.8189450-05:00" />
+    <meta http-equiv="last-modified" content="2015-05-02T16:34:30.5554049-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/page4/" />
@@ -36,6 +36,71 @@
                   
 
   <ul class="posts">
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/12/journal-starting-out-with-nancy-on-mono_16.html">Journal: Starting out with Nancy on Mono Pt.3</a> 
+        <span>posted on 16 Dec 2012</span>
+      </h1> 
+      
+      <p>In the last blog post, I had some trouble finding an ORM layer I could tolerate. Since then, I have built mono 3.0.3 from source (master/df22423 Sat Dec 15 04:31:04 EST 2012). It wasn't easy - there was a lot of black magic involved. Even once I had the mono compiler and libraries built, I was unable to build Entity Framework from source. My solution was to get the EF5 binary from NuGet - so there wasn't really any point to my building mono from source!</p>
+
+<p>So, if you're here and you want to use EF, don't build it from source. Take the easy way out and download the binary from NuGet! (Not that I want to discourage anyone from contributing to an OSS project, but if you're reading this, you're probably more interested in Nancy &amp; WebDev than ORM guts.)</p>
+
+<p><strong>I was unable to get the MySQL bindings working, so I moved into a Windows 8 VM. From here on out, I'll be using EF5 (possibly moving to EF6) on "LocalDB".</strong></p>
+
+      <p><a href="/2012/12/journal-starting-out-with-nancy-on-mono_16.html">Read more...</a></p>
+    </li>
+    <li class="fancy-container lightblue">
+      <h1>
+        <a href="/2012/12/journal-starting-out-with-nancy-on-mono_15.html">Journal: Starting out with Nancy on Mono Pt.2</a> 
+        <span>posted on 15 Dec 2012</span>
+      </h1> 
+      
+      <p>Hello world is great, but it's time for some real code. I plan to develop a simple flash-card style application to help me study organic chemistry.</p>
+
+<p><em>I'll be developing on Debian Testing/Mono with MonoDevelop.</em></p>
+
+<p><strong>FAIL. Stop reading now, I gave up with Massive and am switching over to EntityFramework. Thus, I am currently building Mono from source.</strong></p>
+
+<h2>Setup</h2>
+
+<p>I don't like the XML mappings that are used with NHibernate, so I am going to use the excellent "<a href="https://github.com/robconery/massive">Massive</a>" from Rob Connery. Since I'm using MySQL, I'll be working with Alexander Nyquist's <a href="https://github.com/alexandernyquist/massive-mysql">MySQL fork</a> of Massive.</p>
+
+<p>Why Massive?</p>
+
+<p>Tiny and simple, a perfect compliment for our tiny and simple web framework.</p>
+
+<p>First things first, let's fork massive-mysql. I put it into a separate project; you don't have to. Whichever route you choose, you'll have to add some references to your project.</p>
+
+<p>In the project that contains your Massive.*.cs file:</p>
+
+<ul>
+<li>Install mysql.data from NuGet</li>
+<li>Add references to:
+<ul>
+<li>Microsoft.CSharp</li>
+<li>System.Configuration</li>
+<li>System.Core</li>
+<li>System.Data</li>
+<li>System.Data.Linq</li>
+<li>System.Dynamic</li>
+</ul></li>
+</ul>
+
+<p>Let's check that everything compiles and move on to some code.</p>
+
+<p><img src="/images/circuitsioVSupverter.jpg" alt="" /></p>
+
+<p><em>My project after adding references</em></p>
+
+<h2>ORM</h2>
+
+<p>The first code I'll write is the ORM code. To prepare, I have drawn a rough diagram of the tables the app will need.</p>
+
+<p><img src="/images/UpverterAddComponent.png" alt="" /></p>
+
+      <p><a href="/2012/12/journal-starting-out-with-nancy-on-mono_15.html">Read more...</a></p>
+    </li>
     <li class="fancy-container lightblue">
       <h1>
         <a href="/2012/12/journal-starting-out-with-nancy-on-mono.html">Journal: Starting out with Nancy on Mono Pt.1</a> 
@@ -341,76 +406,6 @@ git submodule update
 
       <p><a href="/2012/11/working-on-droid-razr-hd-maxx-case.html">Read more...</a></p>
     </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/10/3d-printed-headphones.html">3D Printed Headphones</a> 
-        <span>posted on 13 Oct 2012</span>
-      </h1> 
-      
-      <p>The <a href="http://store.sony.com/webapp/wcs/stores/servlet/ProductDisplay?catalogId=10551&amp;storeId=10151&amp;langId=-1&amp;partNumber=MDRV500DJ#specifications">Sony MDR-V500</a> headphones were marketed as budget DJ headphones. They sound 'good enough' and are extremely durable. Their biggest fault is that they are on-the-ear headphones instead of the more comfortable over-the-ear type. I set out to fix that with a bit of 3D printing.</p>
-
-<p><s><strong>Mod Results</strong></s>
-I did not complete this mod.</p>
-
-<p>I neglected to take a 'before' picture, so here's one from someone else:</p>
-
-<p><img src="/images/sony-mdr-500-headphones.jpg" alt="" /></p>
-
-<p><em>Source: Playderecord.com</em></p>
-
-<h2>In-Progress Photos</h2>
-
-<p><img src="/images/sony-mdr-500-result.jpg" alt="" /></p>
-
-<p><img src="/images/sony-mdr-500-result2.jpg" alt="" /></p>
-
-<p>Modification Process</p>
-
-<p>First, I modeled the two part enclosure in Solidworks. When this was complete, I tweaked the dimensions to allow for pads with a diameter 3cm larger than the original.</p>
-
-<p><img src="/images/sony-mdr-500-progress1.jpg" alt="" /></p>
-
-<p>To install the larger enclosures, the original enclosures must be removed and the drivers extracted.</p>
-
-<p>First, remove the pads and the three screws under them. Carefully remove the foam that is glued over the driver.</p>
-
-<p><img src="/images/sony-mdr-500-progress2.jpg" alt="" /></p>
-
-<p>Separate the two halves of the enclosure. Flip the inner half around and remove the driver by twisting it slightly.</p>
-
-<p><img src="/images/sony-mdr-500-progress3.jpg" alt="" /></p>
-
-<p>Once the driver is free, the headphone wires will need to be removed. Grab a soldering iron and remove the wires one at a time.</p>
-
-<p><img src="/images/sony-mdr-500-progress4.jpg" alt="" /></p>
-
-<p>Cut the zip tie inside and pull the wire out from the enclosure. The enclosure can now be removed from the headband.</p>
-
-<p><img src="/images/sony-mdr-500-progress5.jpg" alt="" /></p>
-
-<p>Save the nice rubber strain relief piece for the new enclosure.</p>
-
-      <p><a href="/2012/10/3d-printed-headphones.html">Read more...</a></p>
-    </li>
-    <li class="fancy-container lightblue">
-      <h1>
-        <a href="/2012/10/linux-mint-cinnamon-set-workspace-names.html">(Linux Mint) Cinnamon Set Workspace Names</a> 
-        <span>posted on 13 Oct 2012</span>
-      </h1> 
-      
-      <p>In Cinnamon 1.6, workspaces in the expo can have custom names applied. However, these names are not carried through to the window right click menu (Move to another workspace ->).</p>
-
-<p>Workspace names in the right click menu are set by the workspace-names key in org.gnome.desktop.wm.preferences.</p>
-
-<p>For example:</p>
-
-<pre><code>gsettings set org.gnome.desktop.wm.preferences workspace-names "['Entertainment', 'Projects', 'Programming', 'Learning', 'Homework']" 
-</code></pre>
-
-<p>(Sadly, these names do synchronize with the expo names, so you'll have to set everything twice.) </p>
-
-      <p><a href="/2012/10/linux-mint-cinnamon-set-workspace-names.html">Read more...</a></p>
-    </li>
   </ul> 
 
   <!-- Pagination links -->
@@ -450,6 +445,8 @@ I did not complete this mod.</p>
                 <aside id="archives-4" class="widget widget_archive">
                     <h1 class="widget-title">Archive</h1>
                     <ul class="posts">
+                          <li><a href="/archive#2015May">May, 2015</a></li>
+                          <li><a href="/archive#2015April">April, 2015</a></li>
                           <li><a href="/archive#2014November">November, 2014</a></li>
                           <li><a href="/archive#2014September">September, 2014</a></li>
                           <li><a href="/archive#2014May">May, 2014</a></li>
