@@ -10,6 +10,8 @@ Primary: HP PS3381-1C1 - 12V@32A, 5V@5A [post](http://www.rcgroups.com/forums/sh
 
 I've been using one of these for a few months on my Mini Kossel without any issues. It handles a 40W cartridge heater and a 120W heated bed with ease. The fan is noisy, but it could be worse. Can be had for $10 shipped!
 
+I'm working on an easy PSU conversion board for this [here](https://upverter.com/GeorgeHahn/ab0a74a39a2743c3/PS-3381-1C1-Breakout/).
+
 Other options:
 
 - Dell NPS330BB A - `12V@18A`, `5V@35A`, `3.3V@10A` [post](http://www.rcgroups.com/forums/showthread.php?t=1382457&highlight=nps330bb) Looks like a great LED PSU!
