@@ -47,9 +47,12 @@ sudo dpkg -i dist/grafana_2.0.0-beta1_armhf.deb
 sudo service grafana restart
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Might need some nasty stuff in between there
-- Merge config
-- Fix service&lt;/p&gt;
+&lt;p&gt;Might need some nasty stuff in between there&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Merge config&lt;/li&gt;
+&lt;li&gt;Fix service&lt;/li&gt;
+&lt;/ul&gt;
 </description><pubDate>Sat, 25 Apr 2015 04:00:00 Z</pubDate><a10:updated>2015-04-25T04:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Mostly for my own records, here's the straightforward way to update InfluxDB and Grafana. I'm actually running on an Odroid-C1, but these instructions should be the same on any ARM platform (and similar on other platforms).&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;cd ~/gocode/src/github.com/influxdb/influxdb/
@@ -67,9 +70,12 @@ sudo dpkg -i dist/grafana_2.0.0-beta1_armhf.deb
 sudo service grafana restart
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Might need some nasty stuff in between there
-- Merge config
-- Fix service&lt;/p&gt;
+&lt;p&gt;Might need some nasty stuff in between there&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Merge config&lt;/li&gt;
+&lt;li&gt;Fix service&lt;/li&gt;
+&lt;/ul&gt;
 </a10:content></item><item><guid isPermaLink="true">http://www.genericmaker.com/2014/11/06/mqtt-rf-bridge/</guid><link>http://www.genericmaker.com/2014/11/06/mqtt-rf-bridge/</link><a10:author><a10:name /></a10:author><category>CC3200</category><category>Internet of Things</category><category>MQTT</category><title>MQTT to 430MHz RF bridge</title><description>&lt;p&gt;For this project, I wanted a way to control my wireless power outlets from &lt;a href="http://www.amazon.com/gp/product/B0087DAW46/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B0087DAW46&amp;amp;linkCode=as2&amp;amp;tag=generi0c-20&amp;amp;linkId=FVZKHDNL5ZGAY5CN"&gt;Etekcity&lt;/a&gt; with MQTT messages. &lt;a href="http://www.mqtt.org/"&gt;MQTT&lt;/a&gt;  is an excellent publish-subscribe protocol designed to power the internet of things; I use it along with &lt;a href="http://nodered.org"&gt;Node-Red&lt;/a&gt; to control devices around my apartment.&lt;/p&gt;
 
 &lt;p&gt;These outlets are controlled with a very simple protocol over ASK 433MHz RF. The protocol is documented pretty well &lt;a href="https://code.google.com/p/rc-switch/"&gt;elsewhere&lt;/a&gt;, so I won't cover it in depth.&lt;/p&gt;

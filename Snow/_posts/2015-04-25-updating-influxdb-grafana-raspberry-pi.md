@@ -21,5 +21,6 @@ Mostly for my own records, here's the straightforward way to update InfluxDB and
 	sudo service grafana restart
 
 Might need some nasty stuff in between there
+
 - Merge config
 - Fix service
