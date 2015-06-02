@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="last-modified" content="2015-05-02T17:04:53.1930814-04:00" />
+    <meta http-equiv="last-modified" content="2015-06-02T16:22:43.3211460-04:00" />
     <title>Generic Maker</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link rel="canonical" href="http://www.genericmaker.com/" />
@@ -143,13 +143,13 @@ sudo service grafana restart
       
       <p>Windows exposes a number of ways to disable DPI scaling, but no way to forcefully enable it. This is a problem when apps tell windows they support high DPI but then go on to render at exactly the same size - making for unreadable text and unclickable buttons.</p>
 
-<p>I tried editing the application's manifest to set DpiAware to false, but that had no effect. Rather than switch my laptop's resolution every time I needed to use Cadence OrCAD, I did a little debugging with Ollydbg. Turns out, at some point, <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms633543%28v=vs.85%29.aspx">SetProcessDPIAware</a> is called. I already had an idea on how to solve it, so I didn't stick around to find the offending library (though I suspect it was being set by gdiplus).</p>
+<p>In my case, I tried editing the application's manifest to set DpiAware to false, but that had no effect. Rather than switch my laptop's resolution every time I needed to use Cadence OrCAD, I did a little debugging with Ollydbg. Turns out, at some point, <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms633543%28v=vs.85%29.aspx">SetProcessDPIAware</a> is called. I already had an idea on how to solve it, so I didn't stick around to find the offending library (though I suspect it was being set by gdiplus).</p>
 
 <p>I probably could have patched OrCAD (less so gdiplus), but there is a far more flexible solution. All we need to do is hook the SetProcessDPIAware function as a program is starting, and we gain the ability to block the function call, leaving the target application no way to tell windows not to scale it.</p>
 
 <p>I used the <a href="https://github.com/RaMMicHaeL/minhook">minhook</a> library to build a DLL that will do just that. When it is loaded by an application, the code replaces SetProcessDPIAware with an implementation that does nothing.</p>
 
-<p>The DLL must be present right as the app is initializing, else it won't be able to block the function call. Rather than inject the DLL per se, I just used CFF Explorer to add it to the misbehaving application's import table. This causes it to be loaded as the application is starting up.</p>
+<p>The DLL must be present right as the app is initializing, else it won't be able to block the function call. Rather than inject the DLL at runtime, I used CFF Explorer to add it to the misbehaving application's import table. This causes it to be loaded automatically as the application is starting up.</p>
 
 <p>To maintain Windows 8 compatibility, I didn't hook <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dn302122%28v=vs.85%29.aspx">SetProcessDpiAwareness</a>.</p>
 
@@ -161,11 +161,11 @@ sudo service grafana restart
 
 <h1>Results</h1>
 
-<p>Before; OrCAD on high DPI is practically unusable with no scaling</p>
+<p>Before: OrCAD on high DPI is practically unusable with no scaling</p>
 
 <p><img src="/images/OrCADNoScaling.png" alt="" /></p>
 
-<p>After; much more usable with forced scaling</p>
+<p>After: much more usable with forced scaling</p>
 
 <p><img src="/images/OrCADScaled.png" alt="" /></p>
 
